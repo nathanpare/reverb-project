@@ -1,0 +1,89 @@
+.App {
+  background-color: #333333;
+}
+
+.message {
+  display: flex;
+  justify-content: center;
+  color: white;
+  font-size: 40px;
+  font-family: 'Mochiy Pop One', sans-serif;
+  margin-top: 2rem;
+}
+
+.featured {
+  color: white;
+  font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.title {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  text-decoration: underline;
+}
+
+.featured-songs {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  padding-bottom: 4rem;
+}
+
+.featured-songs {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 20px;
+  padding-bottom: 4rem;
+}
+
+.song1 {
+  height: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+border-radius: 10%;
+}
+
+.song2 {
+  height: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+border-radius: 10%;
+}
+
+.song3 {
+  height: 300px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+background-color: #0cbaba;
+background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+border-radius: 10%;
+}
+
+.image {
+  height: 150px;
+  width: 150px;
+  background-color: #e39dbb;
+  background-size: 100% 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.artist {
+  opacity: 50%;
+}
