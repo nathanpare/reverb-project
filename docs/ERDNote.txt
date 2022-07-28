@@ -1,0 +1,12 @@
+
+used flex-box
+database reset functionality
+server starter package from lighthouse
+Routes for backend
+Lists to do- to make and finish work.-trellos-with gmail
+-create project invite members-
+-cards-lists-current-completed-future- track in diagram
+-each card can have deadline else flag
+-add comments 
+
+

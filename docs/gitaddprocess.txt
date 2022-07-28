@@ -1,0 +1,18 @@
+git branch <branch name>
+git checkout <branch name>
+
+after working
+
+git add -A 
+git commit -m <some message>
+git push -u origin <branch name>
+
+git checkout main
+git pull origin main
+
+git merge <branch name>
+git push origin main
+
+Some git lines:
+Showing current git: git status
+Listing the remote branches: git branch -a
