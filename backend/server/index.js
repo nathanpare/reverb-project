@@ -2,9 +2,11 @@ const express = require('express');
 
 const app = express();
 
-const port = 8001;
+const port = 8080;
 
 const cors = require('cors');
+
+const pool = require('./connection');
 
 app.use(cors());
 
