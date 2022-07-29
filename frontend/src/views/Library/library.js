@@ -1,83 +1,93 @@
-// import './App.css';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
+import React from 'react';
+import './library.css';
 
 const LibraryPage = () => {
   return (
-    <div className="Page-content">
-      <div className="Page-top">
-        <Header />
-      </div>
- 
-      <div className="Page-center">
-        <LeftBar />
-        <Body />
-        <RightBar />
-      </div>
-      <div className="Page-bottom">
-        <PlayBar />
-      </div>
+    <div className="page-content">
+      <Body />
+      {/* <RenderSongs />
+      <RenderArtists /> */}
     </div>
   );
  };
- 
- const Header = () => {
+
+const RenderSongs = () => {
   return (
-    <div className="Page-header">
-      <h1>Reverb</h1>
-    </div>
-  );
- };
- 
-const LeftBar = () => {
-return (
-    <div className="Left-bar">
-      <button>Navigation</button>
-      <button>Search</button>
-    </div>
-  );
-};
- 
-const Body = () => {
-  
-let user = "TempUser111";
-  
-return (
-    <div className="Center-content">
-      <h4>Good Morning, {user}</h4>
-        <div>Songs</div>
-        <div>Artists</div>
-        <div>Albums</div>
-        <div>Podcasts</div>
-        <div>Playlists</div>
-        <div>Genres</div>
-        {/* <GenreList /> */}
+    <div className="songs-list">Filler tracks
+      <div className="stock-track">Filler track</div>
+      <div className="stock-track">Filler track</div>
+      <div className="stock-track">Filler track</div>
+      <div className="stock-track">Filler track</div>
+      <div className="stock-track">Filler track</div>
+      <div className="stock-track">Filler track</div>
+      <div className="stock-track">Filler track</div>
     </div>
   )
 };
-  
-const RightBar = () => {
- 
-return (
-    <div className="Right-bar">
-      <button>Settings</button>
-    </div> 
-  ); 
-};
 
-const PlayBar = () => {
+const RenderArtists = () => {
   return (
-    <div className="Play-bar">
-      <div className="Song-bar">THIS IS A SONG BAR</div>
+    <div className="artists-list">
+      <div className="stock-artist">Filler artist</div>
+      <div className="stock-artist">Filler artist</div>
+      <div className="stock-artist">Filler artist</div>
+      <div className="stock-artist">Filler artist</div>
+      <div className="stock-artist">Filler artist</div>
+      <div className="stock-artist">Filler artist</div>
+      <div className="stock-artist">Filler artist</div>
+    </div>
+  );
+}
+
+const RenderAlbums = () => {
+  return (
+    <div className="albums-list">
+      <div className="stock-albums"></div>
+    </div>
+  );
+}
+
+const RenderPodcasts = () => {
+  return (
+    <div className="podcasts-list">
+      <div className=""></div>
+    </div>
+  );
+}
+
+const RenderPlaylists = () => {
+  return (
+    <div className="playlists-list"></div>
+  );
+}
+
+const RenderGenres = () => {
+  return (
+    <div className="genres-list"></div>
+  );
+}
+
+//  const Header = () => {
+//   return (
+//     <div className="Page-header">
+//       <h1>Reverb</h1>
+//     </div>
+//   );
+//  };
+ 
+const Body = () => {
+  let user = "TempUser111";
+  // let rndSongs = renderSongs();
+
+  return (
+    <div className="Center-content">
+      <h4>Good Morning, {user}</h4>
+        <button onClick={RenderSongs}>Songs</button>
+        <button onClick={<RenderArtists />}>Artists</button>
+        <button onClick={<RenderAlbums />}>Albums</button>
+        <button onClick={<RenderPodcasts />}>Podcasts</button>
+        <button onClick={<RenderPlaylists />}>Playlists</button>
+        <button onClick={<RenderGenres />}>Genres</button>
     </div>
   )
 };
@@ -99,4 +109,3 @@ const PlayBar = () => {
  // }
  
 export default LibraryPage;
- 
