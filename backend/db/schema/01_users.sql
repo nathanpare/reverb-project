@@ -7,4 +7,4 @@ CREATE TABLE users (
   spotify_name VARCHAR(255) NOT NULL,
   spotify_email VARCHAR(255) NOT NULL,
   spotify_user_id VARCHAR(255) NOT NULL  
-)
+);
