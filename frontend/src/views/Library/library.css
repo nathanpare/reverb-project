@@ -4,3 +4,18 @@
   height: 100px;
 }
  */
+
+
+ .page-content {
+   /* background-color: red; */
+  display: flex;
+  
+ }
+
+ .songs-render {
+   background-color: purple;
+ }
+
+ .tracks-render {
+  background-color: green;
+ }

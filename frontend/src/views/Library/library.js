@@ -1,111 +1,116 @@
 import React from 'react';
 import './library.css';
 
+let songsList = () => {
+  
+}
+
 const LibraryPage = () => {
-  return (
-    <div className="page-content">
-      <Body />
-      {/* <RenderSongs />
-      <RenderArtists /> */}
-    </div>
-  );
- };
 
-const RenderSongs = () => {
-  return (
-    <div className="songs-list">Filler tracks
-      <div className="stock-track">Filler track</div>
-      <div className="stock-track">Filler track</div>
-      <div className="stock-track">Filler track</div>
-      <div className="stock-track">Filler track</div>
-      <div className="stock-track">Filler track</div>
-      <div className="stock-track">Filler track</div>
-      <div className="stock-track">Filler track</div>
-    </div>
-  )
-};
-
-const RenderArtists = () => {
-  return (
-    <div className="artists-list">
-      <div className="stock-artist">Filler artist</div>
-      <div className="stock-artist">Filler artist</div>
-      <div className="stock-artist">Filler artist</div>
-      <div className="stock-artist">Filler artist</div>
-      <div className="stock-artist">Filler artist</div>
-      <div className="stock-artist">Filler artist</div>
-      <div className="stock-artist">Filler artist</div>
-    </div>
-  );
 }
 
-const RenderAlbums = () => {
-  return (
-    <div className="albums-list">
-      <div className="stock-albums"></div>
-    </div>
-  );
-}
-
-const RenderPodcasts = () => {
-  return (
-    <div className="podcasts-list">
-      <div className=""></div>
-    </div>
-  );
-}
-
-const RenderPlaylists = () => {
-  return (
-    <div className="playlists-list"></div>
-  );
-}
-
-const RenderGenres = () => {
-  return (
-    <div className="genres-list"></div>
-  );
-}
-
-//  const Header = () => {
+// const LibraryPage = () => {
 //   return (
-//     <div className="Page-header">
-//       <h1>Reverb</h1>
+//     <button onClick="RenderArtists()"></button>
+//     // <RenderArtists />
+//   );
+//   // return (
+//   //   <div className="page-content">
+//   //     <button id="songs-render" onClick={RenderSongs}>Songs</button>
+//   //     <button id="artists-render" onClick={RenderArtists}>Artists</button>
+//   //     <button id="albums-render" onClick={RenderAlbums}>Albums</button>
+//   //     <button id="playlists-render" onClick={RenderPlaylists}>Playlists</button>
+//   //     <button id="podcasts-render" onClick={RenderPodcasts}>Podcasts</button>
+//   //   </div>
+//   // );
+//  };
+
+// const RenderSongs = () => {
+//   const songs = Document.getElementById('songs-render');
+//   songs.render(
+    
+//   );
+//   // return (
+//   //   <div className="songs-list">Tracks
+//   //     <div className="stock-track">Track</div>
+//   //     <div className="stock-track">Track</div>
+//   //     <div className="stock-track">Track</div>
+//   //     <div className="stock-track">Track</div>
+//   //     <div className="stock-track">Track</div>
+//   //     <div className="stock-track">Track</div>
+//   //     <div className="stock-track">Track</div>
+//   //   </div>
+//   // )
+// };
+
+// const RenderArtists = () => {
+//   return (
+//     <div className="artists-list">Artists
+//       <div className="stock-artist">Artist</div>
+//       <div className="stock-artist">Artist</div>
+//       <div className="stock-artist">Artist</div>
+//       <div className="stock-artist">Artist</div>
+//       <div className="stock-artist">Artist</div>
+//       <div className="stock-artist">Artist</div>
+//       <div className="stock-artist">Artist</div>
 //     </div>
 //   );
-//  };
- 
-const Body = () => {
-  let user = "TempUser111";
-  // let rndSongs = renderSongs();
+// }
 
-  return (
-    <div className="Center-content">
-      <h4>Good Morning, {user}</h4>
-        <button onClick={RenderSongs}>Songs</button>
-        <button onClick={<RenderArtists />}>Artists</button>
-        <button onClick={<RenderAlbums />}>Albums</button>
-        <button onClick={<RenderPodcasts />}>Podcasts</button>
-        <button onClick={<RenderPlaylists />}>Playlists</button>
-        <button onClick={<RenderGenres />}>Genres</button>
-    </div>
-  )
-};
+// const RenderAlbums = () => {
+//   return (
+//     <div className="albums-list">Albums
+//       <div className="stock-albums">Album</div>
+//       <div className="stock-albums">Album</div>
+//       <div className="stock-albums">Album</div>
+//       <div className="stock-albums">Album</div>
+//       <div className="stock-albums">Album</div>
+//       <div className="stock-albums">Album</div>
+//       <div className="stock-albums">Album</div>
+//     </div>
+//   );
+// }
 
- // const GenreList = () => {
- //   const mainGenreList = {
- //     "Pop": ["artist1", "artist2"],
- //     "Rock": [],
- //     "Hip Hop": [],
- //     "Country": [],
- //     "Classical": [],
- //     "Jazz": [],
- //     "Electronic": [],
- //     "Heavy Metal": [],
- //   };
- //   return (
- //     <MainGenreList />
- //   );
- // }
+// const RenderPodcasts = () => {
+//   return (
+//     <div className="podcasts-list">Podcasts
+//       <div className="stock-podcast">Podcast</div>
+//       <div className="stock-podcast">Podcast</div>
+//       <div className="stock-podcast">Podcast</div>
+//       <div className="stock-podcast">Podcast</div>
+//       <div className="stock-podcast">Podcast</div>
+//       <div className="stock-podcast">Podcast</div>
+//       <div className="stock-podcast">Podcast</div>
+//     </div>
+//   );
+// }
+
+// const RenderPlaylists = () => {
+//   return (
+//     <div className="playlists-list">Playlists
+//       <div className="stock-playlist">Playlist</div>
+//       <div className="stock-playlist">Playlist</div>
+//       <div className="stock-playlist">Playlist</div>
+//       <div className="stock-playlist">Playlist</div>
+//       <div className="stock-playlist">Playlist</div>
+//       <div className="stock-playlist">Playlist</div>
+//       <div className="stock-playlist">Playlist</div>
+//     </div>
+//   );
+// }
+
+// const RenderGenres = () => {
+//   return (
+//     <div className="genres-list">Genres
+//       <div className="stock-genre">Genre</div>
+//       <div className="stock-genre">Genre</div>
+//       <div className="stock-genre">Genre</div>
+//       <div className="stock-genre">Genre</div>
+//       <div className="stock-genre">Genre</div>
+//       <div className="stock-genre">Genre</div>
+//       <div className="stock-genre">Genre</div>
+//     </div>
+//   );
+// }
  
 export default LibraryPage;
