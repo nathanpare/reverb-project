@@ -1,21 +1,16 @@
-/* .songs-list {
-  background-color: red;
-  width: 100px;
-  height: 100px;
+.library-page {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* flex-direction: row; */
 }
- */
 
-
- .page-content {
-   /* background-color: red; */
+.library-components {
   display: flex;
-  
- }
+  flex-direction: row;
+}
 
- .songs-render {
-   background-color: purple;
- }
+.category-span {
+  background-color: red;
 
- .tracks-render {
-  background-color: green;
- }
+  border: 5px solid white;
+}
