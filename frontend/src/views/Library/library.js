@@ -10,12 +10,12 @@ import RenderPodcasts from './LibraryComponents/RenderPodcasts';
 
 
 export default function Library() {
-
   const name = "User111";
-
   return (
     <div className="library-page">
-      <h1>Good Morning, {name}</h1>
+      <header className="page-header">
+        <h3>Good morning, {name}</h3>
+      </header>
         <div className="library-components">
           <RenderSongs />
           <RenderAlbums />
@@ -25,5 +25,5 @@ export default function Library() {
           <RenderPodcasts />
         </div>
     </div>
-  );
-}
+  )
+};

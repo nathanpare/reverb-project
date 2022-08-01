@@ -31,15 +31,24 @@ const AlbumsList = [
   }
 ]
 
-function expandAlbums() {
-   
-}
 
 export default function RenderAlbums() {
+  const [area, setArea] = useState(false);
+
+  const addToArea = (
+    <div>AAAAA</div>
+  );
+
+  const fillArea = () => {
+    setArea(true);
+  }
 
   return (
-    <div>Albums
-      <button onClick={expandAlbums}>Expand</button>
+    <div className="category-span">Albums
+      <div id="albums-area">
+        <button onClick={() => fillArea()}>Expand</button>
+        {area && addToArea}
+      </div>
     </div>
   )
 }

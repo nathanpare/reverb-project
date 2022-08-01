@@ -31,22 +31,23 @@ const SongsList = [
   }
 ]
 
-function expandSongs(state) {
-  const target = document.getElementById("songs-area");
-  for (const song of SongsList) {
-    let title = song.title;
-    let artist = song.artist;
-    let album = song.album;
-
-    target.append(`${title}\n${artist}\n${album}\n`);
-  }
-}
-
 export default function RenderSongs() {
+  const [area, setArea] = useState(false);
+
+  const addToArea = (
+    <div>AAAAA</div>
+  );
+
+  const fillArea = () => {
+    setArea(true);
+    // setArea(!area);
+  }
+
   return (
-    <div className="category-span">
-      <div id="songs-area">Songs
-        <button onClick={expandSongs}>Expand</button>
+    <div className="category-span">Songs
+      <div id="songs-area">
+        <button onClick={() => fillArea()}>Expand</button>
+        {area && addToArea}
       </div>
     </div>
   )

@@ -32,10 +32,22 @@ import React, { useState, useEffect } from "react";
 // ]
 
 export default function RenderArtists() {
+  const [area, setArea] = useState(false);
+
+  const addToArea = (
+    <div>AAAAA</div>
+  );
+
+  const fillArea = () => {
+    setArea(true);
+  }
+
   return (
-    <div className="render-artists">Artists
-      <button>Expand</button>
-      {/* <button onClick={renderArtists}>Expand</button> */}
+    <div className="category-span">Artists
+      <div id="artists-area">
+        <button onClick={() => fillArea()}>Expand</button>
+        {area && addToArea}
+      </div>
     </div>
-  )
+  );
 }
