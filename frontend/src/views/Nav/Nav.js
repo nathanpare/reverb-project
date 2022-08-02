@@ -8,9 +8,6 @@ export default function Nav() {
     <p>Reverb</p>
     </div>
     <div className="right">
-      <div className="login">
-        <p>Login</p>
-      </div>
       <div className="account">
         <p>Account</p>
       </div>
