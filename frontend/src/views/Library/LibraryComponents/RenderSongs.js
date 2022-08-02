@@ -35,7 +35,13 @@ export default function RenderSongs() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
-    <div>AAAAA</div>
+    <div>
+      <ul>
+        <li>SONG</li>
+        <li>SONG</li>
+        <li>SONG</li>
+      </ul>
+    </div>
   );
 
   const fillArea = () => {

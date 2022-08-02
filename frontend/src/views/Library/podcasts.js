@@ -5,23 +5,22 @@ import RenderAlbums from './LibraryComponents/RenderAlbums';
 import RenderGenres from './LibraryComponents/RenderGenres';
 import RenderPlaylists from './LibraryComponents/RenderPlaylists';
 import RenderArtists from './LibraryComponents/RenderArtists';
-import RenderPodcasts from './LibraryComponents/RenderPodcasts';
 
-export default function Library() {
-  const name = "User111";
+export default function Podcasts() {
   return (
-    <div className="library-page">
+    <div className="podcasts-page">
       <header className="page-header">
-        <h3>Good morning, {name}</h3>
+        <h3>Podcasts</h3>
       </header>
-        <div className="library-components">
+        <div
+        className="library-components">
           <RenderSongs />
           <RenderAlbums />
           <RenderArtists />
           <RenderPlaylists />
           <RenderGenres />
-          <RenderPodcasts />
+          {/* <RenderHome /> */}
         </div>
     </div>
   )
-};
+}

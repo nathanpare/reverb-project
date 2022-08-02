@@ -36,7 +36,12 @@ export default function RenderAlbums() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
-    <div>AAAAA</div>
+    <div className="albums-add">
+      <p className="stock-album">ALBUM</p>
+      <p className="stock-album">ALBUM</p>
+      <p className="stock-album">ALBUM</p>
+      <p className="stock-album">ALBUM</p>
+    </div>
   );
 
   const fillArea = () => {
@@ -51,4 +56,4 @@ export default function RenderAlbums() {
       </div>
     </div>
   )
-}
+};

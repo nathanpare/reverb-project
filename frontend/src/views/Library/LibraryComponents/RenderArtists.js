@@ -35,7 +35,13 @@ export default function RenderArtists() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
-    <div>AAAAA</div>
+    <div>
+      <ul>
+        <li>Artist</li>
+        <li>Artist</li>
+        <li>Artist</li>
+      </ul>
+    </div>
   );
 
   const fillArea = () => {
