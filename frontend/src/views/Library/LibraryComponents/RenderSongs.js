@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const SongsList = [
   {
@@ -54,6 +55,7 @@ export default function RenderSongsPreview() {
       <div id="songs-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
+        <Link to="/songs">All Songs</Link>
       </div>
     </div>
   )

@@ -10,6 +10,7 @@ import RenderArtistsPreview from './LibraryComponents/RenderArtists';
 import RenderPodcastsPreview from './LibraryComponents/RenderPodcasts';
 import ReactDOM from "react-dom/client";
 import {
+  Link,
   BrowserRouter,
   Routes,
   Route,
@@ -18,24 +19,30 @@ import {
 export default function Library() {
   const name = "User111";
   return (
-    // <BrowserRouter>
-    //  <Routes>
-    //   <Route path="/" element={<Library />} />
-    //     <Route path="songs" element={<Songs />} />
-    //     <Route path="playlists" element={<Playlists />} />
-    //  </Routes>
-    // </BrowserRouter>
     <div className="library-page">
       <header className="page-header">
         <h3>Good morning, {name}</h3>
       </header>
         <div className="library-components">
-          <RenderSongsPreview />
-          <RenderAlbumsPreview />
-          <RenderArtistsPreview />
-          <RenderPlaylistsPreview />
-          <RenderGenresPreview />
-          <RenderPodcastsPreview />
+          <div className="songs-components">
+            <RenderSongsPreview />
+          </div>
+          <div className="albums-components">
+            <RenderAlbumsPreview />
+          </div>
+          <div className="artists-components">
+            <RenderArtistsPreview />
+          </div>
+          <div className="playlists-components">
+            <RenderPlaylistsPreview />
+          </div>
+          <div className="genres-components">
+            <RenderGenresPreview />
+          </div>
+          <div className="podcasts-components">
+            <RenderPodcastsPreview />
+
+          </div>
         </div>
     </div>
   )

@@ -22,11 +22,11 @@ export default function Songs() {
         <h3>Songs</h3>
       </header>
       <div className="library-components">
-        <RenderAlbumsPreview />
+        {/* <RenderAlbumsPreview />
         <RenderArtistsPreview />
         <RenderPlaylistsPreview />
         <RenderGenresPreview />
-        <RenderPodcastsPreview />
+        <RenderPodcastsPreview /> */}
       </div>
     </div>
   )

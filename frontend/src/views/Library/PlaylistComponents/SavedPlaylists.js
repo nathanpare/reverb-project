@@ -1,5 +1,3 @@
-
-
 export default function SavedPlaylists() {
   <div className="saved-playlists">
     <ul>

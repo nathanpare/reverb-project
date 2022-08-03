@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 const AlbumsList = [
   {
@@ -53,6 +54,7 @@ export default function RenderAlbums() {
       <div id="albums-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
+        <Link to="/albums">All Albums</Link>
       </div>
     </div>
   )

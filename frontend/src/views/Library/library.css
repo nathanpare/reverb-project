@@ -5,13 +5,16 @@
   justify-content: center;
 }
 
-.library-components,
 .genres-components,
 .playlists-components,
 .podcasts-components,
 .songs-components,
 .albums-components,
 .artists-components {
+  border: 0px solid yellow;
+}
+
+.library-components {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -34,7 +37,6 @@
 #albums-area {
   border: 5px solid white;
   display: flex;
-
 }
 
 .albums-add {
