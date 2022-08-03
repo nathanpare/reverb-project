@@ -16,3 +16,6 @@ create the local route, fetch
 
 API backend
 
+--
+create states for settracks
+compare database likes in states with API.
