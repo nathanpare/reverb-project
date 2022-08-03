@@ -13,3 +13,11 @@ User Stories
 - User can play and add songs from all pages
 - User can view, create and delete playlists and liked songs
  from corresponding pages (CRUD)
+ - within the library page:
+  - user can render a preview category for:
+    - songs
+    - artists
+    - playlists
+    - genres
+    - podcasts
+  - user can also 'expand all', routing them to the full page version of each category, e.g. albums page, playlists page, etc etc
