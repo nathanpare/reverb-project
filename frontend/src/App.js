@@ -11,6 +11,10 @@ import "./views/login/Login.css"
 import Search from './views/Search/Search';
 import Home from './views/home/Home';
 
+import Songs from "./views/Library/songs";
+import Playlists from './views/Library/playlists';
+import Albums from './views/Library/albums';
+
 const code = new URLSearchParams(window.location.search).get("code")
 
 function App() {
@@ -27,7 +31,14 @@ function App() {
     <Route path="sidebar" element={<Sidebar />} />
     <Route path="footer" element={<Footer />} />
     <Route element={Error} />
-
+    <Route path="/" element={<App />} />
+    <Route path="/library"></Route>
+    <Route path="/songs" element={<Songs />} />
+    <Route path="/playlists" element={<Playlists />} />
+    {/* <Route path="/albums" element={<Albums />} /> */}
+    {/* <Route path="/artists" element={<Artists />} /> */}
+    {/* <Route path="/genres" element={<Genres />} /> */}
+    {/* <Route path="/podcasts" element={<Podcasts />} /> */}
     </Routes>
 
     </>

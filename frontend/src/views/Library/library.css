@@ -1,120 +1,64 @@
+.library-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.library-components,
+.genres-components,
+.playlists-components,
+.podcasts-components,
+.songs-components,
+.albums-components,
+.artists-components {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+}
 
-/* .App {
+.page-header {
+  border: 5px solid white;
+}
 
+.category-span {
+  border: 5px solid white;
+  display: flex;
+  flex-direction: column;
+}
 
- text-align: center;
+.songs-area {
+  border: 5px solid white;
+}
 
+#albums-area {
+  border: 5px solid white;
+  display: flex;
 
 }
 
-
-
-
-
-
-.App-logo {
-
-
- height: 40vmin;
-
-
- pointer-events: none;
-
-
+.albums-add {
+  display: flex;
+  flex-direction: row;
+  /* align-content: space-evenly; */
+  gap: 10%;
+  border: 1px solid yellow;
+  width: 100%;
 }
 
-
-
-
-
-
-@media (prefers-reduced-motion: no-preference) {
-
-
- .App-logo {
-
-
-   animation: App-logo-spin infinite 20s linear;
-
-
- }
-
-
+.artists-area {
+  border: 5px solid white;
 }
 
-
-
-
-
-
-.App-header {
-
-
- background-color: #282c34;
-
-
- min-height: 100vh;
-
-
- display: flex;
-
-
- flex-direction: column;
-
-
- align-items: center;
-
-
- justify-content: center;
-
-
- font-size: calc(10px + 2vmin);
-
-
- color: white;
-
-
+.genres-area {
+  border: 5px solid white;
 }
 
-
-
-
-
-
-.App-link {
-
-
- color: #61dafb;
-
-
+.stock-album {
+  width: 5em;
+  height: 5em;
+  background-color: red;
+  text-align: center;
+  text-justify: center;
 }
-
-
-
-
-
-
-@keyframes App-logo-spin {
-
-
- from {
-
-
-   transform: rotate(0deg);
-
-
- }
-
-
- to {
-
-
-   transform: rotate(360deg);
-
-
- }
-
-
-} */
 
