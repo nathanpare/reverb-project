@@ -6,27 +6,7 @@ import RenderPlaylistsPreview from './LibraryComponents/RenderPlaylists';
 import RenderArtistsPreview from './LibraryComponents/RenderArtists';
 import RenderPodcastsPreview from './LibraryComponents/RenderPodcasts';
 
-
-// class App extends Component {
-//   render() {
-//     console.log('App')
-//     return (
-//       <BrowserRouter>
-//         <div className="App">
-//           <Switch>
-//             <Route exact path='/' component={Dashboard} />
-//             <Route exact path='/Dashboard1' component={Dashboard1} />
-//             <Route exact path='/Dashboard2' component={Dashboard2} />
-//           </Switch>
-//           <Dashboard />
-//        </div>
-//       </BrowserRouter>
-//     )
-//   }
-// }
-
-export default function RenderGenresPreview() {
-  
+export default function RenderGenresPreview() {  
   return (
     <div className="library-page">
       <header className="page-header">
