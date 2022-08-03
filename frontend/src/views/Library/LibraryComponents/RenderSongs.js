@@ -31,7 +31,7 @@ const SongsList = [
   }
 ]
 
-export default function RenderSongs() {
+export default function RenderSongsPreview() {
   const [area, setArea] = useState(false);
 
   const addToArea = (

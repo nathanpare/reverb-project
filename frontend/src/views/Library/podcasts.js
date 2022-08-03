@@ -1,10 +1,10 @@
 import React from 'react';
 import './library.css';
-import RenderSongs from './LibraryComponents/RenderSongs';
-import RenderAlbums from './LibraryComponents/RenderAlbums';
-import RenderGenres from './LibraryComponents/RenderGenres';
-import RenderPlaylists from './LibraryComponents/RenderPlaylists';
-import RenderArtists from './LibraryComponents/RenderArtists';
+import RenderSongsPreview from './LibraryComponents/RenderSongs';
+import RenderAlbumsPreview from './LibraryComponents/RenderAlbums';
+import RenderGenresPreview from './LibraryComponents/RenderGenres';
+import RenderPlaylistsPreview from './LibraryComponents/RenderPlaylists';
+import RenderArtistsPreview from './LibraryComponents/RenderArtists';
 
 export default function Podcasts() {
   return (
@@ -14,11 +14,11 @@ export default function Podcasts() {
       </header>
         <div
         className="library-components">
-          <RenderSongs />
-          <RenderAlbums />
-          <RenderArtists />
-          <RenderPlaylists />
-          <RenderGenres />
+          <RenderSongsPreview />
+          <RenderAlbumsPreview />
+          <RenderArtistsPreview />
+          <RenderPlaylistsPreview />
+          <RenderGenresPreview />
           {/* <RenderHome /> */}
         </div>
     </div>

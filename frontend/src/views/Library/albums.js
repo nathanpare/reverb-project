@@ -1,16 +1,23 @@
 import React from 'react';
 import './library';
 import './library.css';
-import RenderSongs from './LibraryComponents/RenderSongs';
-import RenderAlbums from './LibraryComponents/RenderAlbums';
-import RenderGenres from './LibraryComponents/RenderGenres';
-import RenderArtists from './LibraryComponents/RenderArtists';
-import RenderPodcasts from './LibraryComponents/RenderPodcasts';
 
-export default function Albums() {
+export default function RenderAlbumsPreview() {
   return (
     <div className="playlists-page">
-      <header className="page-header"></header>
+      <header className="page-header">
+        <h3>Albums</h3>
+      </header>
+
+      <div className="your-albums">
+        <ul>
+          <li>ALBUM</li>
+          <li>ALBUM</li>
+          <li>ALBUM</li>
+          <li>ALBUM</li>
+          <li>ALBUM</li>
+        </ul>
+      </div>
     </div>
   );
 }

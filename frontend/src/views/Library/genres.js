@@ -1,23 +1,41 @@
 import React from 'react';
 import './library.css';
-import RenderSongs from './LibraryComponents/RenderSongs';
-import RenderAlbums from './LibraryComponents/RenderAlbums';
-import RenderPlaylists from './LibraryComponents/RenderPlaylists';
-import RenderArtists from './LibraryComponents/RenderArtists';
-import RenderPodcasts from './LibraryComponents/RenderPodcasts';
+import RenderSongsPreview from './LibraryComponents/RenderSongs';
+import RenderAlbumsPreview from './LibraryComponents/RenderAlbums';
+import RenderPlaylistsPreview from './LibraryComponents/RenderPlaylists';
+import RenderArtistsPreview from './LibraryComponents/RenderArtists';
+import RenderPodcastsPreview from './LibraryComponents/RenderPodcasts';
 
-export default function Genres() {
+
+// class App extends Component {
+//   render() {
+//     console.log('App')
+//     return (
+//       <BrowserRouter>
+//         <div className="App">
+//           <Switch>
+//             <Route exact path='/' component={Dashboard} />
+//             <Route exact path='/Dashboard1' component={Dashboard1} />
+//             <Route exact path='/Dashboard2' component={Dashboard2} />
+//           </Switch>
+//           <Dashboard />
+//        </div>
+//       </BrowserRouter>
+//     )
+//   }
+// }
+
+export default function RenderGenresPreview() {
+  
   return (
     <div className="library-page">
       <header className="page-header">
         <h3>Genres</h3>
       </header>
       <div className="library-components">
-        <RenderSongs />
-        {/* <RenderHome /> */}
+        <RenderSongsPreview />
+        
       </div>
     </div>
-  );
-}
-
-// TEST TEST TEST COMMENT FOR GIT CONFLICT
+  )
+};

@@ -31,7 +31,7 @@ import React, { useState, useEffect } from "react";
 //   }
 // ]
 
-export default function RenderArtists() {
+export default function RenderArtistsPreview() {
   const [area, setArea] = useState(false);
 
   const addToArea = (

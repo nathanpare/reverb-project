@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-export default function RenderPlaylists() {
+export default function RenderPlaylistsPreview() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
