@@ -27,11 +27,14 @@
 .category-span {
   border: 5px solid white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .songs-area {
   border: 5px solid white;
+  display: flex;
+  /* justify-content: flex-start; */
 }
 
 #albums-area {
@@ -42,7 +45,6 @@
 .albums-add {
   display: flex;
   flex-direction: row;
-  /* align-content: space-evenly; */
   gap: 10%;
   border: 1px solid yellow;
   width: 100%;
@@ -50,6 +52,7 @@
 
 .artists-area {
   border: 5px solid white;
+  display: flex;
 }
 
 .genres-area {

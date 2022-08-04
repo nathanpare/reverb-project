@@ -55,6 +55,8 @@ export default function RenderSongsPreview() {
       <div id="songs-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
+      </div>
+      <div>
         <Link to="/songs">All Songs</Link>
       </div>
     </div>

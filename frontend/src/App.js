@@ -14,6 +14,9 @@ import Home from './views/Home/Home';
 import Songs from "./views/Library/songs";
 import Playlists from './views/Library/playlists';
 import Albums from './views/Library/albums';
+import Artists from './views/Library/artists'
+import Podcasts from './views/Library/podcasts';
+import Genres from './views/Library/genres';
 
 const code = new URLSearchParams(window.location.search).get("code")
 
@@ -22,19 +25,19 @@ function App() {
 
    <>
     <Routes>
-    <Route path="/" element={<Home />} exact />
-    <Route path="login" element={<Login />} />
-    <Route path="search" element={code ? <Search code={code} /> : <Login />} />
-    <Route path="sidebar" element={<Sidebar />} />
-    <Route path="footer" element={<Footer />} />
-    <Route element={Error} />
-    <Route path="library" element={<LibraryPage />}></Route>
-    <Route path="songs" element={<Songs />} />
-    <Route path="playlists" element={<Playlists />} />
-    {/* <Route path="albums" element={<Albums />} /> */}
-    {/* <Route path="artists" element={<Artists />} /> */}
-    {/* <Route path="genres" element={<Genres />} /> */}
-    {/* <Route path="podcasts" element={<Podcasts />} /> */}
+      <Route path="/" element={<Home />} exact />
+      <Route path="login" element={<Login />} />
+      <Route path="search" element={code ? <Search code={code} /> : <Login />} />
+      <Route path="sidebar" element={<Sidebar />} />
+      <Route path="footer" element={<Footer />} />
+      <Route element={Error} />
+      <Route path="library" element={<LibraryPage />}></Route>
+      <Route path="songs" element={<Songs />} />
+      <Route path="playlists" element={<Playlists />} />
+      <Route path="albums" element={<Albums />} />
+      <Route path="artists" element={<Artists />} />
+      <Route path="genres" element={<Genres />} />
+      <Route path="podcasts" element={<Podcasts />} />
     </Routes>
 
     </>

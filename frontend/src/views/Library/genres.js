@@ -1,12 +1,9 @@
 import React from 'react';
 import './library.css';
 import RenderSongsPreview from './LibraryComponents/RenderSongs';
-import RenderAlbumsPreview from './LibraryComponents/RenderAlbums';
-import RenderPlaylistsPreview from './LibraryComponents/RenderPlaylists';
-import RenderArtistsPreview from './LibraryComponents/RenderArtists';
-import RenderPodcastsPreview from './LibraryComponents/RenderPodcasts';
+import { Link } from "react-router-dom";
 
-export default function RenderGenresPreview() {  
+export default function Genres() {  
   return (
     <div className="library-page">
       <header className="page-header">
@@ -14,7 +11,6 @@ export default function RenderGenresPreview() {
       </header>
       <div className="library-components">
         <RenderSongsPreview />
-        
       </div>
     </div>
   )
