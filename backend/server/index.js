@@ -79,21 +79,21 @@ app.get('/callback', (req, res) => {
     },
   }).then(response => {
     if (response.status === 200) {
-  
 
-      const {access_token, token_type } = response.data;
+
+      const { access_token, token_type } = response.data;
 
       axios.get('https://api.spotify.com/v1/me', {
         headers: {
           Authorization: `${token_type} ${access_token}`
         }
       })
-      .then(response => {
-        res.send(`<pre>${JSON.stringify(response.data, null, 2)}</pre>`);
-      })
-      .catch(error =>{
-        res.send(error);
-      })
+        .then(response => {
+          res.send(`<pre>${JSON.stringify(response.data, null, 2)}</pre>`);
+        })
+        .catch(error => {
+          res.send(error);
+        })
       // const { refresh_token } = response.data;
 
       // axios.get(`http://localhost:3000/refresh_token?refresh_token=${refresh_token}`)
@@ -109,7 +109,7 @@ app.get('/callback', (req, res) => {
   })
     .catch(error => {
       res.send(error);
-    });   
+    });
 });
 
 app.get('/refresh_token', (req, res) => {
@@ -132,4 +132,61 @@ app.get('/refresh_token', (req, res) => {
     .catch(error => {
       res.send(error);
     });
+});
+
+app.get("/playlist", async (req, res) => {
+  try {
+    const getAllplaylists = await pool.query(
+      'SELECT name, user_id, image_url FROM playlist'
+
+    );
+    res.json(getAllplaylists);
+  }
+  catch (err) {
+    console.error(err.message);
+  }
+});
+
+app.delete("playlist/delete/:id", async (req, res) => {
+  try {
+    const id = parseInt(req.params.id);
+    console.log("Deleted playlist id: ", id);
+
+    const deleteStep = await pool.query(
+      "DELETE FROM playlist WHERE id = $1 RETURNING *", [id]
+    )
+    res.json("The song was deleted");
+  }
+  catch (err) {
+    console.error(err.message);
+  }
+});
+
+app.post("/playlist", async (req, res) => {
+  try {
+    const { name, user_id, image_url } = req.body;
+
+    console.log("req body", req.body);
+
+    const newPlaylist = await pool.query("INSERT INTO playlist(name, user_id, image_url) VALUES ($1, $2, $3) RETURNING *", [name, user_id, image_url])
+
+    res.json(newMovie.row[0])
+    
+  } catch(err){
+    console.error(err.message)
+
+  }
+    
+});
+app.get("/playlistsongs", async (req, res) => {
+  try {
+    const getAllplaylistsongs = await pool.query(
+      'SELECT name, user_id, image_url FROM playlist'
+
+    );
+    res.json(getAllplaylists);
+  }
+  catch (err) {
+    console.error(err.message);
+  }
 });

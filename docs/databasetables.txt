@@ -2,8 +2,8 @@ Run the following going to backend folder
 
 \i db/databasecreate/database.sql
 \i db/schema/01_users.sql
-\i db/schema/02_playlist.sql
-\i db/schema/04_playlist_songs.sql
+\i db/schema/02_playlists.sql
 \i db/schema/03_likes.sql
+\i db/schema/04_playlist_songs.sql
 
 \i db/seeds/01_users_seed.sql

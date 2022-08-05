@@ -8,11 +8,13 @@ import Footer from './components/footer/Footer';
 import Sidebar from './views/sidebar/Sidebar'
 
 //import "bootstrap/dist/css/bootstrap.min.css";
-import Home from './views/Home/Home';
+import Home from './views/Home/home';
 
 import Songs from "./views/Library/songs";
 import Playlists from './views/Library/playlists';
 import Search from './views/Search/Search';
+import LikeButton from './likeexample/LikeButton';
+import Trackclicks from './likeexample/trackexample/trackclick';
 
 const spotify = new SpotifyWebApi();
 
@@ -81,12 +83,14 @@ function App() {
           {/* <Route path="/artists" element={<Artists />} /> */}
           {/* <Route path="/genres" element={<Genres />} /> */}
           {/* <Route path="/podcasts" element={<Podcasts />} /> */}
+          <Route path="like" element={<LikeButton />} />
+          <Route path="trackclicks" element={<Trackclicks />} />
         </Routes>
 
       </div>
     </>
   );
-}
+}       
 
 
 export default App;
