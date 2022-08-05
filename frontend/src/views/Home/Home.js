@@ -4,11 +4,11 @@ import Nav from "../Nav/Nav"
 import "../Dashboard/Dashboard.css";
 import "../Nav/Nav.css";
 
-function Home() {
+function Home({token, logout, song, user}) {
   return (
     <div>
-      <Nav />
-      <Dashboard />
+      <Nav  token={token} logout={logout} />
+      <Dashboard user={user} song={song} />
     </div>
   )
 }

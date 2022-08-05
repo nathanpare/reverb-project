@@ -6,11 +6,12 @@ import React from 'react'
 //   clientId: "ea696b669de04879856700d07e3f9ac0",
 // })
 
-export default function Dashboard() {
+export default function Dashboard(props) {
   return (
+    
     <div className='dashboard'>
       <div className="message">
-        <p>Welcome !</p>
+        <p>Welcome {props.user.display_name}</p>
       </div>
 
       <div className="featured">
@@ -25,8 +26,8 @@ export default function Dashboard() {
                   width="150" height="150" />
               </a>
             </div>
-            <p className="name">Over Now</p>
-            <p className="artist">Post Malone</p>
+            <p className="name">{props.song.title}</p>
+            <p className="artist">{props.song.artist}</p>
             <i className="fa-solid fa-play"></i>
           </div>
 
