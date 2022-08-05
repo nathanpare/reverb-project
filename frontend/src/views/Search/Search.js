@@ -3,7 +3,10 @@ import React from 'react'
 function Search() {
   return (
     <div>
-      <h1 style={{color: "white"}}>Search</h1>
+      <form>
+        <input type="text"></input>
+        <button type={"submit"}>Search</button>
+      </form>
     </div>
   )
 }
