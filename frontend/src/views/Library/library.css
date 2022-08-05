@@ -67,3 +67,24 @@
   text-justify: center;
 }
 
+/* navigation */
+
+.nav-section {
+
+}
+
+/* playlists page */
+
+.playlists-page {
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: column;
+}
+
+.playlists-components {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+

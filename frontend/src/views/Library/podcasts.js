@@ -12,15 +12,9 @@ export default function Podcasts() {
       <header className="page-header">
         <h3>Podcasts</h3>
       </header>
-        <div
-        className="library-components">
-          <RenderSongsPreview />
-          <RenderAlbumsPreview />
-          <RenderArtistsPreview />
-          <RenderPlaylistsPreview />
-          <RenderGenresPreview />
-          {/* <RenderHome /> */}
-        </div>
+      <div>
+        
+      </div>
     </div>
   )
-}
+};
