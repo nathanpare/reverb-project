@@ -19,3 +19,14 @@ API backend
 --
 create states for settracks
 compare database likes in states with API.
+
+
+-login info sits in backend and then database
+- save song_id 
+- getting liked songs, user_id, song_id
+- backend returns array of spotify_song_ids, 
+- requests according to those id.
+- REST API
+a. Create, delete, update
+b. likes endpoints- Creating , unliking, listing the likes
+
