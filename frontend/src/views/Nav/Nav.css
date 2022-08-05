@@ -18,13 +18,14 @@ nav {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  padding-top: 0.5rem;
 }
 
 .right {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  padding-top: 0.5rem;
+  align-items: baseline;
 }
 
 .about {
@@ -33,7 +34,7 @@ nav {
 }
 
 .account {
-  margin-left: 1rem;
+  margin-left: 0.5rem;
   cursor: pointer;
 }
 
