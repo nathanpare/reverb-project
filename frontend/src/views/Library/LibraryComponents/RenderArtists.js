@@ -14,14 +14,14 @@ export default function RenderArtistsPreview() {
     </div>
   );
 
-  const fillArea = () => {
+  const fillArtistArea = () => {
     setArea(true);
   }
 
   return (
     <div className="category-span">Artists
       <div id="artists-area">
-        <button onClick={() => fillArea()}>Expand</button>
+        <button onClick={() => fillArtistArea()}>Expand</button>
         {area && addToArea}
         <Link to="/artists">All Artists</Link>
       </div>

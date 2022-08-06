@@ -1624,6 +1624,10 @@ export default function RenderAlbumsPreview() {
     }
   })
 
+  const albumsContent = albumsData.map((album) => {
+    <div></div>
+  })
+
   console.log(sortedAlbumsData);
   // console.log(processedAlbumData);
   // const processedAlbumData = [sortedAlbumsData].map((album) => <li>{album}</li>);

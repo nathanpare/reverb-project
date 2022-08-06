@@ -12,9 +12,7 @@ export default function Podcasts() {
       <header className="page-header">
         <h3>Podcasts</h3>
       </header>
-      <div>
-        
-      </div>
+      <div></div>
     </div>
   )
 };

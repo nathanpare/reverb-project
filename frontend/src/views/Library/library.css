@@ -122,4 +122,8 @@
 }
 
 /* songs page */
-/* .songs-page {} */
+
+.songs-containers {
+  display: flex;
+
+}
