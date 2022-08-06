@@ -7,3 +7,6 @@ Run the following going to backend folder
 \i db/schema/04_playlist_songs.sql
 
 \i db/seeds/01_users_seed.sql
+\i db/seeds/02_playlists_seed.sql
+\i db/seeds/03_likes_seed.sql
+\i db/seeds/04_playlist_songs_seed.sql

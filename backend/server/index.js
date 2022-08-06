@@ -14,10 +14,10 @@ const pool = require('./connection');
 
 
 app.use(cors());
-
-app.use(express.json());
 const querystring = require('query-string');
 const { response } = require('express');
+app.use(express.json());
+
 const CLIENT_ID = process.env.CLIENT_ID;
 const CLIENT_SECRET = process.env.CLIENT_SECRET;
 const REDIRECT_URI = process.env.REDIRECT_URI;
@@ -134,20 +134,22 @@ app.get('/refresh_token', (req, res) => {
     });
 });
 
-app.get("/playlist", async (req, res) => {
-  try {
-    const getAllplaylists = await pool.query(
-      'SELECT name, user_id, image_url FROM playlist'
+// app.get("/playlists",  async (req, res) => {
+//   try {
+//     const getAllplaylists = await pool.query(
+//       'SELECT name, user_id, image_url FROM playlists ORDER BY name'
 
-    );
-    res.json(getAllplaylists);
-  }
-  catch (err) {
-    console.error(err.message);
-  }
-});
+//     );
+//     //console.log(getAllplaylists.rows);
+//     res.json(getAllplaylists);
+//     //res.send("working")
+//   }
+//   catch (err) {
+//     console.error(err.message);
+//   }
+// });
 
-app.delete("playlist/delete/:id", async (req, res) => {
+app.delete("/playlists/delete/:id", async (req, res) => {
   try {
     const id = parseInt(req.params.id);
     console.log("Deleted playlist id: ", id);
@@ -162,7 +164,7 @@ app.delete("playlist/delete/:id", async (req, res) => {
   }
 });
 
-app.post("/playlist", async (req, res) => {
+app.post("/playlists", async (req, res) => {
   try {
     const { name, user_id, image_url } = req.body;
 
@@ -181,10 +183,39 @@ app.post("/playlist", async (req, res) => {
 app.get("/playlistsongs", async (req, res) => {
   try {
     const getAllplaylistsongs = await pool.query(
-      'SELECT name, user_id, image_url FROM playlist'
+      'SELECT playlist_id, user_id, spotify_song_id, spotify_song_name FROM playlist_songs'
 
     );
-    res.json(getAllplaylists);
+    res.json(getAllplaylistsongs.rows);
+  }
+  catch (err) {
+    console.error(err.message);
+  }
+});
+
+app.get('/', function(req, res, next) {
+  return res.status(200).json({ message: 'Welcome to Express API template' });
+});
+
+app.get("/users", async (req, res) => {
+  try {
+    const getAllusers = await pool.query(
+      'SELECT spotify_name, spotify_user_id,spotify_email FROM users'
+
+    );
+    res.json(getAllusers.rows);
+  }
+  catch (err) {
+    console.error(err.message);
+  }
+});
+app.get("/playlistsall", async (req, res) => {
+  try {
+    const getAllplaylistshere = await pool.query(
+      'SELECT user_id, name, image_url FROM playlists'
+
+    );
+    res.json(getAllplaylistshere.rows);
   }
   catch (err) {
     console.error(err.message);
