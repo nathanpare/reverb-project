@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
 
 // const ArtistsList = [
 //   {
@@ -30,6 +31,9 @@ import React, { useState, useEffect } from "react";
 //     genre: "Country",
 //   }
 // ]
+=======
+import { Link } from "react-router-dom";
+>>>>>>> new-library-page-etc
 
 export default function RenderArtistsPreview() {
   const [area, setArea] = useState(false);
@@ -44,15 +48,25 @@ export default function RenderArtistsPreview() {
     </div>
   );
 
+<<<<<<< HEAD
   const fillArea = () => {
+=======
+  const fillArtistArea = () => {
+>>>>>>> new-library-page-etc
     setArea(true);
   }
 
   return (
     <div className="category-span">Artists
       <div id="artists-area">
+<<<<<<< HEAD
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
+=======
+        <button onClick={() => fillArtistArea()}>Expand</button>
+        {area && addToArea}
+        <Link to="/artists">All Artists</Link>
+>>>>>>> new-library-page-etc
       </div>
     </div>
   );

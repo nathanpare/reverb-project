@@ -5,13 +5,7 @@
   justify-content: center;
 }
 
-.library-components,
-.genres-components,
-.playlists-components,
-.podcasts-components,
-.songs-components,
-.albums-components,
-.artists-components {
+.library-components {
   display: flex;
   flex-direction: column;
   width: 80%;
@@ -24,34 +18,33 @@
 .category-span {
   border: 5px solid white;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .songs-area {
   border: 5px solid white;
+  display: flex;
+  /* justify-content: flex-start; */
 }
 
-#albums-area {
+#albums-area,
+.artists-area {
   border: 5px solid white;
   display: flex;
-
 }
 
 .albums-add {
   display: flex;
   flex-direction: row;
-  /* align-content: space-evenly; */
   gap: 10%;
   border: 1px solid yellow;
   width: 100%;
 }
 
-.artists-area {
-  border: 5px solid white;
-}
-
 .genres-area {
   border: 5px solid white;
+
 }
 
 .stock-album {
@@ -60,5 +53,77 @@
   background-color: red;
   text-align: center;
   text-justify: center;
+  margin: 1em;
+  border-radius: 5%;
 }
 
+/* navigation */
+.nav-elements {
+  border: 1px solid gold;
+}
+
+.nav-element {
+  margin: 5px;
+  padding: 1em;
+}
+
+/* albums page */
+.albums-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.albums-sort-by {
+  border: 1px solid gold;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  align-items: center;
+  width: 20em;
+  margin: 5px;
+  padding: 5px;
+}
+
+.albums-containers {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  /*border: 5px solid red;*/
+}
+
+.albums-container {
+  width: 80%;
+  display: flex;
+  flex-directiion: row;
+  justify-content: space-evenly;
+  /*flex-direction: column;*/
+  border: 1px solid gold;
+
+}
+
+/* playlists page */
+.playlists-page {
+  display: flex;
+  /* flex-direction: row; */
+  flex-direction: column;
+}
+
+/* artists page */
+.artists-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+/* songs page */
+
+.songs-containers {
+  display: flex;
+
+}
