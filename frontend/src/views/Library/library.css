@@ -5,15 +5,6 @@
   justify-content: center;
 }
 
-.genres-components,
-.playlists-components,
-.podcasts-components,
-.songs-components,
-.albums-components,
-.artists-components {
-  border: 0px solid yellow;
-}
-
 .library-components {
   display: flex;
   flex-direction: column;
@@ -37,7 +28,8 @@
   /* justify-content: flex-start; */
 }
 
-#albums-area {
+#albums-area,
+.artists-area {
   border: 5px solid white;
   display: flex;
 }
@@ -50,13 +42,9 @@
   width: 100%;
 }
 
-.artists-area {
-  border: 5px solid white;
-  display: flex;
-}
-
 .genres-area {
   border: 5px solid white;
+
 }
 
 .stock-album {
@@ -65,26 +53,73 @@
   background-color: red;
   text-align: center;
   text-justify: center;
+  margin: 1em;
+  border-radius: 5%;
 }
 
 /* navigation */
+.nav-elements {
+  border: 1px solid gold;
+}
 
-.nav-section {
+.nav-element {
+  margin: 5px;
+  padding: 1em;
+}
+
+/* albums page */
+.albums-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.albums-sort-by {
+  border: 1px solid gold;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: center;*/
+  align-items: center;
+  width: 20em;
+  margin: 5px;
+  padding: 5px;
+}
+
+.albums-containers {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  width: 80%;
+  align-items: center;
+  justify-content: space-evenly;
+  /*border: 5px solid red;*/
+}
+
+.albums-container {
+  width: 80%;
+  display: flex;
+  flex-directiion: row;
+  justify-content: space-evenly;
+  /*flex-direction: column;*/
+  border: 1px solid gold;
 
 }
 
 /* playlists page */
-
 .playlists-page {
   display: flex;
   /* flex-direction: row; */
   flex-direction: column;
 }
 
-.playlists-components {
+/* artists page */
+.artists-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+
 }
 
+/* songs page */
+/* .songs-page {} */

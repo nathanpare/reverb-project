@@ -6,13 +6,18 @@ import { Link } from "react-router-dom";
 
 
 export default function Artists() {
+  // const []
+
+  
   return (
     <div className="artists-page">
       <header className="page-header">
         <h5>Artists</h5>
       </header>
       <div className="sort-artists">Sort By:
-        <Button></Button>
+        <Button>Recently Added</Button>
+        <Button>Alphabetical</Button>
+        <Button>Most Listened</Button>
       </div>
       <div className="all-artists">All Artists
         <div>Artist</div>
