@@ -28,7 +28,7 @@ export default function PlaylistsAndGenres() {
   );
 
   const fillPlaylistArea = () => {
-      setArea(true);
+      setPlaylist(true);
   }
 
   return (
@@ -42,22 +42,22 @@ export default function PlaylistsAndGenres() {
       </div>
       <div className={"playlists-containers"}>
         <div className={"playlist-container"}>Playlist
-            <Button onClick={() => fillPlaylistArea()}Expand></Button>
+            <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         </div>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
         <div className={"playlist-container"}>Playlist</div>
-          <Button onClick={() => fillPlaylistArea()}Expand></Button>
+          <Button onClick={() => fillPlaylistArea()}Expand>Expand</Button>
       </div>
       <div className={"nav-elements"}>
         <Link to={"/library"} className={"nav-element"}>Library</Link>
