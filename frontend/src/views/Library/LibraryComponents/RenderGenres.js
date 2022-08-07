@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+<<<<<<< HEAD
 
 // const SongsList = [
 //   {
@@ -30,6 +31,9 @@ import React, { useState, useEffect } from "react";
 //     genre: "Country",
 //   }
 // ]
+=======
+import { Link } from "react-router-dom";
+>>>>>>> new-library-page-etc
 
 export default function RenderGenresPreview() {
   const [area, setArea] = useState(false);
@@ -48,6 +52,10 @@ export default function RenderGenresPreview() {
       <div id="genres-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
+<<<<<<< HEAD
+=======
+        <Link to="/genres">All Genres</Link>
+>>>>>>> new-library-page-etc
       </div>
     </div>
   )
