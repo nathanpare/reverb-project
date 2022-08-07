@@ -5,7 +5,7 @@ require('dotenv').config();
 
 const app = express();
 const axios = require('axios');
-const port = 3000;
+const port = 8080;
 
 const cors = require('cors');
 
@@ -27,9 +27,7 @@ app.listen(port, () => {
   console.log(REDIRECT_URI);
 });
 
-app.get("/playlists", async (req, res) => {
 
-});
 function generateRandomString(length) {
   let result = '';
   let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -209,7 +207,7 @@ app.get("/users", async (req, res) => {
     console.error(err.message);
   }
 });
-app.get("/playlistsall", async (req, res) => {
+app.get("/playlists", async (req, res) => {
   try {
     const getAllplaylistshere = await pool.query(
       'SELECT user_id, name, image_url FROM playlists'

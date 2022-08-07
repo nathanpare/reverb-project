@@ -8,7 +8,7 @@ import Footer from './components/footer/Footer';
 import Sidebar from './views/sidebar/Sidebar'
 
 //import "bootstrap/dist/css/bootstrap.min.css";
-import Home from './views/Home/home';
+import Home from './views/Home/Home';
 
 import Songs from "./views/Library/songs";
 import Playlists from './views/Library/playlists';
