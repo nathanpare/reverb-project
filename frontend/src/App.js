@@ -8,7 +8,14 @@ import Footer from './components/footer/Footer';
 import Sidebar from './views/sidebar/Sidebar'
 
 //import "bootstrap/dist/css/bootstrap.min.css";
+<<<<<<< HEAD
 import Home from './views/Home/home';
+=======
+import Login from './views/Login/Login';
+// import "./views/Login/Login.css"
+import Search from './views/Search/Search';
+import Home from './views/Home/Home';
+>>>>>>> eae4475d970d763b5c7ee71529f8218791bb29f6
 
 import Songs from "./views/Library/songs";
 import Playlists from './views/Library/playlists';
@@ -56,9 +63,7 @@ function App() {
         });
     }
 
-
   }, []);
-
 
 
   const logout = () => {
