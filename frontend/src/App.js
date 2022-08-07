@@ -9,7 +9,7 @@ import Sidebar from './views/sidebar/Sidebar'
 
 //import "bootstrap/dist/css/bootstrap.min.css";
 import Login from './views/Login/Login';
-import "./views/Login/Login.css"
+// import "./views/Login/Login.css"
 import Search from './views/Search/Search';
 import Home from './views/Home/Home';
 
@@ -59,9 +59,7 @@ function App() {
         });
     }
 
-
   }, []);
-
 
 
   const logout = () => {

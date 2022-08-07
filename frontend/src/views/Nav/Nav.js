@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CLIENT = "ea696b669de04879856700d07e3f9ac0";
 const REDIRECT = "http://localhost:3000/";
