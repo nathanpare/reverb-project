@@ -82,11 +82,11 @@ function App() {
           <Route path="/library"></Route>
           <Route path="/songs" element={<Songs />} />
           <Route path="/playlists" element={<Playlists />} />
-          {/* <Route path="/albums" element={<Albums />} /> */}
-          {/* <Route path="/artists" element={<Artists />} /> */}
-          {/* <Route path="/genres" element={<Genres />} /> */}
-          {/* <Route path="/podcasts" element={<Podcasts />} /> */}
-          {/* <Route path="like" element={<LikeButton />} /> */}
+           <Route path="/albums" element={<Albums />} />
+           <Route path="/artists" element={<Artists />} />
+           <Route path="/genres" element={<Genres />} />
+           <Route path="/podcasts" element={<Podcasts />} />
+           {/*<Route path="like" element={<LikeButton />} />*/}
           <Route path="trackclicks" element={<Trackclicks />} />
         </Routes>
 

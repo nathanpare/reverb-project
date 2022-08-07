@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './library';
 import './library.css';
 import Button from 'react-bootstrap/esm/Button';
@@ -6,31 +6,47 @@ import { Link } from "react-router-dom";
 
 
 export default function Artists() {
-  // const []
+  const [userArtists, newUserArtists] = useState(false);
 
   
   return (
-    <div className="artists-page">
+    <body className="artists-page">
       <header className="page-header">
-        <h5>Artists</h5>
+        <h3>Artists</h3>
       </header>
-      <div className="sort-artists">Sort By:
-        <Button>Recently Added</Button>
-        <Button>Alphabetical</Button>
-        <Button>Most Listened</Button>
+      <div className="sort-artists">
+          <div className={"artists-sort-by"}>Sort By:
+            <Button className={"artists-sort"}>Recently Added</Button>
+            <Button className={"artists-sort"}>Alphabetical</Button>
+            <Button className={"artists-sort"}>Most Listened</Button>
+          </div>
       </div>
-      <div className="all-artists">All Artists
-        <div>Artist</div>
-        <div>Artist</div>
-        <div>Artist</div>
+      <div className="artists-containers">
+          <div className={"artists-container"}>
+            <div className={"stock-artist"}>Artist</div>
+            <div className={"stock-artist"}>Artist</div>
+            <div className={"stock-artist"}>Artist</div>
+          </div>
+          <div className={"artists-container"}>
+              <div className={"stock-artist"}>Artist</div>
+              <div className={"stock-artist"}>Artist</div>
+              <div className={"stock-artist"}>Artist</div>
+          </div>
+          <div className={"artists-container"}>
+              <div className={"stock-artist"}>Artist</div>
+              <div className={"stock-artist"}>Artist</div>
+              <div className={"stock-artist"}>Artist</div>
+          </div>
       </div>
-      <div className="nav-section">
-        <Link to="/library">Library</Link>
-        <Link to="/songs">Songs</Link>
-        <Link to="/artists">Artists</Link>
-        <Link to="/playlists">Playlists</Link>
-        <Link to="/genres">Genres</Link>
+      <div className="nav-elements">
+         <Link to={"/library"} className={"nav-element"}>Library</Link>
+         <Link to={"/songs"} className={"nav-element"}>Songs</Link>
+         <Link to={"/albums"} className={"nav-element"}>Albums</Link>
+         {/*<Link to={"/artists"} className={"nav-element"}>Artists</Link>*/}
+         <Link to={"/playlists"} className={"nav-element"}>Playlists</Link>
+         <Link to={"/genres"} className={"nav-element"}>Genres</Link>
+         <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
       </div>
-    </div>
+    </body>
   );
 }

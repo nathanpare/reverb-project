@@ -1608,29 +1608,22 @@ const albumData = {
   ]
 }
 
+// function parseAlbumsData(props) {
+//   const 
+// }
 
-export default function RenderAlbumsPreview() {
-  // console.log(albumData.albums);
-  const albumsData = albumData.albums;
-  // console.log(albumsData);
+export default function Albums() {
   let sortedAlbumsData = {};
 
-  albumsData.forEach(alb => {
+  albumData.albums.forEach(alb => {
     sortedAlbumsData[alb.id] = {
       albumName: alb.name,
       id: alb.id,
+      cover: alb.images[1].url,
       artistName: alb.artists[0].name,
-      tracks: alb.tracks.items      
+      tracks: alb.tracks.items
     }
   })
-
-  const albumsContent = albumsData.map((album) => {
-    <div></div>
-  })
-
-  console.log(sortedAlbumsData);
-  // console.log(processedAlbumData);
-  // const processedAlbumData = [sortedAlbumsData].map((album) => <li>{album}</li>);
 
   return (
     <div className="albums-page">
@@ -1642,11 +1635,21 @@ export default function RenderAlbumsPreview() {
           <Button className={"albums-sort"}>Recently Added</Button>
           <Button className={"albums-sort"}>Name</Button>
         </div>
-        <div className="albums-container">
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
+        <div className={"albums-container"}>
+        {Object.values(sortedAlbumsData).map((data) => {
+          return (
+              <div className={"album-container"}>
+                <img
+                  src={data.cover}
+                  className={"album-cover"}
+                  width={"50px"}
+                  height={"50px"}
+                ></img>
+                <div className={"album-name"}>{data.albumName}</div>
+                <div className={"album-artist-name"}>{data.artistName}</div>
+              </div>
+          );
+        })}
         </div>
         <div className="albums-container">
           <div className="stock-album">ALBUM</div>

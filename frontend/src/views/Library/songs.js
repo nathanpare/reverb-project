@@ -895,21 +895,25 @@ export default function Songs() {
   const [track, setTrack] = useState(null);
 
   return (
-      <div className={"songs-page"}>
+      <body className={"songs-page"}>
         <header className={"page-header"}>
-          <h3>Albums</h3>
+          <h3>Tracks</h3>
         </header>
         <div className={"songs-sort-by"}>Sort By:
           <Button className={"songs-sort"}>Recently Added</Button>
           <Button className={"songs-sort"}>Name</Button>
         </div>
         <div className={"songs-containers"}>
-          <div className={"song-container"}>Song</div>
-          <div className={"song-container"}>Song</div>
-          <div className={"song-container"}>Song</div>
-          <div className={"song-container"}>Song</div>
-          <div className={"song-container"}>Song</div>
-          <div className={"song-container"}>Song</div>
+          <ul>
+            <li>Song</li>
+            <li>Song</li>
+            <li>Song</li>
+            <li>Song</li>
+            <li>Song</li>
+            <li>Song</li>
+            <li>Song</li>
+            <li>Song</li>
+          </ul>
         </div>
         <div className={"nav-elements"}>
           <Link to={"/library"} className={"nav-element"}>Library</Link>
@@ -920,6 +924,6 @@ export default function Songs() {
           <Link to={"/genres"} className={"nav-element"}>Genres</Link>
           <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
         </div>
-      </div>
+      </body>
   );
 };

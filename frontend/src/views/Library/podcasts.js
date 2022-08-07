@@ -8,7 +8,7 @@ import RenderArtistsPreview from './LibraryComponents/RenderArtists';
 
 export default function Podcasts() {
   return (
-    <div className="podcasts-page">
+    <body className="podcasts-page">
       <header className="page-header">
         <h3>Podcasts</h3>
       </header>
@@ -21,6 +21,6 @@ export default function Podcasts() {
           <RenderGenresPreview />
           {/* <RenderHome /> */}
         </div>
-    </div>
+    </body>
   )
 }
