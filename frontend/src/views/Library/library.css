@@ -39,12 +39,19 @@ body {
   display: flex;
 }
 
+.albums-add-section {
+  display: flex;
+  justify-content: center;
+  
+}
+
 .albums-add {
   display: flex;
   flex-direction: row;
   gap: 10%;
   border: 1px solid yellow;
-  width: 100%;
+  width: 50%;
+  text-align: center;
 }
 
 .genres-area {
@@ -53,7 +60,9 @@ body {
 }
 
 .stock-album {
-
+  background-color: red;
+  width: 75px;
+  height: 75px;
 }
 
 .album-container,

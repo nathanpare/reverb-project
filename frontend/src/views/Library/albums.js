@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import './library';
 import './library.css';
 import { Link } from "react-router-dom";
@@ -1608,11 +1608,9 @@ const albumData = {
   ]
 }
 
-// function parseAlbumsData(props) {
-//   const 
-// }
-
 export default function Albums() {
+  const [album, expandAlbum] = useState(false);
+
   let sortedAlbumsData = {};
 
   albumData.albums.forEach(alb => {
@@ -1621,19 +1619,38 @@ export default function Albums() {
       id: alb.id,
       cover: alb.images[1].url,
       artistName: alb.artists[0].name,
+      trackLength: alb.tracks.items.length,
       tracks: alb.tracks.items
     }
   })
 
+  // const expandAlbum = (inp) => {
+  //   for (const album in albumData.albums) {
+  //     if (albumData.albums[inp]) {
+  //       return (
+  //         <div>
+  //           <h1>AAAAAA</h1>
+  //         </div>
+  //       );
+  //     }
+  //   }
+  // }
+
   return (
-    <div className="albums-page">
+    <body className="albums-page">
       <header className="page-header">
         <h3>Albums</h3>
       </header>
       <div className="albums-containers">
-        <div className={"albums-sort-by"}>Sort By:
-          <Button className={"albums-sort"}>Recently Added</Button>
-          <Button className={"albums-sort"}>Name</Button>
+        <div>
+          <div className={"albums-sort-by"}>
+            <h3 id={"sort-by-tag"}>Sort By:</h3>
+            <Button className={"albums-sort"}>Recently Added</Button>
+            <Button className={"albums-sort"}>Name</Button>
+          </div>
+          <div className={"albums-add-section"}>
+            <Button className={"albums-add"}>Add Album</Button>
+          </div>
         </div>
         <div className={"albums-container"}>
         {Object.values(sortedAlbumsData).map((data) => {
@@ -1642,11 +1659,14 @@ export default function Albums() {
                 <img
                   src={data.cover}
                   className={"album-cover"}
-                  width={"50px"}
-                  height={"50px"}
+                  width={"100px"}
+                  height={"100px"}
                 ></img>
                 <div className={"album-name"}>{data.albumName}</div>
                 <div className={"album-artist-name"}>{data.artistName}</div>
+                <div className={"album-tracks"}>
+                  {/*<Button onClick={() => renderAlbum()}>{data.trackLength} tracks</Button>*/}
+                </div>
               </div>
           );
         })}
@@ -1663,12 +1683,7 @@ export default function Albums() {
           <div className="stock-album">ALBUM</div>
           <div className="stock-album">ALBUM</div>
         </div>
-        <div className={"albums-container"}>
-          <div className={"stock-album"}>ALBUM</div>
-          <div className={"stock-album"}>ALBUM</div>
-          <div className={"stock-album"}>ALBUM</div>
-          <div className={"stock-album"}>ALBUM</div>
-        </div>
+      <div className={"render-album"}>AAAA</div>
       </div>
       <div className="nav-elements">
         <Link to={"/library"} className={"nav-element"}>Library</Link>
@@ -1679,6 +1694,6 @@ export default function Albums() {
         <Link to={"/genres"} className={"nav-element"}>Genres</Link>
         <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
       </div>
-    </div>
+    </body>
   );
 }

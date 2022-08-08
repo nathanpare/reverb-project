@@ -23,13 +23,6 @@ export default function Genres() {
         <div className={"stock-genre"}>Genre</div>
         <div className={"stock-genre"}>Genre</div>
       </div>
-      <div className={"genres-container"}>
-        <div className={"stock-genre"}>Genre</div>
-        <div className={"stock-genre"}>Genre</div>
-        <div className={"stock-genre"}>Genre</div>
-        <div className={"stock-genre"}>Genre</div>
-        <div className={"stock-genre"}>Genre</div>
-      </div>
       <div className="nav-elements">
         <Link to={"/library"} className={"nav-element"}>Library</Link>
         <Link to={"/songs"} className={"nav-element"}>Songs</Link>
