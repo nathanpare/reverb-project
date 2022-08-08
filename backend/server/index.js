@@ -168,9 +168,9 @@ app.post("/playlists", async (req, res) => {
 
     console.log("req body", req.body);
 
-    const newPlaylist = await pool.query("INSERT INTO playlist(name, user_id, image_url) VALUES ($1, $2, $3) RETURNING *", [name, user_id, image_url])
+    const newPlaylist = await pool.query("INSERT INTO playlists(name, user_id, image_url) VALUES ($1, $2, $3) RETURNING *", [name, user_id, image_url])
 
-    res.json(newMovie.row[0])
+    res.json(newPlaylist.rows[0])
     
   } catch(err){
     console.error(err.message)

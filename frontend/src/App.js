@@ -5,17 +5,15 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import SpotifyWebApi from "spotify-web-api-node";
 import Footer from './components/footer/Footer';
-import Sidebar from './views/sidebar/Sidebar'
+import Sidebar from './views/sidebar/Sidebar';
 
 //import "bootstrap/dist/css/bootstrap.min.css";
-<<<<<<< HEAD
-import Home from './views/Home/home';
-=======
+
+import Home from './views/Home/Home';
+
 import Login from './views/Login/Login';
 // import "./views/Login/Login.css"
 import Search from './views/Search/Search';
-import Home from './views/Home/Home';
->>>>>>> eae4475d970d763b5c7ee71529f8218791bb29f6
 
 import Songs from "./views/Library/songs";
 import Playlists from './views/Library/playlists';
@@ -24,6 +22,7 @@ import Artists from './views/Library/artists'
 import Podcasts from './views/Library/podcasts';
 import Genres from './views/Library/genres';
 import Trackclicks from './likeexample/trackexample/trackclick';
+import CreatePlaylists from './views/Library/PlaylistComponents/CreatePlaylists';
 
 const spotify = new SpotifyWebApi();
 
@@ -46,6 +45,7 @@ function App() {
       spotify.setAccessToken(token);
       spotify.getMe()
         .then(function (data) {
+          console.log('USER DATA',data);
           setUser(data.body);
         }, function (err) {
           console.log('Something went wrong!', err);
@@ -64,7 +64,6 @@ function App() {
     }
 
   }, []);
-
 
   const logout = () => {
     setToken("");
@@ -85,7 +84,8 @@ function App() {
           <Route path="/" element={<App />} />
           <Route path="/library"></Route>
           <Route path="/songs" element={<Songs />} />
-          <Route path="/playlists" element={<Playlists />} />
+          <Route path="/playlists" element={<Playlists exact />} />
+          <Route path="/createplaylists" element={<CreatePlaylists user={user} exact/>} />
           {/* <Route path="/albums" element={<Albums />} /> */}
           {/* <Route path="/artists" element={<Artists />} /> */}
           {/* <Route path="/genres" element={<Genres />} /> */}

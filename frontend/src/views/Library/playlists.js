@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import './library';
 import './library.css';
+import './playlists.css';
 import Button from 'react-bootstrap/esm/Button';
 import { Link } from "react-router-dom";
 import { 
@@ -10,7 +11,24 @@ import {
   ThisPlaylist 
 } from './LibraryComponents/RenderPlaylists';
 
+import {Routes, Route, useNavigate} from 'react-router-dom';
+
+
+  
+
+
 export default function PlaylistsAndGenres() {
+  const navigate = useNavigate();
+
+  const navigateToCreatePlaylist = () => {
+    // 👇️ navigate to /contacts
+    navigate('/createplaylists');
+  };
+
+  // const navigateHome = () => {
+  //   // 👇️ navigate to /
+  //   navigate('/');
+  // };
   const [playlist, setPlaylist] = useState(false);
 
   // add playlist obj to fill out the addToPlaylist with actual data 
@@ -32,10 +50,21 @@ export default function PlaylistsAndGenres() {
   }
 
   return (
-    <div>
+    <div class='playlists'>
       <header className={"page-header"}>
         <h3>Playlists</h3>
       </header>
+    <div className='createplaylist'>
+    <Button className="button1" onClick={navigateToCreatePlaylist}>Create Playlist</Button>{"   "}
+      <Button className="button2">Delele Playlist</Button>{"    "}
+      <span> </span>
+      <span> </span>
+      <span> </span>
+      <span> </span>
+      <span> </span>
+
+    
+    </div>
       <div className={"playlists-sort-by"}>Sort By:
         <Button className={"playlists-sort"}>Recently Added</Button>
         <Button className={"playlists-sort"}>Name</Button>
