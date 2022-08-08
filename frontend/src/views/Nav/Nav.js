@@ -28,10 +28,8 @@ export default function Nav(props) {
     <div className="right">
     <div className='login'>
     <Container>
-      {localStorage.getItem("token") ?
-        <button className='btn btn-primary btn-lg' onClick={props.logout}>Logout</button>
-        : <a className='btn btn-primary btn-lg' href={AUTH_URL}>Login with Reverb</a>
-      }
+        {/* <button className='btn btn-primary btn-lg' onClick={props.logout}>Logout</button> */}
+        <a className='btn btn-primary btn-lg' href={AUTH_URL}>Login with Reverb</a>
     </Container>
     </div>
       <div className="account">

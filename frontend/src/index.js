@@ -1,6 +1,8 @@
 import React from 'react';
 import App from './App';
 import ReactDOM from "react-dom/client";
+import { DataLayer } from './DataLayer';
+import reducer, { initialState } from './reducer';
 import Songs from "./views/Library/songs";
 import Playlists from './views/Library/playlists';
 import Albums from './views/Library/albums';
@@ -13,9 +15,10 @@ import {
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+  <DataLayer
+    initialState={initialState} reducer={reducer} >
+    <App />
+  </DataLayer>
 );
 
 
