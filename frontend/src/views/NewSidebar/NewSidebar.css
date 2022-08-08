@@ -1,0 +1,47 @@
+.sidebar {
+  background-color: mediumslateblue;
+  width: 12rem;
+  height: 1100px;
+  color: white;
+}
+
+.sidebar-items {
+  padding-top: 20px;
+}
+
+.sidebar-home {
+  padding-top: 5px;
+  display: flex;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar-search {
+  padding-top: 5px;
+  display: flex;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar-library {
+  padding-top: 5px;
+  display: flex;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.sidebar-playlist {
+  padding-top: 5px;
+  display: flex;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.sidebar-liked {
+  padding-top: 5px;
+  display: flex;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.sidebar-icon {
+  margin-right: 5px;
+}
