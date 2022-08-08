@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 const Box = styled.div`
+position: fixed;
 padding: 0px 0px;
 background: darkblue;
 position: absolute;

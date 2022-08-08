@@ -1,25 +1,22 @@
-// const pool = require('./connection');
-// const express = require("express")
-// const cors = require("cors")
-// const bodyParser = require("body-parser")
-// const SpotifyWebApi = require("spotify-web-api-node")
+// const express = require("express");
+// const cors = require("cors");
+// const bodyParser = require("body-parser");
+// const SpotifyWebApi = require("spotify-web-api-node");
 
-// const app = express()
-// app.use(cors())
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true }))
+// const app = express();
+// app.use(cors());
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
 
-// // app.listen(port, () => {
-// //   console.log(`Music library server nunning on ${port}`);
-// // });
+
 // app.post("/refresh", (req, res) => {
 //   const refreshToken = req.body.refreshToken
 //   const spotifyApi = new SpotifyWebApi({
-//     redirectUri: process.env.REDIRECT_URI,
-//     clientId: process.env.CLIENT_ID,
-//     clientSecret: process.env.CLIENT_SECRET,
+//     redirectUri: "http://localhost:3000/",
+//     clientId: "ea696b669de04879856700d07e3f9ac0",
+//     clientSecret: "0cb6984edf9e49dc86a7240f2018abe2",
 //     refreshToken,
-//   })
+//   });
 
 //   spotifyApi
 //     .refreshAccessToken()
@@ -27,13 +24,13 @@
 //       res.json({
 //         accessToken: data.body.accessToken,
 //         expiresIn: data.body.expiresIn,
-//       })
+//       });
 //     })
 //     .catch(err => {
-//       console.log(err)
-//       res.sendStatus(400)
-//     })
-// })
+//       console.log(err);
+//       res.sendStatus(400);
+//     });
+// });
 
 // app.post("/login", (req, res) => {
 //   const code = req.body.code
@@ -57,4 +54,4 @@
 //     })
 // })
 
-// app.listen(3002)
+// app.listen(3002);

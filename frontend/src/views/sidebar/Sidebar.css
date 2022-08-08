@@ -1,7 +1,8 @@
 .Sidebar {
-  height: 100%;
-  width: 250px;  
+  height: 1100px;
+  width: 250px;
   background-color: mediumslateblue;
+  margin-right: 2rem;
 }
 
 .SidebarList {
@@ -24,10 +25,25 @@
 .Sidebar .rowdata #sidebaricon {
   flex:20%;
   padding-left: 15%;
-    
+  cursor: pointer;
+  transition: 200ms color ease-in;
 }
 .Sidebar .rowdata #sidebartitle {
   flex:80%;  
   padding-left: 0%;
+  cursor: pointer;
+  transition: 200ms color ease-in;
+}
 
+.Sidebar .rowdata #sidebaricon:hover {
+  color: blue;
+}
+
+.Sidebar .rowdata #sidebartitle:hover {
+  color: blue;
+}
+
+.sidebar-option {
+  color: white;
+  margin: 5px;
 }

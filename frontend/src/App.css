@@ -7,3 +7,11 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.reverb {
+  display: flex;
+}
+
+.featured-songs {
+  margin-left: 75px;
+}
