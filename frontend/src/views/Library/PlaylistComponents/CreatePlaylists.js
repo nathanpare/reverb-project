@@ -25,7 +25,7 @@ function CreatePlaylists(props) {
     })
 
   }, []);
-
+//include catch always
   function handleInput(event){
     const obj = {
       [event.target.name]: event.target.value
@@ -45,7 +45,7 @@ function CreatePlaylists(props) {
           <input type="email"   /> {"      "}
         
         </label>
-        <input type="submit" value="submit" />
+        <input type="submit" value="submit"  />
       </form>
     </div>
   )

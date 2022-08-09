@@ -26,6 +26,9 @@ import Login from './views/Login/Login';
 import "./views/Login/Login.css"
 import Sidebar from './views/sidebar/Sidebar';
 
+import CreatePlaylists from './views/Library/PlaylistComponents/CreatePlaylists';
+
+
 const spotify = new SpotifyWebApi();
 
 function App() {
@@ -48,10 +51,13 @@ function App() {
       spotify.setAccessToken(_token);
       spotify.getMe()
         .then((user) => {
+          console.log(user);
           dispatch({
             type: "SET_USER",
             user: user,
           });
+        }).catch((error) => {
+          console.log(error);
         });
 
       spotify.getUserPlaylists().then((playlists) => {
@@ -119,7 +125,7 @@ function App() {
             </div>
             <p>Your Library</p>
           </div>
-          <div className='sidebar-playlist'>
+          <div className='sidebar-playlist' onClick={() => setView("CreatePlaylists")}>
             <div className='sidebar-icon'>
               <PlaylistAddIcon />
             </div>
@@ -138,6 +144,7 @@ function App() {
         {view === "Home" && <Home spotify={spotify} user={user} />}
         {view === "Library" && <Library />}
         {view === "Search" && <Sidebar releases={releases}/>}
+        {view === "CreatePlaylists" && <CreatePlaylists user={user} />}
       </div>
     </div>
 
