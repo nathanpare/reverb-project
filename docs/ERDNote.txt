@@ -30,3 +30,5 @@ compare database likes in states with API.
 a. Create, delete, update
 b. likes endpoints- Creating , unliking, listing the likes
 
+This worked
+npm install --save --save-exact react-scripts@3.0.1
