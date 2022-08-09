@@ -3,49 +3,54 @@ import './CreatePlaylists.css';
 import axios from 'axios';
 // class CreatePlaylists extends Component {
 //   render() {
-  const playlistObject ={
-    name: 'name',
-    id: 'id',
-    email: 'email'
-  }
-  
+const playlistObject = {
+  name: 'name',
+  id: 'id',
+  email: 'email'
+}
+
 function CreatePlaylists(props) {
   // const name = props.user.display_name;
   // const name = user.display_name;
   console.log(props);
-  const[playlists, setPlaylists]=useState(playlistObject.name);
- // const [playlistObject, setPlaylistObject] = userState({})
+  const [playlists, setPlaylists] = useState(playlistObject.name);
+  // const [playlistObject, setPlaylistObject] = userState({})
 
   useEffect(() => {
     axios.get(`http://localhost:8080/playlists`)
-    .then(function (res) {
-      console.log(res.data);
-      setPlaylists([...res.data])
-      //console.log(playlists);
-    })
+      .then(function (res) {
+        console.log(res.data);
+        setPlaylists([...res.data])
+        //console.log(playlists);
+      })
 
   }, []);
-//include catch always
-  function handleInput(event){
+  //include catch always
+  function handleInput(event) {
     const obj = {
       [event.target.name]: event.target.value
     }
-
-    
+  
+  }
+  function handleClick(event) {
+    const obj = {
+      [event.target.name]: event.target.value
+    }
+  
   }
 
   return (
     <div className="createplaylists">
 
-    <h1>Create Playlists</h1>
+      <h1>Create Playlists</h1>
       <form >
         <label>
           Playlist Name:
           <input type="text" onChange={() => handleInput()} /> {"      "}
-          <input type="email"   /> {"      "}
-        
+          <input type="email" /> {"      "}
+
         </label>
-        <input type="submit" value="submit"  />
+        <input className="button_submit" type="submit" value="submit" onClick={() => handleClick()}></input>
       </form>
     </div>
   )

@@ -1,4 +1,5 @@
-const CLIENT = "ea696b669de04879856700d07e3f9ac0";
+const CLIENT = "418c1699153843ba9f0709a131bd3074";
+
 const REDIRECT = "http://localhost:3000/";
 const AUTH_ENDPOINT = "https://accounts.spotify.com/authorize";
 const RESPONSE_TYPE = "token";
