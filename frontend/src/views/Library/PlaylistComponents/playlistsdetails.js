@@ -11,8 +11,7 @@ export default function PlaylistNames(props){
           <tr>
        
             <th>TableName</th>
-            <th>UserId</th>
-            <th>imageURL</th>
+          
             </tr>
         </thead>
         <tbody>
