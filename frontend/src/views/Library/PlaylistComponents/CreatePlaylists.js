@@ -28,26 +28,42 @@ export default function CreatePlaylists(props) {
   //const [playlist_image_url, setPlaylistImageUrl]= useState("");
 
   // const [playlistObject, setPlaylistObject] = userState({})
+  const[users, setUsers] =useState([]);
+
+  const fetchData = () =>{
+    const usersApi=`http://localhost:8080/users`;
+    const playlistsApi=`http://localhost:8080/playlists`;
+    const getUsers=axios.get(usersApi);
+    const getPlaylists=axios.get(playlistsApi);
+
+    axios.all([getUsers, getPlaylists]).then(
+      axios.spread((...allData) => {
+        const allUserData = allData[0].data;
+        const allPlaylistData = allData[1].data;
+        console.log(allUserData);
+        console.log(allPlaylistData);
+        setUsers([...allUserData]);
+        setPlaylists([...allPlaylistData]);
+      })
+    ).catch(error =>{
+      console.log(error);
+    })    
+  };
 
   useEffect(() => {
-    axios.get(`http://localhost:8080/playlists`)
-      .then(function (res) {
-        console.log(res.data);
-        setPlaylists([...res.data])
-        //console.log(playlists);
-      }).catch(error =>{
-        console.log(error);
-      })      
-      
+    // axios.get(`http://localhost:8080/playlists`)
+    //   .then(function (res) {
+    //     console.log(res.data);
+    //     setPlaylists([...res.data])
+    
+    //   }).catch(error =>{
+    //     console.log(error);
+    //   })      
+      fetchData();
 
   }, []);
   //include catch always
-  // function handleInput(event) {
-  //   const obj = {
-  //     [event.target.name]: event.target.value
-  //   }
   
-  // }
   function handleClick(event) {
     event.preventDefault();
     const playlistsobj = {
@@ -60,12 +76,28 @@ export default function CreatePlaylists(props) {
   
   }
   function addUser(userData){
+    
     const spotify_name= props.user.display_name;
-
+    const spotify_user_id = props.user.id;
+    const usersObject = {spotify_name: spotify_name, spotify_user_id: spotify_user_id};
+    console.log("user added: ", usersObject);
+    return axios.post(`http://localhost:8080/users`, usersObject)
+    .then((response) => {
+      const newUser =response.data;
+      setUsers([newUser, ...users]);
+    });
   }
   const addPlaylist= () =>{
-    //e.preventDefault();
-    const playlistObject = { name: playlist_name, user_id: props.user.id, image_url:"xxxxx" };
+    addUser();
+    console.log(users);
+    
+    const filtered_user_table = users.filter(user =>{
+      return user.spotify_name === props.user.display_name;
+    })
+    console.log(filtered_user_table[0].id);
+    const user_id_tableUsers =filtered_user_table[0].id;
+      
+    const playlistObject = { name: playlist_name, user_id: user_id_tableUsers, image_url:"xxxxx" };
     console.log("Playlist added: ", playlistObject);
     return axios.post(`http://localhost:8080/playlists`, playlistObject)
     .then((response) => {

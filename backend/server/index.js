@@ -195,18 +195,6 @@ app.get('/', function(req, res, next) {
   return res.status(200).json({ message: 'Welcome to Express API template' });
 });
 
-app.get("/users", async (req, res) => {
-  try {
-    const getAllusers = await pool.query(
-      'SELECT spotify_name, spotify_user_id,spotify_email FROM users'
-
-    );
-    res.json(getAllusers.rows);
-  }
-  catch (err) {
-    console.error(err.message);
-  }
-});
 app.get("/playlists", async (req, res) => {
   try {
     const getAllplaylistshere = await pool.query(
@@ -218,4 +206,32 @@ app.get("/playlists", async (req, res) => {
   catch (err) {
     console.error(err.message);
   }
+});
+app.get("/users", async (req, res) => {
+  try {
+    const getAllusers = await pool.query(
+      'SELECT * FROM users ORDER BY id ASC' 
+
+    );
+    res.json(getAllusers.rows);
+  }
+  catch (err) {
+    console.error(err.message);
+  }
+});
+app.post("/users", async (req, res) => {
+  try {
+    const { spotify_name, spotify_user_id} = req.body;
+
+    console.log("req body", req.body);
+
+    const newUser = await pool.query("INSERT INTO users(spotify_name, spotify_user_id) VALUES ($1, $2) RETURNING *", [spotify_name, spotify_user_id]);
+
+    res.json(newUser.rows[0]);
+    
+  } catch(err){
+    console.error(err.message)
+
+  }
+    
 });
