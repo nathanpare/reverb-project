@@ -7,8 +7,10 @@ import { Link } from "react-router-dom";
 
 export default function Artists() {
   const [userArtists, newUserArtists] = useState(false);
+  let sortedArtistsData = {};
 
-  
+
+
   return (
     <body className="artists-page">
       <header className="page-header">
@@ -22,6 +24,14 @@ export default function Artists() {
           </div>
       </div>
       <div className="artists-containers">
+        {Object.values(sortedArtistsData).map((artist) => {
+          return (
+            <div className={"artist-container"}>
+              <div className={"artist-name"}></div>
+              <div className={"artist-albums"}></div>
+            </>
+          );
+        })}
           <div className={"artists-container"}>
             <div className={"stock-artist"}>Artist</div>
             <div className={"stock-artist"}>Artist</div>
