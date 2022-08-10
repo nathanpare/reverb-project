@@ -210,7 +210,7 @@ app.get("/users", async (req, res) => {
 app.get("/playlists", async (req, res) => {
   try {
     const getAllplaylistshere = await pool.query(
-      'SELECT user_id, name, image_url FROM playlists'
+      'SELECT * FROM playlists'
 
     );
     res.json(getAllplaylistshere.rows);
