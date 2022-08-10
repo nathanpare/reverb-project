@@ -4,7 +4,11 @@ import RenderSongsPreview from './LibraryComponents/RenderSongs';
 import Button from "react-bootstrap/esm/Button";
 import { Link } from "react-router-dom";
 
-export default function Genres() {  
+export default function Genres() {
+  const [genres, newGenre] = useState(false);
+
+
+
   return (
     <body className={"genres-page"}>
       <header className={"page-header"}>

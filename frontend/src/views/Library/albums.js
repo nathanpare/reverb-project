@@ -1608,6 +1608,10 @@ const albumData = {
   ]
 }
 
+function addAlbumToLibrary() {
+
+}
+
 export default function Albums() {
   const [album, expandAlbum] = useState(false);
 
@@ -1624,7 +1628,7 @@ export default function Albums() {
     }
   })
 
-  // const expandAlbum = (inp) => {
+  // const renderAlbum = (inp) => {
   //   for (const album in albumData.albums) {
   //     if (albumData.albums[inp]) {
   //       return (

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 
 export default function Podcasts() {
+  const [podcasts, setPodcasts] = useState(false);
+
   return (
     <body className="podcasts-page">
       <header className={"page-header"}>
