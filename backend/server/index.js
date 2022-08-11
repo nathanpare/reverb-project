@@ -27,20 +27,20 @@ app.listen(port, () => {
   // console.log(REDIRECT_URI);
 });
 
-app.delete("/playlists/delete/:id", async (req, res) => {
-  try {
-    const id = parseInt(req.params.id);
-    console.log("Deleted playlist id: ", id);
+// app.delete("/playlists/delete/:id", async (req, res) => {
+//   try {
+//     const id = parseInt(req.params.id);
+//     console.log("Deleted playlist id: ", id);
 
-    const deleteStep = await pool.query(
-      "DELETE FROM playlist WHERE id = $1 RETURNING *", [id]
-    )
-    res.json("The song was deleted");
-  }
-  catch (err) {
-    console.error(err.message);
-  }
-});
+//     const deleteStep = await pool.query(
+//       "DELETE FROM playlist WHERE id = $1 RETURNING *", [id]
+//     )
+//     res.json("The song was deleted");
+//   }
+//   catch (err) {
+//     console.error(err.message);
+//   }
+// });
 
 app.post("/playlists", async (req, res) => {
   try {
@@ -58,18 +58,7 @@ app.post("/playlists", async (req, res) => {
   }
     
 });
-app.get("/playlistsongs", async (req, res) => {
-  try {
-    const getAllplaylistsongs = await pool.query(
-      'SELECT playlist_id, user_id, spotify_song_id, spotify_song_name FROM playlist_songs'
 
-    );
-    res.json(getAllplaylistsongs.rows);
-  }
-  catch (err) {
-    console.error(err.message);
-  }
-});
 
 app.get('/', function(req, res, next) {
   return res.status(200).json({ message: 'Welcome to Express API template' });
@@ -128,4 +117,41 @@ app.post("/users", async (req, res) => {
 
   }
     
+});
+
+app.get("/playlistsongs", async (req, res) => {
+  try {
+    const getAllplaylistsongs = await pool.query(
+      'SELECT id, playlist_id, user_id, spotify_song_id, spotify_song_name FROM playlist_songs'
+
+    );
+    res.json(getAllplaylistsongs.rows);
+  }
+  catch (err) {
+    console.log(err.message);
+  }
+});
+app.post("/playlistsongs", async (req, res) => {
+  try {
+    const { playlist_id, user_id, spotify_song_id, spotify_song_name } = req.body;
+    console.log(req.body);
+    const newPlaylistSong = await pool.query(`INSERT into playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name VALUES $1, $2 RETURNING * )`, [playlist_id, user_id, spotify_song_id, spotify_song_name]);
+    res.json(newPlaylistSong.rows[0]);
+
+  } catch(error){
+    console.log(error.message);
+  }
+});
+app.delete("/playlistsongs/:id", async (req, res) => {
+  try {
+    const id =parseInt(req.params.id);
+    console.log("Deleted Playlist id: ", id );
+    const deleteStep = await pool.query(
+      "DELETE FROM playlist_songs WHERE id = $1 RETURNING *", [id]
+    )
+    res.json("The song was deleted")
+
+  }catch(err){
+    console.log(err.message)
+  }
 });
