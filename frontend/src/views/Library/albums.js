@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import './library.css';
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
-import FetchUserAlbums from "AlbumsComponents/FetchUserAlbums";
+// import FetchUserAlbums from "AlbumsComponents/FetchUserAlbums";
 import axios from 'axios';
 
 
@@ -47,7 +47,7 @@ export default function Albums() {
           </div>
         </div>
         <div className={"albums-container"}>
-        {Object.values(sortedAlbumsData).map((data) => {
+        {/* {Object.values(sortedAlbumsData).map((data) => {
           return (
               <div className={"album-container"}>
                 <img
@@ -59,13 +59,13 @@ export default function Albums() {
                 <div className={"album-name"}>{data.albumName}</div>
                 <div className={"album-artist-name"}>{data.artistName}</div>
                 <div className={"album-tracks"}>
-                  {/*<Button onClick={() => renderAlbum()}>{data.trackLength} tracks</Button>*/}
+                  <Button onClick={() => renderAlbum()}>{data.trackLength} tracks</Button>
                 </div>
                 <div className="add-album">Add to Library</div>
               </div>
               
           );
-        })}
+        })} */}
         </div>
         <div className="albums-container">
           <div className="stock-album">ALBUM</div>
