@@ -6,7 +6,7 @@ import React, { useState, useEffect } from 'react';
 import SpotifyWebApi from "spotify-web-api-js";
 // import Footer from './components/footer/Footer';
 // import Sidebar from './views/sidebar/Sidebar'
-import { getTokenFromResponse } from "./views/Nav/spotify";
+import { getTokenFromResponse } from "./views/Login/spotify";
 import { UseDataLayerValue } from './DataLayer';
 
 import HomeIcon from '@mui/icons-material/Home';
@@ -19,23 +19,32 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Home from './views/Home/Home';
 import Search from './views/Search/Search';
 import "./views/Search/Search.css";
-import Library from './views/Library/library';
 import "./views/Library/library.css"
 import "./views/NewSidebar/NewSidebar.css"
 import Login from './views/Login/Login';
 import "./views/Login/Login.css"
-import Sidebar from './views/sidebar/Sidebar';
 
 const spotify = new SpotifyWebApi();
 
 function App() {
   const [view, setView] = useState("Home");
-  const [{ user, releases, recents, playlists, token }, dispatch] = UseDataLayerValue();
+  const [{ user, recents, playlists, token, featured, search }, dispatch] = UseDataLayerValue();
+
+  const featuredTracks = ["0SuLAslEMFZAXf0SwY7syi", "6m9qPYXmhge2QhBLfFKnVF", "2U5WueTLIK5WJLD7mvDODv", "1XdbvPWz4lhyRBMz9cBy8b", "09IOPhEh1OMe0HD9b36FJk", "0qtK3XwbuG153dmwB8iepL", "1mpD5Q8IM32I4bF6eCpU74", "0Aqi7ArnBrGblW5T6p2jmD"];
+  const songsOfSummer = ["5fXhZxEgItsbLnC3AyTh2m", "0pjb349DmkGMDWlBxUw3Do", "27rshalgXksSkPe00lwaju", "6LqoPaYA72w6y0W3zEvjAV", "0UTKogJDuLLjZVsY9xZbmw", "2Xpt0PB7ARg7OAmzvwgU3P", "4SwTUCamdQXKuAR7Z5C39e", "4luCSAqgvRv5ek9fef3NlZ"];
 
   useEffect(() => {
     const hash = getTokenFromResponse();
     window.location.hash = "";
     let _token = hash.access_token;
+    ;
+    // if (hash.access_token) {
+    //   window.location.hash = "";
+    //   _token = hash.access_token;
+    //   localStorage.setItem("_token", _token);
+    // } else {
+    //   _token = localStorage.getItem("_token");
+    // }
 
     if (_token) {
       spotify.setAccessToken(_token);
@@ -45,13 +54,16 @@ function App() {
         token: _token,
       });
 
-      spotify.setAccessToken(_token);
       spotify.getMe()
         .then((user) => {
           dispatch({
             type: "SET_USER",
             user: user,
           });
+        // },(err) => {
+        //   console.log(err);
+        //   localStorage.removeItem("_token");
+        //   window.location.reload(false);
         });
 
       spotify.getUserPlaylists().then((playlists) => {
@@ -61,15 +73,7 @@ function App() {
         })
       })
 
-      spotify.getNewReleases({ limit: 5, offset: 0, country: 'SE' })
-        .then((releases) => {
-          dispatch({
-            type: "SET_RELEASES",
-            releases: releases,
-          })
-        })
-
-      spotify.getTracks(["ndn9e3nc394i","nreouvnberov"])
+      spotify.getTracks(featuredTracks)
         .then((featured) => {
           dispatch({
             type: "SET_FEATURED",
@@ -77,8 +81,32 @@ function App() {
           })
         })
 
+      spotify.getTracks(songsOfSummer)
+        .then((summers) => {
+          dispatch({
+            type: "SET_SUMMERS",
+            summers: summers,
+          })
+        })
+
+      spotify.getArtistTopTracks("246dkjvS1zLTtiykXe5h60", 'US')
+        .then((tops) => {
+          dispatch({
+            type: "SET_TOPS",
+            tops: tops,
+          })
+        })
+
+      spotify.searchTracks("I Want It")
+        .then((search) => {
+          dispatch({
+            type: "SET_SEARCH",
+            search: search,
+          })
+        })
+
         spotify.getMyRecentlyPlayedTracks({
-          limit : 10
+          limit : 8
         })
         .then((recents) => {
           dispatch({
@@ -91,15 +119,19 @@ function App() {
 
   }, []);
 
-  console.log("token", token);
-  console.log("RELEASES", releases);
+  console.log("TOPS", token);
   console.log("playlists", playlists);
   console.log("RECENTS", recents);
+  console.log("FEATURED", featured);
+  console.log("SEARCH", search);
   return (
     <div className='app'>
     {token ? 
 <div className='reverb'>
       <div className='sidebar'>
+      <div className='sidebar-title'>
+        <p>Reverb</p>
+      </div>
         <div className='sidebar-items'>
           <div className='sidebar-home' onClick={() => setView("Home")}>
             <div className='sidebar-icon'>
@@ -135,9 +167,8 @@ function App() {
 
       </div>
       <div className='view'>
-        {view === "Home" && <Home spotify={spotify} user={user} />}
-        {view === "Library" && <Library />}
-        {view === "Search" && <Sidebar releases={releases}/>}
+        {view === "Home" && <Home />}
+        {view === "Search" && <Search />}
       </div>
     </div>
 

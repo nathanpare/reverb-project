@@ -1,7 +1,4 @@
-body {
-  display: flex;
-  justify-content: center;
-}
+
 
 /*.library-page {*/
 /*  display: flex;*/
@@ -132,7 +129,7 @@ body {
 .songs-container {
   width: 80%;
   display: flex;
-  flex-directiion: row;
+  flex-direction: row;
   justify-content: space-evenly;
   /*flex-direction: column;*/
   border: 5px outset grey;
