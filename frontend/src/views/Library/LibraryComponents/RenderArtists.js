@@ -23,7 +23,7 @@ export default function RenderArtistsPreview() {
       <div id="artists-area">
         <button onClick={() => fillArtistArea()}>Expand</button>
         {area && addToArea}
-        <Link to="/artists">All Artists</Link>
+        {/* <Link to="/artists">All Artists</Link> */}
       </div>
     </div>
   );

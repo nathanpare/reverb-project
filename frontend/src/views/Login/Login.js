@@ -1,5 +1,5 @@
 import React from 'react';
-import { AUTH_URL } from '../Nav/spotify';
+import { AUTH_URL } from './spotify';
 
 import { Container } from 'react-bootstrap';
 
