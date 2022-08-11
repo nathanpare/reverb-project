@@ -1,6 +1,5 @@
 import React, { Component, useState, useEffect } from 'react';
 import './App.css';
-import LibraryPage from './views/Library/library';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SpotifyWebApi from "spotify-web-api-js";
 // import Footer from './components/footer/Footer';
@@ -170,8 +169,7 @@ function App() {
       <div className='view'>
         {view === "Home" && <Home />}
         {view === "Search" && <Search />}
-        {view === "Library" && <Library />}
-        {view === "Search" && <Sidebar releases={releases}/>}
+        {view === "Search" && <Search/>}
         {view === "CreatePlaylists" && <CreatePlaylists user={user} />}     
       </div>
     </div>
