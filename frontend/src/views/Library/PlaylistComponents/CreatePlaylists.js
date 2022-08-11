@@ -75,14 +75,23 @@ export default function CreatePlaylists(props) {
    // resetForm();
   
   }
-  function addUser(userData){
+  function addUser(){
     
     const spotify_name= props.user.display_name;
     const spotify_user_id = props.user.id;
     const usersObject = {spotify_name: spotify_name, spotify_user_id: spotify_user_id};
-    console.log("user added: ", usersObject);
+    
+    const filtered_user_table = users.filter(user =>{
+      return user.spotify_name === props.user.display_name;
+    })
+  if(filtered_user_table){
+    return;
+  }
+
+    
     return axios.post(`http://localhost:8080/users`, usersObject)
     .then((response) => {
+      console.log("user added: ", usersObject);
       const newUser =response.data;
       setUsers([newUser, ...users]);
     });
@@ -96,11 +105,23 @@ export default function CreatePlaylists(props) {
     })
     console.log(filtered_user_table[0].id);
     const user_id_tableUsers =filtered_user_table[0].id;
+
+
+    const filtered_playlists_table = playlists.find(playlist =>{
+      return playlist.name === playlist_name;
+    })
+    console.log(filtered_playlists_table);
+    if(filtered_playlists_table){
+      console.log("playlistname already exists", filtered_playlists_table);
+      return;
+    }
+    
       
     const playlistObject = { name: playlist_name, user_id: user_id_tableUsers, image_url:"xxxxx" };
-    console.log("Playlist added: ", playlistObject);
+   
     return axios.post(`http://localhost:8080/playlists`, playlistObject)
     .then((response) => {
+      console.log("Playlist added: ", playlistObject);
       const newPlaylist =response.data;
       setPlaylists([newPlaylist, ...playlists]);
     });
@@ -121,7 +142,7 @@ export default function CreatePlaylists(props) {
         {"      "}
         <input className="button_submit" type="submit" value="submit" onClick={addPlaylist}></input>
       </form>
-      <PlaylistDetails playlists={playlists} />
+      <PlaylistDetails playlists={playlists} setPlaylists={setPlaylists} />
     </div>
   )
 }

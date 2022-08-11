@@ -198,7 +198,7 @@ app.get('/', function(req, res, next) {
 app.get("/playlists", async (req, res) => {
   try {
     const getAllplaylistshere = await pool.query(
-      'SELECT name FROM playlists JOIN users on users.id = playlists.user_id ORDER BY name ASC' 
+      'SELECT playlists.id, playlists.name FROM playlists JOIN users on users.id = playlists.user_id ORDER BY name ASC' 
 
     );
     res.json(getAllplaylistshere.rows);
@@ -207,6 +207,20 @@ app.get("/playlists", async (req, res) => {
     console.error(err.message);
   }
 });
+app.delete("/deleteplaylists/:id", async (req, res) => {
+  try {
+    const id =parseInt(req.params.id);
+    console.log("Deleted Playlist id: ", id );
+    const deleteStep = await pool.query(
+      "DELETE FROM playlists WHERE id = $1 RETURNING *", [id]
+    )
+    res.json("The playlist was deleted")
+
+  }catch(err){
+    console.log(err.message)
+  }
+});
+
 app.get("/users", async (req, res) => {
   try {
     const getAllusers = await pool.query(
