@@ -10,7 +10,6 @@ export default function RenderPodcastsPreview() {
 
   const fillArea = () => {
     setArea(true);
-    // setArea(!area);
   };
 
   return (
@@ -18,7 +17,7 @@ export default function RenderPodcastsPreview() {
       <div id="podcasts-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
-        <Link to="/podcasts">All Podcasts</Link>
+        {/* <Link to="/podcasts">All Podcasts</Link> */}
       </div>
     </div>
   )

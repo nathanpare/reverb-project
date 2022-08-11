@@ -8,6 +8,8 @@ import RenderGenresPreview from './LibraryComponents/RenderGenres';
 import RenderPlaylistsPreview from './LibraryComponents/RenderPlaylists';
 import RenderArtistsPreview from './LibraryComponents/RenderArtists';
 import RenderPodcastsPreview from './LibraryComponents/RenderPodcasts';
+import Footer from '../footer/Footer';
+
 // import ReactDOM from "react-dom/client";
 import Button from 'react-bootstrap/Button';
 // import {
@@ -20,14 +22,14 @@ import Button from 'react-bootstrap/Button';
 
 // export default function Library() {
 //   let name = "User111";
-//
+
 //   return (
 //     <div className={"library-page"}>
 //       <header className={"page-header"}>
 //         <h3>Hello, ${name}</h3>
 //       </header>
+//       <footer className="footer">Footer</footer>
 //     </div>
-//     <div></div>
 //   )
 // }
  
@@ -37,6 +39,7 @@ export default function Library() {
   return (
     <div className="library-page">
       <header className="page-header">
+        <h1>TESTTEST</h1>
         <h3>Good morning, {name}</h3>
       </header>
       <div className={"songs-components"}>
@@ -57,6 +60,8 @@ export default function Library() {
       <div className={"podcasts-components"}>
         <RenderPodcastsPreview />
       </div>
+
+      <Footer />
     </div>
   );
 }

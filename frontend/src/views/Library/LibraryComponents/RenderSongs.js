@@ -56,9 +56,9 @@ export default function RenderSongsPreview() {
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
       </div>
-      {/*<div>*/}
-        {/*<Link to="/songs">All Songs</Link>*/}
-      {/*</div>*/}
+      <div>
+        {/* <Link to="/songs">All Songs</Link> */}
+      </div>
     </div>
   )
 };
