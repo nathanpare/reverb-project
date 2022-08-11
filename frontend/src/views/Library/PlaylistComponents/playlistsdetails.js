@@ -1,17 +1,53 @@
 import React, { useState } from "react";
 import axios from 'axios';
-export default function PlaylistNames({playlists, setPlaylists}) {
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import AddSongs from './AddSongs';
+export default function PlaylistNames({ playlists, setPlaylists }) {
+  const [songAddState, setSongAddState] = useState(false);
   //console.log(props);
   //console.log(props[1]);
- // const [playlists, setPlaylists] = useState([]);
+  // const [playlists, setPlaylists] = useState([]);
+  //  const navigate = useNavigate();
+  //  function navigateToAddSongs(){
+
+  //   navigate('/AddSongsToPlaylists');
+  //  }
   function deletePlaylist(id) {
     console.log(id);
     return axios.delete(`http://localhost:8080/deleteplaylists/${id}`)
-   .then(res => {
-       setPlaylists(playlists.filter(playlist => playlist.id !==id ))
-      console.log("Playlist deleted id:", id);
-   })
-   }
+      .then(res => {
+        setPlaylists(playlists.filter(playlist => playlist.id !== id))
+        console.log("Playlist deleted id:", id);
+      })
+  }
+  let addRender="";
+  
+
+  function AddSongsPage(id) {
+    console.log(id);
+    console.log("Add Songs Clicked.");
+    setSongAddState(true);
+    // console.log(buttonClicked);
+    //renderOrNotSongs(songAddState);
+    // buttonClicked = false;
+    console.log(songAddState);
+  }
+  // function renderOrNotSongs(buttonClicked){
+  //   if(buttonClicked===true){
+  //     addRender = <AddSongs />;
+  //   } else {
+  //     addRender = <h1>hi</h1>;
+  //     buttonClicked =false;
+  //   }
+  // }
+  if(songAddState===true){
+    addRender = <AddSongs />;
+  } else {
+    addRender = <h1>Add songs above to your desired playlist</h1>;
+    
+  }
+ 
+  
   return (
     <>
       <div>
@@ -26,8 +62,8 @@ export default function PlaylistNames({playlists, setPlaylists}) {
         </thead>
         <tbody>
           {playlists.map((playlist, index) => {
-         //   console.log(playlist.id);
-         //   console.log(playlist.name);
+            //   console.log(playlist.id);
+            //   console.log(playlist.name);
             return (
               <tr key={index}>
                 {/* //<td>{playlist.id}</td> */}
@@ -36,13 +72,13 @@ export default function PlaylistNames({playlists, setPlaylists}) {
                 <td>{playlist.image_url}</td> */}
 
                 <td>
-                  <button className="button_delete" onClick={() =>deletePlaylist(playlist.id)}                 >
+                  <button className="button_delete" onClick={() => deletePlaylist(playlist.id)}                 >
                     Delete
                   </button>
                 </td>
                 <td>---</td>
                 <td>
-                  <button className="button_add_songs" >
+                  <button className="button_add_songs" onClick={() => AddSongsPage(playlist.id)}>
                     Add Songs
                   </button>
                 </td>
@@ -51,6 +87,7 @@ export default function PlaylistNames({playlists, setPlaylists}) {
 
         </tbody>
       </table>
+      {addRender}
     </>
   )
 }
