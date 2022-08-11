@@ -27,22 +27,34 @@ const reducer = (state, action) => {
         playlists: action.playlists,
       };
 
-    case "SET_RELEASES" :
-      return {
-        ...state,
-        releases: action.releases,
-      };
-
     case "SET_FEATURED" :
       return {
         ...state,
         featured: action.featured,
       };
 
+    case "SET_SUMMERS" :
+      return {
+        ...state,
+        summers: action.summers,
+      };
+
+    case "SET_TOPS" :
+      return {
+        ...state,
+        tops: action.tops,
+      };
+
     case "SET_RECENTS" :
       return {
         ...state,
         recents: action.recents,
+      };
+
+    case "SET_SEARCH" :
+      return {
+        ...state,
+        search: action.search,
       };
 
     default:

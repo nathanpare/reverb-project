@@ -1,19 +1,25 @@
 .sidebar {
   background-color: mediumslateblue;
-  width: 12rem;
-  height: 1100px;
+  width: 200px;
+  height: 3360px;
+  position: fixed;
   color: white;
 }
 
 .sidebar-items {
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .sidebar-home {
-  padding-top: 5px;
+  padding-top:px;
   display: flex;
   margin-left: 10px;
   cursor: pointer;
+}
+
+.sidebar-home:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1) !important;
 }
 
 .sidebar-search {
@@ -23,18 +29,35 @@
   cursor: pointer;
 }
 
+.sidebar-search:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1) !important;
+}
+
 .sidebar-library {
   padding-top: 5px;
   display: flex;
   margin-left: 10px;
   cursor: pointer;
 }
+
+.sidebar-library:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1) !important;
+}
+
 .sidebar-playlist {
   padding-top: 5px;
   display: flex;
   margin-left: 10px;
   cursor: pointer;
 }
+
+.sidebar-playlist:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1) !important;
+}
+
 .sidebar-liked {
   padding-top: 5px;
   display: flex;
@@ -42,6 +65,19 @@
   cursor: pointer;
 }
 
+.sidebar-liked:hover {
+  transition: 0.2s ease-in-out;
+  transform: scale(1.1) !important;
+}
+
 .sidebar-icon {
   margin-right: 5px;
+}
+
+.sidebar-title {
+  font-size: x-large;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10px;
 }
