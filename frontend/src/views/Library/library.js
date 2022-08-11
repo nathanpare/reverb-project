@@ -18,34 +18,44 @@ import {
 } from "react-router-dom";
 
 
-
 export default function Library() {
-  const name = "User111";
+  let name = "User111";
+
   return (
-    <div className="library-page">
-      <header className="page-header">
-        <h3>Good morning, {name}</h3>
+    <div className={"library-page"}>
+      <header className={"page-header"}>
+        <h3>Hello, ${name}</h3>
       </header>
-        <div className="library-components">
-          <div className="songs-components">
-            <RenderSongsPreview />
-          </div>
-          <div className="albums-components">
-            <RenderAlbumsPreview />
-          </div>
-          <div className="artists-components">
-            <RenderArtistsPreview />
-          </div>
-          <div className="playlists-components">
-            <RenderPlaylistsPreview />
-          </div>
-          <div className="genres-components">
-            <RenderGenresPreview />
-          </div>
-          <div className="podcasts-components">
-            <RenderPodcastsPreview />
-          </div>
-        </div>
     </div>
   )
-};
+}
+ 
+// export default function Library() {
+//   const name= "User111";
+//
+//   return (
+//     <div className="library-page">
+//       <header className="page-header">
+//         <h3>Good morning, {name}</h3>
+//       </header>
+//       <div className={"songs-components"}>
+//         <RenderSongsPreview />
+//       </div>
+//       <div className="albums-components">
+//         <RenderAlbumsPreview />
+//       </div>
+//       <div className="artists-components">
+//         <RenderArtistsPreview />
+//       </div>
+//       <div className="playlists-components">
+//         <RenderPlaylistsPreview />
+//       </div>
+//       <div className="genres-components">
+//         <RenderGenresPreview />
+//       </div>
+//       <div className={"podcasts-components"}>
+//         <RenderPodcastsPreview />
+//       </div>
+//     </div>
+//   );
+// }
