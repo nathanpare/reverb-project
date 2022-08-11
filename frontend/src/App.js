@@ -1,8 +1,7 @@
-//import React, {Component} from 'react';
+import React, { Component, useState, useEffect } from 'react';
 import './App.css';
-// import LibraryPage from './views/Library/library';
+import LibraryPage from './views/Library/library';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import React, { useState, useEffect } from 'react';
 import SpotifyWebApi from "spotify-web-api-js";
 // import Footer from './components/footer/Footer';
 // import Sidebar from './views/sidebar/Sidebar'
