@@ -5,10 +5,13 @@ import FetchUserAlbums from "FetchUserAlbums";
 
 export default function DeleteAlbum(userID, albumId) {
   const [albums, albumsMM] = useState(false);
-  
-  function removeAlbum(id) {
+
+  // const removeAlbum = (library, id) => {
     
-  }
+  // }
+
+  // let userAlbums = FetchUserAlbums(userID);
+
 
   return (
     <div>
