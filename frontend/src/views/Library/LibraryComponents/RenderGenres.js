@@ -18,7 +18,7 @@ export default function RenderGenresPreview() {
       <div id="genres-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
-        <Link to="/genres">All Genres</Link>
+        {/* <Link to="/genres">All Genres</Link> */}
       </div>
     </div>
   )

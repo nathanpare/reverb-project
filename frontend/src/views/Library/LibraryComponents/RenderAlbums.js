@@ -22,7 +22,7 @@ export default function RenderAlbums() {
       <div id="albums-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
-        <Link to="/albums">All Albums</Link>
+        {/* <Link to="/albums">All Albums</Link> */}
       </div>
     </div>
   )
