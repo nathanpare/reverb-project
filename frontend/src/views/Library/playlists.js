@@ -3,7 +3,20 @@ import React from 'react';
 //import './library.css';
 
 
+function addPlaylist() {
+  const [plists, plistsPlusPlus] = useState(false);
+
+  return (
+    <div>
+      <h1>TEST</h1>
+    </div>
+  );
+}
+
+
+
 export default function Playlists() {
+  
   return (
     <div className="playlists-page">
       <header className="page-header">

@@ -6,11 +6,29 @@ import Button from "react-bootstrap/esm/Button";
 // import FetchUserAlbums from "AlbumsComponents/FetchUserAlbums";
 import axios from 'axios';
 
+function addAlbum(library) {
+  const [albums, albumsPlusPlus] = useState(false);
 
+  return (
+    <div>
+      <h3>TEST</h3>
+    </div>
+  );
+}
+
+function removeAlbum(library) {
+  const [albums, albumsMinusMinus] = useState(false);
+
+  return (
+    <div>
+      <h3>TEST</h3>
+    </div>
+  );
+}
 
 export default function Albums() {
-  const [album, expandAlbum] = useState(false);
-  const [albums, albumsAdd] = useState(false);
+  // const [album, expandAlbum] = useState(false);
+  // const [albums, albumsAdd] = useState(false);
 
   // function getUserAlbums(id) {
       // let sortedAlbumsData = {};
@@ -81,15 +99,18 @@ export default function Albums() {
         </div>
       <div className={"render-album"}>AAAA</div>
       </div>
-      <div className="nav-elements">
+      <div>
+        {/* add onclick events to re render etc etc */}
+      </div>
+      {/* <div className="nav-elements">
         <Link to={"/library"} className={"nav-element"}>Library</Link>
         <Link to={"/songs"} className={"nav-element"}>Songs</Link>
-        {/*<Link to={"/albums"} className={"nav-element"}>Albums</Link>*/}
+        <Link to={"/albums"} className={"nav-element"}>Albums</Link>
         <Link to={"/artists"} className={"nav-element"}>Artists</Link>
         <Link to={"/playlists"} className={"nav-element"}>Playlists</Link>
         <Link to={"/genres"} className={"nav-element"}>Genres</Link>
         <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
-      </div>
+      </div> */}
     </body>
   );
 }

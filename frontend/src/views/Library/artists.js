@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 
 
 export default function Artists() {
-  const [userArtists, newUserArtists] = useState(false);
+  const [userArtists, addUserArtists] = useState(false);
   let sortedArtistsData = {};
 
-
+  
 
   return (
     <body className="artists-page">
@@ -29,7 +29,7 @@ export default function Artists() {
             <div className={"artist-container"}>
               <div className={"artist-name"}></div>
               <div className={"artist-albums"}></div>
-            </>
+            </div>
           );
         })}
           <div className={"artists-container"}>
@@ -48,15 +48,15 @@ export default function Artists() {
               <div className={"stock-artist"}>Artist</div>
           </div>
       </div>
-      <div className="nav-elements">
+      {/* <div className="nav-elements">
          <Link to={"/library"} className={"nav-element"}>Library</Link>
          <Link to={"/songs"} className={"nav-element"}>Songs</Link>
          <Link to={"/albums"} className={"nav-element"}>Albums</Link>
-         {/*<Link to={"/artists"} className={"nav-element"}>Artists</Link>*/}
+         <Link to={"/artists"} className={"nav-element"}>Artists</Link>
          <Link to={"/playlists"} className={"nav-element"}>Playlists</Link>
          <Link to={"/genres"} className={"nav-element"}>Genres</Link>
          <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
-      </div>
+      </div> */}
     </body>
   );
 }

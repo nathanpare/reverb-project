@@ -20,6 +20,8 @@ import Search from './views/Search/Search';
 import "./views/Search/Search.css";
 import Library from './views/Library/library';
 import "./views/Library/library.css"
+import Albums
+ from './views/Library/albums';
 import "./views/NewSidebar/NewSidebar.css"
 import Login from './views/Login/Login';
 import "./views/Login/Login.css"
@@ -142,6 +144,7 @@ function App() {
       <div className='view'>
         {view === "Home" && <Home spotify={spotify} user={user} />}
         {view === "Library" && <Library />}
+        {view === "Albums" && <Albums />}
         {view === "Search" && <Sidebar releases={releases}/>}
         {view === "CreatePlaylists" && <CreatePlaylists user={user} />}
       </div>
