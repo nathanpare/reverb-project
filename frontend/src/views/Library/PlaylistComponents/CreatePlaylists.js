@@ -163,6 +163,9 @@ export default function CreatePlaylists(props) {
         console.log(user.spotify_name);
         return user.spotify_name === props.user.display_name;
       })
+      if(filtered_user_table.length===0){
+        return;
+      }
       console.log(filtered_user_table[0].id);
       const user_id_tableUsers =filtered_user_table[0].id;
   

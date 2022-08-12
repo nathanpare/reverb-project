@@ -1,5 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import './App.css';
+// import LibraryPage from './views/Library/library';
+// import LibraryPage from './views/Library/library';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SpotifyWebApi from "spotify-web-api-js";
 // import Footer from './components/footer/Footer';
@@ -18,9 +20,12 @@ import Home from './views/Home/Home';
 import Search from './views/Search/Search';
 import "./views/Search/Search.css";
 import "./views/Library/library.css"
+import Albums
+ from './views/Library/albums';
 import "./views/NewSidebar/NewSidebar.css"
 import Login from './views/Login/Login';
 import "./views/Login/Login.css"
+import Player from './views/Dashboard/Player';
 
 import CreatePlaylists from './views/Library/PlaylistComponents/CreatePlaylists';
 
@@ -29,10 +34,11 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   const [view, setView] = useState("Home");
-  const [{ user, recents, playlists, token, featured, search }, dispatch] = UseDataLayerValue();
+  const [searchResult, setSearchResult] = useState("");
+  const [{ user, recents, playlists, token, featured, releases, playingTrack, search }, dispatch] = UseDataLayerValue();
 
-  const featuredTracks = ["0SuLAslEMFZAXf0SwY7syi", "6m9qPYXmhge2QhBLfFKnVF", "2U5WueTLIK5WJLD7mvDODv", "1XdbvPWz4lhyRBMz9cBy8b", "09IOPhEh1OMe0HD9b36FJk", "0qtK3XwbuG153dmwB8iepL", "1mpD5Q8IM32I4bF6eCpU74", "0Aqi7ArnBrGblW5T6p2jmD"];
-  const songsOfSummer = ["5fXhZxEgItsbLnC3AyTh2m", "0pjb349DmkGMDWlBxUw3Do", "27rshalgXksSkPe00lwaju", "6LqoPaYA72w6y0W3zEvjAV", "0UTKogJDuLLjZVsY9xZbmw", "2Xpt0PB7ARg7OAmzvwgU3P", "4SwTUCamdQXKuAR7Z5C39e", "4luCSAqgvRv5ek9fef3NlZ"];
+  const featuredTracks = ["0SuLAslEMFZAXf0SwY7syi", "6m9qPYXmhge2QhBLfFKnVF", "2U5WueTLIK5WJLD7mvDODv", "1XdbvPWz4lhyRBMz9cBy8b", "09IOPhEh1OMe0HD9b36FJk", "0qtK3XwbuG153dmwB8iepL"];
+  const songsOfSummer = ["5fXhZxEgItsbLnC3AyTh2m", "0pjb349DmkGMDWlBxUw3Do", "27rshalgXksSkPe00lwaju", "6LqoPaYA72w6y0W3zEvjAV", "0UTKogJDuLLjZVsY9xZbmw", "2Xpt0PB7ARg7OAmzvwgU3P"];
 
   useEffect(() => {
     const hash = getTokenFromResponse();
@@ -89,15 +95,15 @@ function App() {
           })
         })
 
-      spotify.getArtistTopTracks("246dkjvS1zLTtiykXe5h60", 'US')
-        .then((tops) => {
+      spotify.getNewReleases({ limit : 6, offset: 0, country: 'SE' })
+        .then((releases) => {
           dispatch({
-            type: "SET_TOPS",
-            tops: tops,
+            type: "SET_RELEASES",
+            releases: releases,
           })
         })
 
-      spotify.searchTracks("I Want It")
+      spotify.searchTracks(searchResult)
         .then((search) => {
           dispatch({
             type: "SET_SEARCH",
@@ -106,7 +112,7 @@ function App() {
         })
 
         spotify.getMyRecentlyPlayedTracks({
-          limit : 8
+          limit : 6
         })
         .then((recents) => {
           dispatch({
@@ -119,11 +125,18 @@ function App() {
 
   }, []);
 
-  console.log("TOPS", token);
-  console.log("playlists", playlists);
+  const setPlayingTrack = (track) => {
+    dispatch({
+      type: "SET_PLAYING_TRACK",
+      track: track,
+    })
+  }
+
+  console.log("TOKEN", token);
+  console.log("PLAYLISTS", playlists);
   console.log("RECENTS", recents);
   console.log("FEATURED", featured);
-  console.log("SEARCH", search);
+  console.log("Search", search);
   return (
     <div className='app'>
     {token ? 
@@ -168,10 +181,12 @@ function App() {
       </div>
       <div className='view'>
         {view === "Home" && <Home />}
-        {view === "Search" && <Search />}
-        {view === "Search" && <Search/>}
+        {view === "Search" && <Search searchResult={searchResult} setSearchResult={setSearchResult} />}
         {view === "CreatePlaylists" && <CreatePlaylists user={user} />}     
       </div>
+      <div className='player-div'>
+    <Player token={token} trackUri={playingTrack?.uri} />
+    </div>
     </div>
 
 : <Login/>

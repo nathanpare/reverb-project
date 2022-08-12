@@ -3,7 +3,19 @@ import React from 'react';
 //import './library.css';
 
 
+function addPlaylist() {
+
+  return (
+    <div>
+      <h1>TEST</h1>
+    </div>
+  );
+}
+
+
+
 export default function Playlists() {
+  
   return (
     <div className="playlists-page">
       <header className="page-header">

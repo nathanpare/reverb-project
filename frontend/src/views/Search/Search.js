@@ -1,18 +1,22 @@
 import React, { useState } from 'react';
 import { UseDataLayerValue } from '../../DataLayer'
 
-function Search() {
-  const [SearchInput, setSearchInput] = useState("");
-  const [{ search }, dispatch] = UseDataLayerValue();
+function Search({ searchResult, setSearchResult }) {
+  const [{ token, search }, dispatch] = UseDataLayerValue();
+
+  console.log("TOKEN", token);
+  console.log("SEARCH", search)
 
   return (
     <div className='search'>
       <div className='search-field'>
-      <form>
-        <input placeholder='Search for songs'
-          type='input'
-          onChange={event => setSearchInput(event.target.value)}></input>
-        <button className='btn btn-primary' type={"submit"} onClick={() => { console.log("Search")}}>Search</button>
+      <form onSubmit={search} >
+        <input
+         type="text"
+         placeholder='Search a song'
+         onChange={e => setSearchResult(e.target.value)}
+         ></input>
+        <button className='btn btn-primary' type={"submit"}>Search</button>
       </form>
       </div>
     </div>

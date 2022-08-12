@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-export default function RenderPlaylistsPreview() {
+function RenderPlaylistsPreview() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
@@ -18,7 +18,7 @@ export default function RenderPlaylistsPreview() {
       <div id="playlists-area">
         <button onClick={() => fillArea()}>Expand</button>
         {area && addToArea}
-        {/* <Link to="/playlists">All Playlists</Link> */}
+        <Link to="/playlists">All Playlists</Link>
       </div>
     </div>
   )

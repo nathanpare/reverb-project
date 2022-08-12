@@ -5,7 +5,7 @@ import Dashboard from '../Dashboard/Dashboard';
 import Player from '../Dashboard/Player';
 import "../sidebar/Sidebar.css"
 import "../Dashboard/Dashboard.css";
-import "../Nav/Nav.css";
+
 
 function Home() {
 

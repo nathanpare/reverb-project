@@ -5,4 +5,24 @@
 
 .reverb {
   display: flex;
+  flex-wrap: wrap;
+}
+
+.player-div {
+  width: 100%;
+  position: fixed;
+  bottom: 0%;
+}
+
+._ContentRSWP.__1xc0f9k {
+  background-color: #0cbaba;;
+  color: white;
+}
+
+path {
+  color: white;
+}
+
+ a {
+  color: white;
 }
