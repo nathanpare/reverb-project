@@ -6,7 +6,6 @@ import Player from '../Dashboard/Player';
 import "../sidebar/Sidebar.css"
 import "../Dashboard/Dashboard.css";
 
-
 function Home() {
 
   return (
