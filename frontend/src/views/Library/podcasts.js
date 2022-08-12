@@ -28,13 +28,13 @@ export default function Podcasts() {
           <div className={"render-podcasts"}></div>
         </div>
       </div>
-      <div className={"nav-elements"}>
+      {/* <div className={"nav-elements"}>
         <Link to={"/library"} className={"nav-element"}>Library</Link>
         <Link to={"/songs"} className={"nav-element"}>Songs</Link>
         <Link to={"/albums"} className={"nav-element"}>Albums</Link>
         <Link to={"/artists"} className={"nav-element"}>Artists</Link>
         <Link to={"/genres"} className={"nav-element"}>Genres</Link>
-      </div>
+      </div> */}
     </body>
   )
 }

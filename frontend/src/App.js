@@ -1,5 +1,9 @@
 import React, { Component, useState, useEffect } from 'react';
 import './App.css';
+<<<<<<< HEAD
+=======
+// import LibraryPage from './views/Library/library';
+>>>>>>> new-library-page-etc
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SpotifyWebApi from "spotify-web-api-js";
 // import Footer from './components/footer/Footer';
@@ -18,6 +22,8 @@ import Home from './views/Home/Home';
 import Search from './views/Search/Search';
 import "./views/Search/Search.css";
 import "./views/Library/library.css"
+import Albums
+ from './views/Library/albums';
 import "./views/NewSidebar/NewSidebar.css"
 import Login from './views/Login/Login';
 import "./views/Login/Login.css"
@@ -170,7 +176,8 @@ function App() {
         {view === "Home" && <Home />}
         {view === "Search" && <Search />}
         {view === "Search" && <Search/>}
-        {view === "CreatePlaylists" && <CreatePlaylists user={user} />}     
+        {view === "CreatePlaylists" && <CreatePlaylists user={user} />}
+        {view === "Library" && <Library spotify={spotify} user={user}/>}     
       </div>
     </div>
 

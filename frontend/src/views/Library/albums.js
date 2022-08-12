@@ -3,14 +3,32 @@ import React, { useState } from 'react';
 import './library.css';
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
-import FetchUserAlbums from "AlbumsComponents/FetchUserAlbums";
+// import FetchUserAlbums from "AlbumsComponents/FetchUserAlbums";
 import axios from 'axios';
 
+function addAlbum(library) {
+  // const [albums, albumsPlusPlus] = useState(false);
 
+  return (
+    <div>
+      <h3>TEST</h3>
+    </div>
+  );
+}
+
+function removeAlbum(library) {
+  // const [albums, albumsMinusMinus] = useState(false);
+
+  return (
+    <div>
+      <h3>TEST</h3>
+    </div>
+  );
+}
 
 export default function Albums() {
-  const [album, expandAlbum] = useState(false);
-  const [albums, albumsAdd] = useState(false);
+  // const [album, expandAlbum] = useState(false);
+  // const [albums, albumsAdd] = useState(false);
 
   // function getUserAlbums(id) {
       // let sortedAlbumsData = {};
@@ -47,7 +65,7 @@ export default function Albums() {
           </div>
         </div>
         <div className={"albums-container"}>
-        {Object.values(sortedAlbumsData).map((data) => {
+        {/* {Object.values(sortedAlbumsData).map((data) => {
           return (
               <div className={"album-container"}>
                 <img
@@ -59,13 +77,13 @@ export default function Albums() {
                 <div className={"album-name"}>{data.albumName}</div>
                 <div className={"album-artist-name"}>{data.artistName}</div>
                 <div className={"album-tracks"}>
-                  {/*<Button onClick={() => renderAlbum()}>{data.trackLength} tracks</Button>*/}
+                  <Button onClick={() => renderAlbum()}>{data.trackLength} tracks</Button>
                 </div>
                 <div className="add-album">Add to Library</div>
               </div>
               
           );
-        })}
+        })} */}
         </div>
         <div className="albums-container">
           <div className="stock-album">ALBUM</div>
@@ -81,15 +99,14 @@ export default function Albums() {
         </div>
       <div className={"render-album"}>AAAA</div>
       </div>
-      <div className="nav-elements">
-        <Link to={"/library"} className={"nav-element"}>Library</Link>
-        <Link to={"/songs"} className={"nav-element"}>Songs</Link>
-        {/*<Link to={"/albums"} className={"nav-element"}>Albums</Link>*/}
-        <Link to={"/artists"} className={"nav-element"}>Artists</Link>
-        <Link to={"/playlists"} className={"nav-element"}>Playlists</Link>
-        <Link to={"/genres"} className={"nav-element"}>Genres</Link>
-        <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
+      <div>
+        {/* add onclick events to re render etc etc */}
       </div>
+      <div className="render-albums-page"></div>
+      <div className="render-artists-page"></div>
+      <div className="render-songs-page"></div>
+      <div className="render-playlists-page"></div>
+      <div className="render-genres-page"></div>
     </body>
   );
 }

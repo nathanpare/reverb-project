@@ -31,8 +31,7 @@ const SongsList = [
     genre: "Country",
   }
 ]
-
-export default function RenderSongsPreview() {
+function RenderSongsPreview() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
@@ -57,7 +56,7 @@ export default function RenderSongsPreview() {
         {area && addToArea}
       </div>
       <div>
-        {/* <Link to="/songs">All Songs</Link> */}
+      {/* <RenderSongsPage /> */}
       </div>
     </div>
   )
