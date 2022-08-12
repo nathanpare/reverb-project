@@ -4,13 +4,38 @@ import './library.css';
 import Button from 'react-bootstrap/esm/Button';
 import { Link } from "react-router-dom";
 
+function selectAlbum(library) {
+
+  return (
+    <div>
+      <h4>TEST</h4>
+    </div>
+  );
+}
+
+function addArtist(library) {
+
+  return (
+    <div>
+      <h4>TEST</h4>
+    </div>
+  );
+}
+
+function removeArtist(library) {
+  
+  return (
+    <div>
+      <h4>TEST</h4>
+    </div>
+  );
+}
+
 
 export default function Artists() {
   const [userArtists, addUserArtists] = useState(false);
+
   let sortedArtistsData = {};
-
-  
-
   return (
     <body className="artists-page">
       <header className="page-header">

@@ -143,10 +143,7 @@ function App() {
       </div>
       <div className='view'>
         {view === "Home" && <Home spotify={spotify} user={user} />}
-        {view === "Library" && <Library />}
-        {view === "Albums" && <Albums />}
-        {view === "Search" && <Sidebar releases={releases}/>}
-        {view === "CreatePlaylists" && <CreatePlaylists user={user} />}
+        {view === "Library" && <Library spotify={spotify} user={user}/>}
       </div>
     </div>
 

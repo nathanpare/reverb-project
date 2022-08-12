@@ -4,7 +4,6 @@ import React from 'react';
 
 
 function addPlaylist() {
-  const [plists, plistsPlusPlus] = useState(false);
 
   return (
     <div>

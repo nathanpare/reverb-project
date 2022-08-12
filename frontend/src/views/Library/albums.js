@@ -7,7 +7,7 @@ import Button from "react-bootstrap/esm/Button";
 import axios from 'axios';
 
 function addAlbum(library) {
-  const [albums, albumsPlusPlus] = useState(false);
+  // const [albums, albumsPlusPlus] = useState(false);
 
   return (
     <div>
@@ -17,7 +17,7 @@ function addAlbum(library) {
 }
 
 function removeAlbum(library) {
-  const [albums, albumsMinusMinus] = useState(false);
+  // const [albums, albumsMinusMinus] = useState(false);
 
   return (
     <div>
@@ -102,15 +102,11 @@ export default function Albums() {
       <div>
         {/* add onclick events to re render etc etc */}
       </div>
-      {/* <div className="nav-elements">
-        <Link to={"/library"} className={"nav-element"}>Library</Link>
-        <Link to={"/songs"} className={"nav-element"}>Songs</Link>
-        <Link to={"/albums"} className={"nav-element"}>Albums</Link>
-        <Link to={"/artists"} className={"nav-element"}>Artists</Link>
-        <Link to={"/playlists"} className={"nav-element"}>Playlists</Link>
-        <Link to={"/genres"} className={"nav-element"}>Genres</Link>
-        <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
-      </div> */}
+      <div className="render-albums-page"></div>
+      <div className="render-artists-page"></div>
+      <div className="render-songs-page"></div>
+      <div className="render-playlists-page"></div>
+      <div className="render-genres-page"></div>
     </body>
   );
 }

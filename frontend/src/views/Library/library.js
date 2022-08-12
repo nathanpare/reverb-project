@@ -86,9 +86,7 @@ function AlbumsPreview() {
   return (
     <div className="categ">
       {/* <RenderAlbumsPreview /> */}
-      <Button onClick={() => {
-
-      }}>AAAAA</Button>
+      {/* <Button onClick={() => {}}>AAAAA</Button> */}
     </div>
   )
 };
@@ -98,7 +96,16 @@ function RenderGenresPreview() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
-    <div>AAAAA</div>
+    <div>
+      <h5>Genres</h5>
+      <ul>
+        <li>Genre</li>
+        <li>Genre</li>
+        <li>Genre</li>
+        <li>Genre</li>
+        <li>Genre</li>
+      </ul>
+    </div>
   );
 
   const fillArea = () => {
@@ -194,6 +201,18 @@ export default function Library() {
     </div>
   );
 }
+
+
+
+// function () {
+//   const [] = useState(false);
+
+//   return (
+//     <div>
+//       <h4>TEST</h4>
+//     </div>
+//   );
+// }
 
 
 // <div className={"songs-components"}>
