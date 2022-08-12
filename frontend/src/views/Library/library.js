@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './library.css';
 import Playlists from './playlists';
 import Songs from './songs';
-<<<<<<< HEAD
 import RenderSongsPreview from './LibraryComponents/RenderSongs';
 import RenderAlbumsPreview from './LibraryComponents/RenderAlbums';
 import RenderGenresPreview from './LibraryComponents/RenderGenres';
@@ -10,28 +9,20 @@ import RenderPlaylistsPreview from './LibraryComponents/RenderPlaylists';
 import RenderArtistsPreview from './LibraryComponents/RenderArtists';
 import RenderPodcastsPreview from './LibraryComponents/RenderPodcasts';
 import ReactDOM from "react-dom/client";
-=======
 import Albums from './albums';
 import Artists from './artists';
 import Genres from './genres';
 import Podcasts from './podcasts';
->>>>>>> new-library-page-etc
 import Footer from '../footer/Footer';
 import ReactDOM from "react-dom/client";
 import Button from 'react-bootstrap/Button';
-<<<<<<< HEAD
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-} from "react-router-dom";
 
 
 // export default function Library() {
 //   let name = "User111";
-=======
->>>>>>> new-library-page-etc
-
+import Footer from '../footer/Footer';
+import ReactDOM from "react-dom/client";
+import Button from 'react-bootstrap/Button';
 // function SongsPreview() {
 //   return (
 //     <div className="songs-components">
@@ -254,4 +245,3 @@ export default function Library() {
 // </div>
 // <div className={"podcasts-components"}>
 // {/* <RenderPodcastsPreview /> */}
-// </div>

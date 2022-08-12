@@ -1,9 +1,7 @@
 import React, { Component, useState, useEffect } from 'react';
 import './App.css';
-<<<<<<< HEAD
-=======
 // import LibraryPage from './views/Library/library';
->>>>>>> new-library-page-etc
+// import LibraryPage from './views/Library/library';
 // import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import SpotifyWebApi from "spotify-web-api-js";
 // import Footer from './components/footer/Footer';
