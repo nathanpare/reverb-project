@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import '../PlaylistComponents/AddSongs.css';
 import axios from 'axios';
 import { UseDataLayerValue } from '../../../DataLayer';
+import Featured from './AddSongsFeatured';
 export default function AddSongsToPlaylists({ user_id, setUserId, playlist_id, setPlaylistId }) {
   // const [playlistSongs, setPlaylistSongs]= useState([]);
   const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
@@ -9,8 +10,11 @@ export default function AddSongsToPlaylists({ user_id, setUserId, playlist_id, s
   console.log("user_id", user_id);
   console.log("playlist_id", playlist_id);
   const [playlistSongs, setPlaylistSongs] = useState([]);
+  const [playingTrack, setPlayingTrack] = useState();
   console.log(playlistSongs);
-
+  const chooseTrack = (features) => {
+    setPlayingTrack(features);
+  };
   
   const addPlaylistSongs = () => {
 
@@ -38,6 +42,18 @@ export default function AddSongsToPlaylists({ user_id, setUserId, playlist_id, s
         </button>
         <i className="fa-solid fa-play" ></i>
       </div>
+      <div className="featured">
+        <div className="title">
+          <p>Featured</p>
+        </div>
+        <div className="featured-songs">
+      {featured?.tracks?.map((features) => (
+      <Featured title={features.name} artist={features.artists[0].name} img={features.album.images[0].url}  key={features.uri} addPlaylistSongs={addPlaylistSongs} />
+      
+    ))
+    }
+    </div>
+    </div>
     </div>
   )
 };
