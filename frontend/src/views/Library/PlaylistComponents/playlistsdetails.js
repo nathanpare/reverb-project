@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import AddSongs from './AddSongs';
-export default function PlaylistNames({ playlists, setPlaylists }) {
+export default function PlaylistNames({ playlists, setPlaylists, user_id, setUserId }) {
   const [songAddState, setSongAddState] = useState(false);
+  const [playlist_id, setPlaylistId] = useState(0);
   //console.log(props);
   //console.log(props[1]);
   // const [playlists, setPlaylists] = useState([]);
@@ -25,6 +26,7 @@ export default function PlaylistNames({ playlists, setPlaylists }) {
 
   function AddSongsPage(id) {
     console.log(id);
+    setPlaylistId(id);
     console.log("Add Songs Clicked.");
     setSongAddState(true);
     // console.log(buttonClicked);
@@ -41,7 +43,7 @@ export default function PlaylistNames({ playlists, setPlaylists }) {
   //   }
   // }
   if(songAddState===true){
-    addRender = <AddSongs />;
+    addRender = <AddSongs user_id={user_id} setUserId={setUserId} playlist_id={playlist_id} setPlaylistId={setPlaylistId} />;
   } else {
     addRender = <h1>Add songs above to your desired playlist</h1>;
     

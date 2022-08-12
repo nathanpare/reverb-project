@@ -1,23 +1,23 @@
 User Stories
 
-- User can view home page with sample songs
-- User can got to login page and login with their spotify account
-- User can logout
-- User can view further info such as about and contact from the footer
-- User can see the home page with Featured songs, Albums of the summer etc.
-- User can play, Add songs to playlists and add to their Liked songs
+
+- User can got to login page and login with their spotify account - Done
+- User can logout - Done
+- User can view further info such as about and contact from the footer- Nathan
+- User can see the home page with Featured songs, Albums of the summer etc.-Done
+- User can play, Add songs to playlists and add to their Liked songs - Robin 
 - User can Navigate to all pages from sidebar, Search songs, go to library,
-  view genres, view their liked songs and playlists
-- User can view their songs, albums, artists, playlists, genres and podcasts
- from the library page
-- User can play and add songs from all pages
-- User can view, create and delete playlists and liked songs
+  view genres, view their liked songs and playlists- Done
+- User can view their songs, albums, artists, playlists, Likes, genres --and podcasts-stretch
+ from the library page - Robert 
+- User can play and add songs from all pages- Done
+- User can view, create and delete playlists and liked songs - Progress-Robin
  from corresponding pages (CRUD)
- - within the library page:
+ - within the library page: Progress-Robert
   - user can render a preview category for:
     - songs
     - artists
     - playlists
     - genres
     - podcasts
-  - user can also 'expand all', routing them to the full page version of each category, e.g. albums page, playlists page, etc etc
+  - user can also 'expand all', routing them to the full page version of each category, e.g. albums page, playlists page, etc etc- Progress-Robert

@@ -1,34 +1,38 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useInsertionEffect } from "react";
 import '../PlaylistComponents/CreatePlaylists.css';
 import axios from 'axios';
 import PlaylistDetails from './playlistsdetails';
 import Playlists from "../playlists";
-//import e from "express";
-//import { reset } from "nodemon";
-// class CreatePlaylists extends Component {
-//   render() {
-  const playlistObject ={
-    name: 'name',
-    id: 'id',
-    email: 'email'
-  }
+//import { UseDataLayerValue } from '../../DataLayer'
+
+  //const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
+
+  // const playlistObject ={
+  //   name: 'name',
+  //   id: 'id',
+  //   email: 'email'
+  // }
 export default function CreatePlaylists(props) {
-  // const name = props.user.display_name;
-  // const name = user.display_name;
+
   console.log(props);
   console.log(props.user.display_name);
   console.log(props.user.id);
-  //console.log(props.user.email); email not found
+  //console.log(users);
+ 
+
   const [playlists, setPlaylists] = useState([]);
   const [spotify_name, setSpotifyName]= useState("");
-  //const [spotify_email, setSpotifyEmail] = useState("");
+ 
   const [spotify_user_id, setSpotifyUserId] = useState("");
 
   const [playlist_name, setPlaylistName] = useState("");
-  //const [playlist_image_url, setPlaylistImageUrl]= useState("");
 
-  // const [playlistObject, setPlaylistObject] = userState({})
   const[users, setUsers] =useState([]);
+  const [user_id, setUserId] = useState(0);
+  console.log(users);
+  if(user_id === 0){
+    setUserIdFunction()
+  }
 
   const fetchData = () =>{
     const usersApi=`http://localhost:8080/users`;
@@ -44,6 +48,7 @@ export default function CreatePlaylists(props) {
         console.log(allPlaylistData);
         setUsers([...allUserData]);
         setPlaylists([...allPlaylistData]);
+      
       })
     ).catch(error =>{
       console.log(error);
@@ -58,53 +63,77 @@ export default function CreatePlaylists(props) {
     
     //   }).catch(error =>{
     //     console.log(error);
-    //   })      
-      fetchData();
+    //   })       
+      fetchData();        
 
   }, []);
+
+  // useEffect(() => {
+  // addUser();
+  // }, []);
   //include catch always
   
-  function handleClick(event) {
-    event.preventDefault();
-    const playlistsobj = {
-      playlist_name,
-      spotify_user_id
+  // function handleClick(event) {
+  //   event.preventDefault();
+  //   const playlistsobj = {
+  //     playlist_name,
+  //     spotify_user_id
 
-    }
-    //addPlaylists(playlistObject);
-   // resetForm();
+  //   }
+  //   //addPlaylists(playlistObject);
+  //  // resetForm();
   
-  }
+  // }
   function addUser(){
     
     const spotify_name= props.user.display_name;
     const spotify_user_id = props.user.id;
+    console.log(spotify_name);
+    console.log(spotify_user_id);
+    console.log(users);    
+    console.log(playlists);
     const usersObject = {spotify_name: spotify_name, spotify_user_id: spotify_user_id};
     
     const filtered_user_table = users.filter(user =>{
       return user.spotify_name === props.user.display_name;
     })
-  if(filtered_user_table){
+    console.log(filtered_user_table);
+    console.log(usersObject);
+    if(filtered_user_table.length>0){
+      console.log("two", filtered_user_table);
     return;
-  }
-
-    
+  }    
     return axios.post(`http://localhost:8080/users`, usersObject)
     .then((response) => {
       console.log("user added: ", usersObject);
       const newUser =response.data;
       setUsers([newUser, ...users]);
-    });
-  }
-  const addPlaylist= () =>{
-    addUser();
-    console.log(users);
+      console.log(users);
+    }).catch(error =>{
+      console.log(error.message);
+    });      
     
-    const filtered_user_table = users.filter(user =>{
-      return user.spotify_name === props.user.display_name;
-    })
-    console.log(filtered_user_table[0].id);
-    const user_id_tableUsers =filtered_user_table[0].id;
+    console.log("database added");
+  }
+
+
+  const addPlaylist= () =>{
+    const spotify_name= props.user.display_name;
+    const spotify_user_id = props.user.id;
+    // console.log(spotify_name);
+    // console.log(spotify_user_id);
+    addUser();
+    // console.log(users);
+    // console.log(props.user.display_name);
+    
+    // const filtered_user_table = users.filter(user =>{
+    //   console.log(user.spotify_name);
+    //   return user.spotify_name === props.user.display_name;
+    // })
+    // console.log(filtered_user_table[0].id);
+    // const user_id_tableUsers =filtered_user_table[0].id;
+
+    // setUserId(user_id_tableUsers);
 
 
     const filtered_playlists_table = playlists.find(playlist =>{
@@ -115,9 +144,8 @@ export default function CreatePlaylists(props) {
       console.log("playlistname already exists", filtered_playlists_table);
       return;
     }
-    
-      
-    const playlistObject = { name: playlist_name, user_id: user_id_tableUsers, image_url:"xxxxx" };
+          
+    const playlistObject = { name: playlist_name, user_id: user_id, image_url:"xxxxx" };
    
     return axios.post(`http://localhost:8080/playlists`, playlistObject)
     .then((response) => {
@@ -126,6 +154,21 @@ export default function CreatePlaylists(props) {
       setPlaylists([newPlaylist, ...playlists]);
     });
   };
+
+  function setUserIdFunction(){
+    console.log(users);
+    console.log(props.user.display_name);
+    if(users.length>0){
+      const filtered_user_table = users.filter(user =>{
+        console.log(user.spotify_name);
+        return user.spotify_name === props.user.display_name;
+      })
+      console.log(filtered_user_table[0].id);
+      const user_id_tableUsers =filtered_user_table[0].id;
+  
+      setUserId(user_id_tableUsers);
+    }
+  }
 
   return (
     <div className="createplaylists">
@@ -142,7 +185,7 @@ export default function CreatePlaylists(props) {
         {"      "}
         <input className="button_submit" type="submit" value="submit" onClick={addPlaylist}></input>
       </form>
-      <PlaylistDetails playlists={playlists} setPlaylists={setPlaylists} />
+      <PlaylistDetails playlists={playlists} setPlaylists={setPlaylists} user_id={user_id} setUserId={setUserId}/>
     </div>
   )
 }
