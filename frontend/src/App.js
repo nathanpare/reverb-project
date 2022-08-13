@@ -103,8 +103,9 @@ function App() {
           })
         })
 
-      spotify.searchTracks(searchResult)
+      spotify.searchTracks("love")
         .then((search) => {
+          console.log("HELLO")
           dispatch({
             type: "SET_SEARCH",
             search: search,
@@ -136,7 +137,6 @@ function App() {
   console.log("PLAYLISTS", playlists);
   console.log("RECENTS", recents);
   console.log("FEATURED", featured);
-  console.log("Search", search);
   return (
     <div className='app'>
     {token ? 
@@ -181,7 +181,7 @@ function App() {
       </div>
       <div className='view'>
         {view === "Home" && <Home />}
-        {view === "Search" && <Search searchResult={searchResult} setSearchResult={setSearchResult} />}
+        {view === "Search" && <Search searchResult={searchResult} setSearchResult={setSearchResult} spotify={spotify} />}
         {view === "CreatePlaylists" && <CreatePlaylists user={user} />}     
       </div>
       <div className='player-div'>

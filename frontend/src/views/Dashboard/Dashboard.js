@@ -41,12 +41,14 @@ export default function Dashboard() {
           <p>Songs of the Summer</p>
         </div>
         <div className="summer-songs">
-          {summers?.tracks?.map((summer) => (
+          {summers?.tracks?.map((item) => (
             <SummerSongs
-              title={summer.name}
-              artist={summer.artists[0].name}
-              img={summer.album.images[0].url}
-              summer={summer} />
+              title={item.name}
+              artist={item.artists[0].name}
+              img={item.album.images[0].url}
+              setPlayingTrack={setPlayingTrack}
+              item={item}
+              onPlay={setPlayingTrack} />
           ))}
         </div>
 
@@ -54,12 +56,14 @@ export default function Dashboard() {
           <p>Recently Played</p>
         </div>
         <div className="recent-songs">
-          {recents?.items?.map((recent) => (
+          {recents?.items?.map((item) => (
             <RecentSongs
-              title={recent.track.name}
-              artist={recent.track.artists[0].name}
-              img={recent.track.album.images[0].url}
-              recent={recent} />
+              title={item.track.name}
+              artist={item.track.artists[0].name}
+              img={item.track.album.images[0].url}
+              setPlayingTrack={setPlayingTrack}
+              item={item}
+              onPlay={setPlayingTrack} />
           ))}
         </div>
 
@@ -67,12 +71,14 @@ export default function Dashboard() {
           <p>New Releases</p>
         </div>
         <div className="releases-songs">
-          {releases?.albums?.items.map((release) => (
+          {releases?.albums?.items.map((item) => (
             <Releases
-              title={release.name}
-              artist={release.artists[0].name}
-              img={release.images[0].url}
-              release={release} />
+              title={item.name}
+              artist={item.artists[0].name}
+              img={item.images[0].url}
+              setPlayingTrack={setPlayingTrack}
+              item={item}
+              onPlay={setPlayingTrack} />
           ))}
         </div>
       </div>
