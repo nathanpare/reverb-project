@@ -19,4 +19,5 @@ Run for schema and seed data copying all at once:
 \i db/seeds/03_likes_seed.sql
 \i db/seeds/04_playlist_songs_seed.sql
 
-3. Go to another terminal and go to server directory and run: npm start
+3. Go to backend/server/connection.js file and change your user and password from your database user and password.
+4. Go to another terminal and go to server directory and run: npm start

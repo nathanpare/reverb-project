@@ -123,17 +123,7 @@ export default function CreatePlaylists(props) {
     // console.log(spotify_name);
     // console.log(spotify_user_id);
     addUser();
-    // console.log(users);
-    // console.log(props.user.display_name);
-    
-    // const filtered_user_table = users.filter(user =>{
-    //   console.log(user.spotify_name);
-    //   return user.spotify_name === props.user.display_name;
-    // })
-    // console.log(filtered_user_table[0].id);
-    // const user_id_tableUsers =filtered_user_table[0].id;
-
-    // setUserId(user_id_tableUsers);
+   
 
 
     const filtered_playlists_table = playlists.find(playlist =>{
