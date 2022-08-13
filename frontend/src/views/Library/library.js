@@ -9,15 +9,20 @@ import Podcasts from './podcasts';
 import Footer from '../footer/Footer';
 import ReactDOM from "react-dom/client";
 import Button from 'react-bootstrap/Button';
+import axios from 'axios';
+// require('dotenv').config();
+import { UseDataLayerValue } from '../../DataLayer';
+import { user } from 'pg/lib/defaults';
 
-// function SongsPreview() {
-//   return (
-//     <div className="songs-components">
-//       <RenderSongsPreview />
-//       <Button onClick={Songs}>All Songs</Button>
-//     </div>
-//   );
-// }
+function SongsPreview() {
+  return (
+    <div className="songs-components">
+      {/* <RenderSongsPreview /> */}
+      {/* <Button onClick={Songs}>All Songs</Button> */}
+      <h1>AA</h1>
+    </div>
+  );
+}
 
 function ArtistsPreview() {
   const [area, setArea] = useState(false);
@@ -124,51 +129,100 @@ function RenderGenresPreview() {
   )
 };
  
-export default function Library() {
-  const [songs, setSongs] = useState(false); 
-  const [albums, setLibrary] = useState(false);
+export default function Library(props) {
+  const [songs, setSongs] = useState(false);
   const [artists, setArtists] = useState(false);
+  const [albums, setAlbums] = useState(false);
   const [playlists, setPlaylists] = useState(false);
-  const [genresprev, setGenres] = useState(false);
-  const [podcastsprev, setPodcasts] = useState(false);
+  const [genres, setGenres] = useState();
 
-  const fullSongs = (
-    <div>
-      <ul>
-        <li>Song</li>
-        <li>Song</li>
-        <li>Song</li>
-        <li>Song</li>
-        <li>Song</li>
-      </ul>
-    </div>
-  )
+  const [{ albums, playlists, }, dispatch] = UseDataLayerValue();
 
-  const fillSongs = () => {
-    // get div id and then clear
-    // store info in state
-    setSongs(true);
-  } 
+  const fetchData = () => {
+    const usersApi = `https://localhost:8080/users`;
+    const playlistsApi = `http://localhost:8080/playlists`;
+    const artistsApi = `http://localhost:8080/artists`;
+    const albumsApi = `http"//localhost:8080/albums`;
+    const tracksApi = `http://localhost:8080/tracks`;
+    const genresApi = `http://localhost:8080/genres`;
 
-  const fillLibrary = () => {
-    setLibrary(true);
+    const getUsers = `http://localhost:8080/`;
+    const getPlaylists = `http://localhost:8080/`;
+    const getArtists = `http://localhost:8080/`;
+    const getAlbums = `http://localhost:8080/`;
+    const getTracks = `http://localhost:8080/`;
+    const getGenres = `http://localhost:8080/`;
+    
+    axios.all([fetchArtists, fetchAlbums, fetchPlaylists, fetchTracks, fetchGenres]).then(
+      axios.spread((...allData) => {
+        // yoink the data you need and save to variables
+      })
+    ).catch(error => {
+      console.log(error);
+    })
   }
 
-  const fillArtists = () => {
-    setArtists(true);
-  }
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-  const fillPlaylists = () => {
-    setPlaylists(true);
+  function fetchUser() {
+    const user_name = props.user.display_name;
+    const spotify_user_id = props.user.id;
+    const usersObject = {
+      usrName: spotify_name, 
+      usrId: spotify_user_id
+    }
+    const userLibObj = {
+      libAlbums: user.albumsData,
+      libTracks: user.trackData,
+      libPlaylists: user.playlistData,
+      libArtists: user.artistData,
+      libGenres: user.genresData,
+    }
+    return axios.post(`http://localhost:8080/users`)
   }
+  
+  // axios.all([
+  //   axios.post(`/my-url`, {
+  //     myVar: 'myValue'
+  //   }), 
+  //   axios.post(`/my-url2`, {
+  //     myVar: 'myValue'
+  //   })
+  // ])
+  // .then(axios.spread((data1, data2) => {
+  //   // output of req.
+  //   console.log('data1', data1, 'data2', data2)
+  // }));
 
-  const fillGenres = () => {
-    setGenres(true);
-  }
+  // line 106 of create playlists
 
-  const fillPodcasts = () => {
-    setPodcasts(true);
-  }
+  // const fillSongs = () => {
+  //   // get div id and then clear
+  //   // store info in state
+  //   setSongs(true);
+  // } 
+
+  // const fillLibrary = () => {
+  //   setLibrary(true);
+  // }
+
+  // const fillArtists = () => {
+  //   setArtists(true);
+  // }
+
+  // const fillPlaylists = () => {
+  //   setPlaylists(true);
+  // }
+
+  // const fillGenres = () => {
+  //   setGenres(true);
+  // }
+
+  // const fillPodcasts = () => {
+  //   setPodcasts(true);
+  // }
 
   const name= "User111";
 
@@ -179,12 +233,12 @@ export default function Library() {
         <h1>TESTTEST</h1>
         <h3>Good morning, {name}</h3>
       </header>
-      {/* <div className="songs-components">
+      <div className="songs-components">
         <h5>Songs</h5>
         <Button>
           <SongsPreview />
         </Button>
-      </div> */}
+      </div>
       <div className="albums-components">
         <h5>Albums</h5>
         <Button>
