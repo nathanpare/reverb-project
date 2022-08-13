@@ -1,13 +1,13 @@
 import React from 'react';
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
-export default function RecentSongs({ title, artist, img, chooseTrackRecent, recent }) {
+export default function RecentSongs({ title, artist, img, setPlayingTrack, item }) {
   const handlePlay = () => {
-    chooseTrackRecent(recent);
-    console.log("THIS", recent);
+    setPlayingTrack(item.track);
+    console.log("TRACKKK", item);
   }
   return (
-    <div className="song" onClick={handlePlay}>
+    <div className="song">
       <div className="image">
         <img alt={""} src={img}
           width="150" height="150" />

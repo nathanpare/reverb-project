@@ -1,11 +1,9 @@
-import React, { useState } from 'react';
-import { UseDataLayerValue } from '../../DataLayer'
+import React from 'react';
 import "../Home/Home.css"
 import Dashboard from '../Dashboard/Dashboard';
 import Player from '../Dashboard/Player';
 import "../sidebar/Sidebar.css"
 import "../Dashboard/Dashboard.css";
-import "../Nav/Nav.css";
 
 function Home() {
 

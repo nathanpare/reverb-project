@@ -1,13 +1,13 @@
 import React from 'react';
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
-export default function Releases({ title, artist, img, chooseTrackReleases, release }) {
+export default function Releases({ title, artist, img, setPlayingTrack, item }) {
   const handlePlay = () => {
-    chooseTrackReleases(release);
-    console.log("TRACKKK", release);
+    setPlayingTrack(item);
+    console.log("TRACKKK", item);
   }
   return (
-    <div className="song" onClick={handlePlay} >
+    <div className="song">
       <div className="image">
         <img alt={""} src={img}
           width="150" height="150" />
