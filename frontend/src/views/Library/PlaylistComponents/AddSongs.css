@@ -1,3 +1,15 @@
 .addsongs {
-  background-color: white;
+  background-color: lightblue;
+}
+.addsongtitle {
+  background-color: transparent;
+  padding-left: 3px;
+  height: 10px;
+  font-size: 30px;
+  font-weight: bold;
+  font-family: "Gill Sans", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  color: purple;
+  margin-top: 20px;
 }

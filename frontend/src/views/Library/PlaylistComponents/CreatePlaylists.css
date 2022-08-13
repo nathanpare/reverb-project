@@ -1,4 +1,41 @@
 .createplaylists {
-  background-color: white;
+  background-color: lightblue;
   margin-left: 12.5rem;
+  padding: 5%;
+  width: 100%;
+  
+}
+.headerword {
+  font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+.addplaylistslabel {
+  font: italic 1.2em "Fira Sans", serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.button_submit {
+  background-color:green;
+  border-radius: 25px;
+  border: 1px solid #FF4742;
+  width: 20%;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+
+}
+.button_submit:hover,
+.button_submit:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+.button_submit {
+  opacity: 1;
 }

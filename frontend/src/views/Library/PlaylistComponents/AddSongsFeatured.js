@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function Featured({ title, artist, img, chooseTrack, features, addPlaylistSongs, song_id, song_name}) {
+
   return (
     <div className="song" >
       <div className="image">

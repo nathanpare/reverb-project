@@ -166,7 +166,7 @@ export default function CreatePlaylists(props) {
   return (
     <div className="createplaylists">
 
-      <h1>Create Playlists</h1>
+      <div className="headerword">Create Playlists</div>
       <form onSubmit={e => e.preventDefault()}>
         <label className="addplaylistslabel">
           Playlist Name:
@@ -176,7 +176,7 @@ export default function CreatePlaylists(props) {
 
         </label>
         {"      "}
-        <input className="button_submit" type="submit" value="submit" onClick={addPlaylist}></input>
+        <input className="button_submit" type="submit" value="Submit" onClick={addPlaylist}></input>
       </form>
       <PlaylistDetails playlists={playlists} setPlaylists={setPlaylists} user_id={user_id} setUserId={setUserId}/>
     </div>

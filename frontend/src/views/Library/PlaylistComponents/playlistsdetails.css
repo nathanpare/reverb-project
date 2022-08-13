@@ -1,0 +1,68 @@
+.tableinfo {
+  font-size: 20px;
+  font-family: cursive;
+  font-weight: bold;
+}
+.playlists-table tr td {
+  height: 35px;
+  border-style: solid;
+  border-color: purple;
+
+}
+.playlistname {
+  background-color: transparent;
+  padding-left: 3px;
+  height: 10px;
+  font-size: 20px;
+  font-style: italic;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
+  text-align: center;
+  color: purple;
+}
+.button_add_songs {
+  background-color:green;
+  border-radius: 20px;
+  border: 1px solid #FF4742;
+  width: 130px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+}
+.button_add_songs:hover,
+.button_add_songs:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+.button_add_songs {
+  opacity: 1;
+}
+.button_delete {
+  background-color: darkred;
+  border-radius: 15px;
+  border: 1px solid #FF4742;
+  width: 70px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
+  font-style: italic;
+}
+.button_delete:hover,
+.button_delete:active {
+  background-color: initial;
+  background-position: 0 0;
+  color: #FF4742;
+}
+.button_delete {
+  opacity: 1;
+}
+.playlistmessage {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+}

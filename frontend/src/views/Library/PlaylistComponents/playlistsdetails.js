@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from 'axios';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import AddSongs from './AddSongs';
+import './playlistsdetails.css';
+
 export default function PlaylistNames({ playlists, setPlaylists, user_id, setUserId }) {
   const [songAddState, setSongAddState] = useState(false);
   const [playlist_id, setPlaylistId] = useState(0);
@@ -26,29 +28,26 @@ export default function PlaylistNames({ playlists, setPlaylists, user_id, setUse
   }
 
   if (songAddState === true) {
-    addRender = <AddSongs user_id={user_id}  playlist_id={playlist_id} />;
+    addRender = <AddSongs user_id={user_id}  playlist_id={playlist_id} playlists={playlists}/>;
   } else {
-    addRender = <h1>Add songs above to your desired playlist</h1>;
+    addRender = <div className="playlistmessage">Add songs to your desired playlist</div>;
 
   }
 
   return (
     <>
-      <div>
+      <div className="tableinfo">
         List of Playlists</div>
       <table className="playlists-table">
         <thead>
           <tr>
-
-            <th>TableName</th>
-
           </tr>
         </thead>
         <tbody>
           {playlists.map((playlist, index) => {
             return (
               <tr key={index}>
-                <td>{playlist.name}</td>
+                <td className="playlistname">***{playlist.name}***</td>
                 <td>
                   <button className="button_delete" onClick={() => deletePlaylist(playlist.id)}  >
                     Delete
@@ -65,6 +64,7 @@ export default function PlaylistNames({ playlists, setPlaylists, user_id, setUse
 
         </tbody>
       </table>
+  
       {addRender}
     </>
   )
