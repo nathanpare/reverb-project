@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from 'axios';
-import { Routes, Route, useNavigate } from 'react-router-dom';
+//import { Routes, Route, useNavigate } from 'react-router-dom';
 import AddSongs from './AddSongs';
 import './playlistsdetails.css';
 
-export default function PlaylistNames({ playlists, setPlaylists, user_id, setUserId }) {
+export default function PlaylistNames({ playlists, setPlaylists, user_id }) {
   const [songAddState, setSongAddState] = useState(false);
   const [playlist_id, setPlaylistId] = useState(0);
 
@@ -20,9 +20,9 @@ export default function PlaylistNames({ playlists, setPlaylists, user_id, setUse
 
 
   function AddSongsPage(id) {
-    console.log(id);
+   // console.log(id);
     setPlaylistId(id);
-    console.log("Add Songs Clicked.");
+   // console.log("Add Songs Clicked.");
     setSongAddState(true);
  
   }

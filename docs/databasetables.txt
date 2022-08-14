@@ -6,7 +6,7 @@ Run:
 
 --Database is created
 
-2. Connect the database
+2. Connect the database by # \c spotifyclone;
 Run for schema and seed data copying all at once:
 
 \i db/schema/01_users.sql

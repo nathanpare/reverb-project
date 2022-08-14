@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Featured({ title, artist, img, chooseTrack, features, addPlaylistSongs, song_id, song_name}) {
+export default function Featured({ title, artist, img, chooseTrack, features, addMultiFunctionPlaylistSongs, song_id, song_name}) {
 
   return (
     <div className="song" >
@@ -10,7 +10,7 @@ export default function Featured({ title, artist, img, chooseTrack, features, ad
       </div>
       <p className="name">{title}</p>
       <p className="artist">{artist}</p>
-      <button className="button_add_songs" onClick={() => addPlaylistSongs(song_id, song_name)}  >
+      <button className="button_add_songs" onClick={() => addMultiFunctionPlaylistSongs(song_id, song_name)}  >
           Add Song
         </button>
     </div>
