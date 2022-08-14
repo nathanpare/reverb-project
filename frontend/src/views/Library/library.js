@@ -46,34 +46,34 @@ import { user } from 'pg/lib/defaults';
 
 function SongsPreview() {
   return (
-    <ul className="stock-songs">
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
-      <li className="stock-song">Track: Artist: Album: </li>
+    <ul className="songs-items">
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
+      <li className="songs-item">Track: Artist: Album: </li>
     </ul>
   )
 }
 
 function AlbumsPreview() {
   return (
-    <ul className="stock-albums">
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
-      <li className="stock-album">AlbumName: Artist: </li>
+    <ul className="albums-items">
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
+      <li className="albums-item">AlbumName: Artist: </li>
     </ul>
   );
   
@@ -81,67 +81,68 @@ function AlbumsPreview() {
 
 function PlaylistsPreview() {
   return (
-    <ul className="stock-playlists">
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
-      <li className="stock-playlist">Playlist </li>
+    <ul className="playlists-items">
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
+      <li className="playlists-item">Playlist</li>
     </ul>
   )
 }
 
 function ArtistsPreview() {
   return (
-    <ul className="stock-artists">
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
-      <li className="stock-artist">Artist</li>
+    <ul className="artists-items">
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
+      <li className="artists-item">Artist</li>
     </ul>
   )
 }
 
 function GenresPreview() {
   return (
-    <ul className="stock-genres">
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
-      <li className="stock-genre">Genre</li>
+    <ul className="genres-items">
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
+      <li className="genres-item">Genre</li>
     </ul>
   )
 }
 
 function PodcastsPreview() {
   return (
-    <ul className="stock-podcasts">
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
-      <li className="stock-podcast">Podcast</li>
+    <ul className="podcasts-items">
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
+      <li className="podcasts-item">Podcast</li>
     </ul>
   )
 }
@@ -245,7 +246,9 @@ export default function Library(props) {
         <h3 className="header-message">Good morning, {name}</h3>
       </header>
         <body className="page-components">
+
           <div className="left-side">
+
             <div className="songs-components">
               <h5 className="songs-header">Songs</h5>
                 <div className="songs-items">
@@ -270,6 +273,7 @@ export default function Library(props) {
           </div>
 
           <div className="right-side">
+
             <div className="playlists-components">
               <h5 className="playlists-header">Playlists</h5>
                 <div className="playlists-items">
@@ -291,6 +295,7 @@ export default function Library(props) {
                   <Button className="all-podcasts-button">All Podcasts</Button>
                 </div>
             </div>
+
           </div>         
         </body>
       <Footer />

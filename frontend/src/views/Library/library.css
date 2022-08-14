@@ -1,12 +1,7 @@
 .library-page {
   display: flex;
   flex-direction: column;
-  /* flex-flow: column wrap; */
-  /* justify-content: space-evenly; */
-  /* align-items: space-evenly; */
-  /* align-content: stretch; */
-  /* height: 70vh; */
-  /* flex-wrap: wrap; */
+  justify-content: space-evenly;
 }
 
 .page-header {
@@ -31,36 +26,45 @@
 
 .page-components {
   display: flex;
-  /* flex-direction: column;*/
-  flex-flow: row wrap;
-  justify-content: space-evenly;
-  height: 80vh;
-  border: 3px solid green;
+  flex-direction: row;
+  flex-grow: 1;
 }
 
 .left-side {
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
+  /* flex-flow: column wrap; */
+  flex-direction: column;
   width: 50%;
+  /* flex: auto; */
+  border: 5px solid green;
 }
 
 .right-side {
   display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
+  flex-flow: column wrap;
   width: 50%;
+  flex-grow: 1;
+  border: 5px solid red;
 }
 
 .songs-components {
-  
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+  flex: 1;
 }
 
 .songs-header {
-
+  display: flex;
+  flex-flow: row wrap;
 } 
 
 .songs-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.song-item {
   
 }
 
@@ -70,7 +74,11 @@
 }
 
 .albums-components {
-  
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+
+  flex: 1;
 }
 
 .albums-header {
@@ -78,7 +86,13 @@
 }
 
 .albums-items {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+}
 
+.albums-item {
+  /* background-color: red; */
 }
 
 .all-albums-button {
@@ -86,7 +100,10 @@
 }
 
 .playlists-components {
-
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+  flex: 1;
 }
 
 .playlists-header {
@@ -94,7 +111,12 @@
 }
 
 .playlists-items {
+  display: flex;
+  flex-flow: row wrap;
+}
 
+.playlists-item {
+  
 }
 
 .all-playlists-button {
@@ -102,7 +124,10 @@
 }
 
 .artists-components {
-
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+  /* flex: 1; */
 }
 
 .artists-header {
@@ -110,7 +135,12 @@
 }
 
 .artists-items {
+  display: flex;
+  flex-flow: row wrap;
+}
 
+.artists-item {
+  
 }
 
 .all-artists-button {
@@ -118,7 +148,9 @@
 }
 
 .genres-components {
-
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
 }
 
 .genres-header {
@@ -126,6 +158,11 @@
 }
 
 .genres-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.genres-item {
 
 }
 
@@ -134,7 +171,9 @@
 }
 
 .podcasts-components {
-  
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
 }
 
 .podcasts-header {
@@ -142,73 +181,14 @@
 }
   
 .podcasts-items {
+  display: flex;
+  flex-flow: row wrap;
+}
 
+.podcasts-item {
+  
 }
 
 .all-podcasts-button {
-
-}
-
-
-
-/* Once again making stock items */
-.stock-songs {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-}
-
-.stock-song {
-  
-}
-
-.stock-albums {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-}
-
-.stock-album {
-
-}
-
-.stock-artists {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-}
-
-.stock-artist {
-  
-}
-
-.stock-playlists {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-}
-
-.stock-playlist {
-
-}
-
-
-.stock-genres {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-}
-
-.stock-genre {
-
-}
-
-.stock-podcasts {
-  display: flex;
-  flex-direction: row;
-  flex-flow: row wrap;
-}
-
-.stock-podcast {
 
 }
