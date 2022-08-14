@@ -55,7 +55,7 @@ export default function CreatePlaylists(props) {
       addUser();
       setFirstRender("B");
     }
-  }, []);
+  }, [firstRender]);
 
 
   function addUser() {
@@ -64,7 +64,10 @@ export default function CreatePlaylists(props) {
     const spotify_user_id = props.user.id;
     // console.log(spotify_name);
     // console.log(spotify_user_id);
-    // console.log(users);
+    //  console.log(users);
+    //  if(users.length===0){
+    //   return;
+    //  }
     // console.log(playlists);
     const usersObject = { spotify_name: spotify_name, spotify_user_id: spotify_user_id };
 
