@@ -45,7 +45,105 @@ import { user } from 'pg/lib/defaults';
 // }
 
 function SongsPreview() {
+  return (
+    <ul className="stock-songs">
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+      <li className="stock-song">Track: Artist: Album: </li>
+    </ul>
+  )
+}
+
+function AlbumsPreview() {
+  return (
+    <ul className="stock-albums">
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+      <li className="stock-album">AlbumName: Artist: </li>
+    </ul>
+  );
   
+}
+
+function PlaylistsPreview() {
+  return (
+    <ul className="stock-playlists">
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+      <li className="stock-playlist">Playlist </li>
+    </ul>
+  )
+}
+
+function ArtistsPreview() {
+  return (
+    <ul className="stock-artists">
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+      <li className="stock-artist">Artist</li>
+    </ul>
+  )
+}
+
+function GenresPreview() {
+  return (
+    <ul className="stock-genres">
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+      <li className="stock-genre">Genre</li>
+    </ul>
+  )
+}
+
+function PodcastsPreview() {
+  return (
+    <ul className="stock-podcasts">
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+      <li className="stock-podcast">Podcast</li>
+    </ul>
+  )
 }
  
 export default function Library(props) {
@@ -151,22 +249,22 @@ export default function Library(props) {
             <div className="songs-components">
               <h5 className="songs-header">Songs</h5>
                 <div className="songs-items">
-                  {/* <SongsPreview /> */}
-                  <Button>All Songs</Button>
+                  <SongsPreview />
+                  <Button className="all-songs-button">All Songs</Button>
                 </div>
             </div>
             <div className="albums-components">
               <h5 className="albums-header">Albums</h5>
                 <div className="albums-items">
-                  {/* <AlbumsPreview /> */}
-                  <Button>All Albums</Button>
+                  <AlbumsPreview />
+                  <Button className="all-albums-button">All Albums</Button>
                 </div>
             </div>
             <div className="artists-components">
               <h5 className="artists-header">Artists</h5>
                 <div className="artists-items">
-                  {/* <ArtistsPreview /> */}
-                  <Button>All Artists</Button>
+                  <ArtistsPreview />
+                  <Button className="all-artists-button">All Artists</Button>
                 </div>
             </div>
           </div>
@@ -175,22 +273,22 @@ export default function Library(props) {
             <div className="playlists-components">
               <h5 className="playlists-header">Playlists</h5>
                 <div className="playlists-items">
-                  {/* <PlaylistsPreview /> */}
-                  <Button>All Playlists</Button>
+                  <PlaylistsPreview />
+                  <Button className="all-playlists-button">All Playlists</Button>
                 </div>
             </div>
             <div className="genres-components">
               <h5 className="genres-header">Genres</h5>
                 <div className="genres-items">
-                  {/* <GenresPreview /> */}
-                  <Button>All Genres</Button>
+                  <GenresPreview />
+                  <Button className="all-genres-button">All Genres</Button>
                 </div>
             </div>
             <div className="podcasts-components">
               <h5 className="podcasts-header">Podcasts</h5>
                 <div className="podcasts-items">
-                  {/* <PodcastsPreview /> */}
-                  <Button>All Podcasts</Button>
+                  <PodcastsPreview />
+                  <Button className="all-podcasts-button">All Podcasts</Button>
                 </div>
             </div>
           </div>         
@@ -199,35 +297,3 @@ export default function Library(props) {
     </div>
   );
 }
-
-
-
-// function () {
-//   const [] = useState(false);
-
-//   return (
-//     <div>
-//       <h4>TEST</h4>
-//     </div>
-//   );
-// }
-
-
-// <div className={"songs-components"}>
-// <RenderSongsPreview />
-// </div>
-// <div className="albums-components">
-// <RenderAlbumsPreview />
-// </div>
-// <div className="artists-components">
-// {/* <RenderArtistsPreview /> */}
-// </div>
-// <div className="playlists-components">
-// {/* <RenderPlaylistsPreview /> */}
-// </div>
-// <div className="genres-components">
-// {/* <RenderGenresPreview /> */}
-// </div>
-// <div className={"podcasts-components"}>
-// {/* <RenderPodcastsPreview /> */}
-// </div>
