@@ -74,15 +74,15 @@ export default function CreatePlaylists(props) {
     const filtered_user_table = users.filter(user => {
       return user.spotify_name === props.user.display_name;
     })
-    console.log(filtered_user_table);
-    console.log(usersObject);
+    //console.log(filtered_user_table);
+    //console.log(usersObject);
     if (filtered_user_table.length > 0) {
      // console.log("two", filtered_user_table);
       return;
     }
     return axios.post(`http://localhost:8080/users`, usersObject)
       .then((response) => {
-        console.log("user added: ", usersObject);
+       // console.log("user added: ", usersObject);
         const newUser = response.data;
         setUsers([newUser, ...users]);
         // console.log(users);
@@ -145,6 +145,7 @@ export default function CreatePlaylists(props) {
     <div className="createplaylists">
 
       <div className="headerword">Create Playlists</div>
+      <div className="createplaylistform">
       <form onSubmit={e => e.preventDefault()}>
         <label className="addplaylistslabel">
           Playlist Name:
@@ -156,7 +157,10 @@ export default function CreatePlaylists(props) {
         {"      "}
         <input className="button_submit" type="submit" value="Submit" onClick={addPlaylist}></input>
       </form>
+      </div>
+      <div className="playlistdetailsafter">
       <PlaylistDetails playlists={playlists} setPlaylists={setPlaylists} user_id={user_id} setUserId={setUserId} />
+      </div>
     </div>
   )
 }

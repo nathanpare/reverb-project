@@ -20,6 +20,17 @@
   text-align: center;
   color: purple;
 }
+.playlistmessage {
+  background-color: transparent;
+  padding-left: 3px;
+  height: 10px;
+  font-size: 20px;
+  font-style: italic;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: bold;
+  text-align: left;
+  color: darkblue;
+}
 .button_add_songs {
   background-color:green;
   border-radius: 20px;
