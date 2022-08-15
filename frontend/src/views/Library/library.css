@@ -1,151 +1,194 @@
-/* body {
-  display: flex;
-  justify-content: center;
-} */
-
-/*.library-page {*/
-/*  display: flex;*/
-/*  flex-direction: column;*/
-/*  align-items: center;*/
-/*  justify-content: center;*/
-/*}*/
-
-.library-components {
+.library-page {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  justify-content: space-evenly;
 }
 
 .page-header {
-  border: 5px solid white;
-}
-
-.category-span {
-  border: 5px solid white;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.songs-area {
-  border: 5px solid white;
-  display: flex;
-  /* justify-content: flex-start; */
-}
-
-#albums-area,
-.artists-area {
-  border: 5px solid white;
-  display: flex;
-}
-
-.albums-add-section {
-  display: flex;
-  justify-content: center;
-
-}
-
-.albums-add {
-  display: flex;
-  flex-direction: row;
-  gap: 10%;
-  border: 1px solid yellow;
+  align-self: center;
+  flex-direction: column;
+  align-items: center;
+  border: 10px outset gray;
   width: 50%;
-  text-align: center;
 }
 
-.genres-area {
-  border: 5px solid white;
-
-}
-
-.stock-album {
-  background-color: red;
-  width: 75px;
-  height: 75px;
-}
-
-.album-container,
-.stock-artist {
-  text-align: center;
-  margin: 1em;
-  border-radius: 5%;
-}
-
-/* navigation */
-.nav-elements {
-  border: 5px outset grey;
-  padding: 5px;
-}
-
-.nav-element {
-  margin: 5px;
-  padding: 1em;
-}
-
-.library-page,
-.albums-page,
-.artists-page,
-.genres-page,
-.songs-page,
-.podcasts-page {
-  width: 100vw;
-  height: 100vh;
+.page-title {
   display: flex;
-  flex-direction: column;
   align-items: center;
 }
 
-.albums-sort-by,
-.artists-sort-by,
-.genres-sort-by,
-.songs-sort-by,
-.genres-sort-by {
-  border: 5px outset grey;
+.header-message {
   display: flex;
-  flex-direction: column;
-  /*justify-content: center;*/
   align-items: center;
-  width: 20em;
-  margin: 5px;
-  padding: 5px;
+  /* border: 3px solid red; */
 }
 
-.albums-containers,
-.artists-containers,
-.genres-containers,
-.songs-containers,
-.podcasts-containers {
-  display: flex;
-  flex-direction: column;
-  margin: 5px;
-  width: 80vw;
-  align-items: center;
-  justify-content: space-evenly;
-  /*border: 5px solid red;*/
-}
-
-.albums-container,
-.artists-container,
-.genres-container,
-.podcasts-container,
-.songs-container {
-  width: 80%;
+.page-components {
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  /*flex-direction: column;*/
-  border: 5px outset grey;
+  flex-grow: 1;
 }
 
-.artists-page,
-.albums-page,
-.songs-page,
-.genres-page,
-.podcasts-page {
+.left-side {
   display: flex;
+  /* flex-flow: column wrap; */
   flex-direction: column;
-  align-items: center;
-  width: 80vw;
+  width: 50%;
+  /* flex: auto; */
+  border: 5px solid green;
+}
+
+.right-side {
+  display: flex;
+  flex-flow: column wrap;
+  width: 50%;
+  flex-grow: 1;
   border: 5px solid red;
+}
+
+.songs-components {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+  flex: 1;
+}
+
+.songs-header {
+  display: flex;
+  flex-flow: row wrap;
+} 
+
+.songs-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.song-item {
+  
+}
+
+
+.all-songs-button {
+
+}
+
+.albums-components {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+
+  flex: 1;
+}
+
+.albums-header {
+
+}
+
+.albums-items {
+  display: flex;
+  flex-flow: row wrap;
+  flex: 1;
+}
+
+.albums-item {
+  /* background-color: red; */
+}
+
+.all-albums-button {
+  
+}
+
+.playlists-components {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+  flex: 1;
+}
+
+.playlists-header {
+
+}
+
+.playlists-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.playlists-item {
+  
+}
+
+.all-playlists-button {
+
+}
+
+.artists-components {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+  /* flex: 1; */
+}
+
+.artists-header {
+
+}
+
+.artists-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.artists-item {
+  
+}
+
+.all-artists-button {
+
+}
+
+.genres-components {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+}
+
+.genres-header {
+
+}
+
+.genres-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.genres-item {
+
+}
+
+.all-genres-button {
+
+}
+
+.podcasts-components {
+  display: flex;
+  flex-flow: column wrap;
+  border: 5px outset gray;
+}
+
+.podcasts-header {
+
+}
+  
+.podcasts-items {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.podcasts-item {
+  
+}
+
+.all-podcasts-button {
+
 }
