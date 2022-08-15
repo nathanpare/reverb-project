@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 // import './library';
 import './library.css';
+import './albums.css';
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 // import FetchUserAlbums from "AlbumsComponents/FetchUserAlbums";
@@ -11,7 +12,7 @@ function addAlbum(library) {
 
   return (
     <div>
-      <h3>TEST</h3>
+      <h3>ADD</h3>
     </div>
   );
 }
@@ -21,16 +22,54 @@ function removeAlbum(library) {
 
   return (
     <div>
-      <h3>TEST</h3>
+      <h3>AAAA</h3>
     </div>
   );
+}
+
+function fetchAlbums(library) {
+  return (
+    <div>
+      <h3>TEST</h3>
+    </div>
+  )
 }
 
 export default function Albums() {
   // const [album, expandAlbum] = useState(false);
   // const [albums, albumsAdd] = useState(false);
 
-  // function getUserAlbums(id) {
+ 
+
+  return (
+    <div className="albums-page">
+      <header className="page-header">
+        <h1 className="page-title">Albums</h1>
+        {/* <h3 className="header-message">Albums</h3> */}
+      </header>
+      <body className="albums-page-components">
+        <div className="albums-sort-by">
+          <h5>Sort By: </h5>
+          <Button>Recently Added</Button>
+          <Button>Name</Button>
+        </div>
+        <div className="albums-page-items">
+          <ul>
+            <li className="albums-page-item">ALBUM</li>
+            <li className="albums-page-item">ALBUM</li>
+            <li className="albums-page-item">ALBUM</li>
+            <li className="albums-page-item">ALBUM</li>
+            <li className="albums-page-item">ALBUM</li>
+            <li className="albums-page-item">ALBUM</li>
+            <li className="albums-page-item">ALBUM</li>
+          </ul>
+        </div>
+      </body>
+    </div>
+  )
+}
+
+ // function getUserAlbums(id) {
       // let sortedAlbumsData = {};
   //     return axios.get(`http://localhost:8080/useralbums${id}`) 
   //     .then((data) => {
@@ -48,80 +87,6 @@ export default function Albums() {
   // }
 
 
-  return (
-    <body className="albums-page">
-      <header className="page-header">
-        <h3>Albums</h3>
-      </header>
-      <div className="albums-containers">
-        <div>
-          <div className={"albums-sort-by"}>
-            <h3 id={"sort-by-tag"}>Sort By:</h3>
-            <Button className={"albums-sort"}>Recently Added</Button>
-            <Button className={"albums-sort"}>Name</Button>
-          </div>
-          <div className={"albums-add-section"}>
-            <Button className={"albums-add"}>Add Album</Button>
-          </div>
-        </div>
-        <div className={"albums-container"}>
-        {/* {Object.values(sortedAlbumsData).map((data) => {
-          return (
-              <div className={"album-container"}>
-                <img
-                  src={data.cover}
-                  className={"album-cover"}
-                  width={"100px"}
-                  height={"100px"}
-                ></img>
-                <div className={"album-name"}>{data.albumName}</div>
-                <div className={"album-artist-name"}>{data.artistName}</div>
-                <div className={"album-tracks"}>
-                  <Button onClick={() => renderAlbum()}>{data.trackLength} tracks</Button>
-                </div>
-                <div className="add-album">Add to Library</div>
-              </div>
-              
-          );
-        })} */}
-        </div>
-        <div className="albums-container">
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-        </div>
-        <div className="albums-container">
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-          <div className="stock-album">ALBUM</div>
-        </div>
-      <div className={"render-album"}>AAAA</div>
-      </div>
-      <div>
-        {/* add onclick events to re render etc etc */}
-      </div>
-      <div className="render-albums-page"></div>
-      <div className="render-artists-page"></div>
-      <div className="render-songs-page"></div>
-      <div className="render-playlists-page"></div>
-      <div className="render-genres-page"></div>
-    </body>
-  );
-}
-
-
-  // albumData.albums.forEach(alb => {
-  //   sortedAlbumsData[alb.id] = {
-  //     albumName: alb.name,
-  //     id: alb.id,
-  //     cover: alb.images[1].url,
-  //     artistName: alb.artists[0].name,
-  //     trackLength: alb.tracks.items.length,
-  //     tracks: alb.tracks.items
-  //   }
-  // })
 
 
   // const albumData = {
