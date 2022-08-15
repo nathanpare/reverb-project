@@ -1,22 +1,16 @@
 import styled from "styled-components";
 
 const Box = styled.div`
-position: fixed;
 padding: 0px 0px;
 background: darkblue;
-position: absolute;
-bottom: 0;
-width: 100%;
-@media (min-width: 1000px) {
-  height:20%;
-}
+bottom: 0%;
+margin-bottom: 3rem;
 `;
 
 const Container = styled.div`
 display: flex;
-flexdirection: column;
-justify-content:center;
-max-width: 100%;
+flex-direction: column;
+justify-content: center;
 margin: 0 auto;
 `;
 

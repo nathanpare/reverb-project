@@ -16,7 +16,7 @@ export default function Releases({ title, artist, img, setPlayingTrack, item }) 
       <p className="artist">{artist}</p>
       <i className="fa-solid fa-play"></i>
       <div className='player-icon' onClick={handlePlay}>
-      <PlayCircleOutlineIcon fontSize='large' className='play-icon'/>
+        <PlayCircleOutlineIcon fontSize='large' className='play-icon' />
       </div>
     </div>
   )
