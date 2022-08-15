@@ -47,13 +47,13 @@ function App() {
 
       spotify.getMe()
         .then((user) => {
-          console.log(user);
+          // console.log(user);
           dispatch({
             type: "SET_USER",
             user: user,
           });
         }).catch((error) => {
-          console.log(error);
+          // console.log(error);
         });
 
       spotify.getUserPlaylists().then((playlists) => {
@@ -89,7 +89,7 @@ function App() {
 
       spotify.searchTracks("love")
         .then((search) => {
-          console.log("HELLO")
+          // console.log("HELLO")
           dispatch({
             type: "SET_SEARCH",
             search: search,
@@ -117,11 +117,11 @@ function App() {
     })
   }
 
-  console.log("TOKEN", token);
-  console.log("PLAYLISTS", playlists);
-  console.log("RECENTS", recents);
-  console.log("FEATURED", featured);
-  console.log("SET PLAYING TRACK", setPlayingTrack);
+  // console.log("TOKEN", token);
+  // console.log("PLAYLISTS", playlists);
+  // console.log("RECENTS", recents);
+  // console.log("FEATURED", featured);
+  // console.log("SET PLAYING TRACK", setPlayingTrack);
   return (
     <div className='app'>
       {token ?
@@ -175,7 +175,8 @@ function App() {
           </div>
         </div>
 
-        : <Login />
+        // : <Login />
+        : <Library />
       }
     </div>
   );
