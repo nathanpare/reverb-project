@@ -12,14 +12,13 @@ export default function TrackSearchItem({ setPlayingTrack, track }) {
           width="60" height="60" />
       </div>
       <div className='search-text'>
-      <div className='search-title'>
-      <p>{track.name}</p>
-      </div>
-      <div className='search-artist'>
-        <p>{track.artists[0].name}</p>
-      </div>
+        <div className='search-title'>
+          <p>{track.name}</p>
+        </div>
+        <div className='search-artist'>
+          <p>{track.artists[0].name}</p>
+        </div>
       </div>
     </div>
-      
   )
 }
