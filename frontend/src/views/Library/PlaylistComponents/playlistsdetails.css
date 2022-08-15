@@ -20,6 +20,49 @@
   text-align: center;
   color: purple;
 }
+.playlistnamebutton {
+  background-color:purple;
+  border-radius: 10%;
+  border: 1px solid #FF4742;
+  width: 250px;
+  height: 60px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block; 
+  font-family: fantasy,"proxima nova",sans-serif;
+  font-weight: bold;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  -webkit-animation: glowing 1500ms infinite;
+  -moz-animation: glowing 1500ms infinite;
+  -o-animation: glowing 1500ms infinite;
+  animation: glowing 1500ms infinite;
+}
+@-webkit-keyframes glowing {
+  0% { background-color: purple; -webkit-box-shadow: 0 0 3px purple; }
+  50% { background-color: purple; -webkit-box-shadow: 0 0 40px purple; }
+  100% { background-color: purple; -webkit-box-shadow: 0 0 3px purple; }
+}
+
+@-moz-keyframes glowing {
+  0% { background-color: purple; -moz-box-shadow: 0 0 3px purple; }
+  50% { background-color: #FF0000; -moz-box-shadow: 0 0 40px purple; }
+  100% { background-color: #B20000; -moz-box-shadow: 0 0 3px purple; }
+}
+
+@-o-keyframes glowing {
+  0% { background-color: purple; box-shadow: 0 0 3px purple; }
+  50% { background-color: purple; box-shadow: 0 0 40px purple; }
+  100% { background-color: purple; box-shadow: 0 0 3px purple; }
+}
+
+@keyframes glowing {
+  0% { background-color: purple; box-shadow: 0 0 3px purple; }
+  50% { background-color: purple; box-shadow: 0 0 40px purple; }
+  100% { background-color: purple; box-shadow: 0 0 3px purple; }
+}
+
 .playlistmessage {
   background-color: transparent;
   padding-left: 3px;
@@ -30,6 +73,8 @@
   font-weight: bold;
   text-align: left;
   color: darkblue;
+  margin-top: 30px;
+  margin-bottom: 10px;
 }
 .button_add_songs {
   background-color:green;
@@ -71,9 +116,4 @@
 }
 .button_delete {
   opacity: 1;
-}
-.playlistmessage {
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 10px;
 }

@@ -49,7 +49,10 @@ export default function PlaylistNames({ playlists, setPlaylists, user_id }) {
           {playlists.map((playlist, index) => {
             return (
               <tr key={index}>
-                <td className="playlistname">***{playlist.name}***</td>
+                {/* <td className="playlistname">***{playlist.name}***</td> */}
+                <td>
+                  <button className="playlistnamebutton">***{playlist.name}***</button>
+                </td>
                 <td>
                   <button className="button_delete" onClick={() => deletePlaylist(playlist.id)}  >
                     Delete
