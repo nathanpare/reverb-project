@@ -1,13 +1,19 @@
-import React, { Component, useState, useEffect } from 'react';
-import './App.css';
-// import LibraryPage from './views/Library/library';
-// import LibraryPage from './views/Library/library';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import SpotifyWebApi from "spotify-web-api-js";
-// import Footer from './components/footer/Footer';
-// import Sidebar from './views/sidebar/Sidebar'
 import { getTokenFromResponse } from "./views/Login/spotify";
 import { UseDataLayerValue } from './DataLayer';
+import './App.css';
+
+import Dashboard from './views/Dashboard/Dashboard';
+import Search from './views/Search/Search';
+import Login from './views/Login/Login';
+import Player from './views/Dashboard/Player';
+import CreatePlaylists from './views/Library/PlaylistComponents/CreatePlaylists';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./views/Dashboard/Dashboard.css"
+import "./views/Search/Search.css";
+import "./views/Library/library.css"
+import "./views/Login/Login.css"
 
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
@@ -15,25 +21,10 @@ import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import Home from './views/Home/Home';
-import Search from './views/Search/Search';
-import "./views/Search/Search.css";
-import "./views/Library/library.css"
-import Albums
- from './views/Library/albums';
-import "./views/NewSidebar/NewSidebar.css"
-import Login from './views/Login/Login';
-import "./views/Login/Login.css"
-import Player from './views/Dashboard/Player';
-
-import CreatePlaylists from './views/Library/PlaylistComponents/CreatePlaylists';
-
-
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [view, setView] = useState("Home");
+  const [view, setView] = useState("Dashboard");
   const [searchResult, setSearchResult] = useState("");
   const [{ user, recents, playlists, token, featured, releases, playingTrack, search }, dispatch] = UseDataLayerValue();
 
@@ -44,14 +35,6 @@ function App() {
     const hash = getTokenFromResponse();
     window.location.hash = "";
     let _token = hash.access_token;
-    ;
-    // if (hash.access_token) {
-    //   window.location.hash = "";
-    //   _token = hash.access_token;
-    //   localStorage.setItem("_token", _token);
-    // } else {
-    //   _token = localStorage.getItem("_token");
-    // }
 
     if (_token) {
       spotify.setAccessToken(_token);
@@ -95,7 +78,7 @@ function App() {
           })
         })
 
-      spotify.getNewReleases({ limit : 6, offset: 0, country: 'SE' })
+      spotify.getNewReleases({ limit: 6, offset: 0, country: 'SE' })
         .then((releases) => {
           dispatch({
             type: "SET_RELEASES",
@@ -112,9 +95,9 @@ function App() {
           })
         })
 
-        spotify.getMyRecentlyPlayedTracks({
-          limit : 6
-        })
+      spotify.getMyRecentlyPlayedTracks({
+        limit: 6
+      })
         .then((recents) => {
           dispatch({
             type: "SET_RECENTS",
@@ -137,63 +120,64 @@ function App() {
   console.log("PLAYLISTS", playlists);
   console.log("RECENTS", recents);
   console.log("FEATURED", featured);
+  console.log("SET PLAYING TRACK", setPlayingTrack);
   return (
     <div className='app'>
-    {token ? 
-<div className='reverb'>
-      <div className='sidebar'>
-      <div className='sidebar-title'>
-        <p>Reverb</p>
-      </div>
-        <div className='sidebar-items'>
-          <div className='sidebar-home' onClick={() => setView("Home")}>
-            <div className='sidebar-icon'>
-              <HomeIcon />
+      {token ?
+        <div className='reverb'>
+          <div className='sidebar'>
+            <div className='sidebar-title'>
+              <p>Reverb</p>
             </div>
-            <p>Home</p>
+            <div className='sidebar-items'>
+              <div className='sidebar-home' onClick={() => setView("Dashboard")}>
+                <div className='sidebar-icon'>
+                  <HomeIcon />
+                </div>
+                <p>Home</p>
+              </div>
+              <div className='sidebar-search' onClick={() => setView("Search")}>
+                <div className='sidebar-icon'>
+                  <SearchIcon />
+                </div>
+                <p>Search</p>
+              </div>
+              <div className='sidebar-library' onClick={() => setView("Library")}>
+                <div className='sidebar-icon'>
+                  <LibraryMusicIcon />
+                </div>
+                <p>Your Library</p>
+              </div>
+              <div className='sidebar-playlist' onClick={() => setView("CreatePlaylists")}>
+                <div className='sidebar-icon'>
+                  <PlaylistAddIcon />
+                </div>
+                <p>Create Playlist</p>
+              </div>
+              <div className='sidebar-liked'>
+                <div className='sidebar-icon'>
+                  <FavoriteIcon />
+                </div>
+                <p>Liked Songs</p>
+              </div>
+            </div>
+
           </div>
-          <div className='sidebar-search' onClick={() => setView("Search")}>
-            <div className='sidebar-icon'>
-              <SearchIcon />
-            </div>
-            <p>Search</p>
+          <div className='view'>
+            {view === "Dashboard" && <Dashboard />}
+            {view === "Search" && <Search searchResult={searchResult} setSearchResult={setSearchResult} spotify={spotify} />}
+            {view === "CreatePlaylists" && <CreatePlaylists user={user} />}
           </div>
-          <div className='sidebar-library' onClick={() => setView("Library")}>
-            <div className='sidebar-icon'>
-              <LibraryMusicIcon />
-            </div>
-            <p>Your Library</p>
-          </div>
-          <div className='sidebar-playlist' onClick={() => setView("CreatePlaylists")}>
-            <div className='sidebar-icon'>
-              <PlaylistAddIcon />
-            </div>
-            <p>Create Playlist</p>
-          </div>
-          <div className='sidebar-liked'>
-            <div className='sidebar-icon'>
-              <FavoriteIcon />
-            </div>
-            <p>Liked Songs</p>
+          <div className='player-div'>
+            <Player token={token} trackUri={playingTrack?.uri} />
           </div>
         </div>
 
-      </div>
-      <div className='view'>
-        {view === "Home" && <Home />}
-        {view === "Search" && <Search searchResult={searchResult} setSearchResult={setSearchResult} spotify={spotify} />}
-        {view === "CreatePlaylists" && <CreatePlaylists user={user} />}     
-      </div>
-      <div className='player-div'>
-    <Player token={token} trackUri={playingTrack?.uri} />
+        : <Login />
+      }
     </div>
-    </div>
-
-: <Login/>
-}
-</div>
   );
-}       
+}
 
 
 export default App;

@@ -8,12 +8,12 @@ export default function Player({ token, trackUri }) {
 
   if (!token) return null
   return <SpotifyPlayer
-  token={token}
-  showSaveIcon
-  callback={state => {
-    if(!state.isPlaying) setPlay(false)
-  }}
-  play={play}
-  uris={trackUri ? [trackUri] : []}
+    token={token}
+    showSaveIcon
+    callback={state => {
+      if (!state.isPlaying) setPlay(false)
+    }}
+    play={play}
+    uris={trackUri ? [trackUri] : []}
   />
 }

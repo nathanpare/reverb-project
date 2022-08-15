@@ -1,8 +1,8 @@
 import React from 'react'
 import PlayCircleOutlineIcon from "@mui/icons-material/PlayCircleOutline";
 
-export default function Featured({ title, artist, img, setPlayingTrack, item}) {
-   const handlePlay = () => {
+export default function Featured({ title, artist, img, setPlayingTrack, item }) {
+  const handlePlay = () => {
     setPlayingTrack(item);
     console.log("TRACKKK", item);
   }
@@ -15,7 +15,7 @@ export default function Featured({ title, artist, img, setPlayingTrack, item}) {
       <p className="name">{title}</p>
       <p className="artist">{artist}</p>
       <div className='player-icon' onClick={handlePlay}>
-      <PlayCircleOutlineIcon fontSize='large' className='play-icon'/>
+        <PlayCircleOutlineIcon fontSize='large' className='play-icon' />
       </div>
     </div>
   )
