@@ -9,6 +9,7 @@ import Search from './views/Search/Search';
 import Login from './views/Login/Login';
 import Player from './views/Dashboard/Player';
 import CreatePlaylists from './views/Library/PlaylistComponents/CreatePlaylists';
+import Library from './views/Library/library';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./views/Dashboard/Dashboard.css"
 import "./views/Search/Search.css";
@@ -167,6 +168,7 @@ function App() {
             {view === "Dashboard" && <Dashboard />}
             {view === "Search" && <Search searchResult={searchResult} setSearchResult={setSearchResult} spotify={spotify} />}
             {view === "CreatePlaylists" && <CreatePlaylists user={user} />}
+            {view === "Library" && <Library user={user} />}
           </div>
           <div className='player-div'>
             <Player token={token} trackUri={playingTrack?.uri} />

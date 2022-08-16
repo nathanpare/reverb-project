@@ -895,7 +895,7 @@ export default function Songs() {
   const [track, setTrack] = useState(null);
 
   return (
-      <body className={"songs-page"}>
+      <div className={"songs-page"}>
         <header className={"page-header"}>
           <h3>Tracks</h3>
         </header>
@@ -915,15 +915,6 @@ export default function Songs() {
             <li>Song</li>
           </ul>
         </div>
-        <div className={"nav-elements"}>
-          <Link to={"/library"} className={"nav-element"}>Library</Link>
-          <Link to={"/songs"} className={"nav-element"}>Songs</Link>
-          <Link to={"/albums"} className={"nav-element"}>Albums</Link>
-          <Link to={"/artists"} className={"nav-element"}>Artists</Link>
-          <Link to={"/playlists"} className={"nav-element"}>Playlists</Link>
-          <Link to={"/genres"} className={"nav-element"}>Genres</Link>
-          <Link to={"/podcasts"} className={"nav-element"}>Podcasts</Link>
-        </div>
-      </body>
+      </div>
   );
 };

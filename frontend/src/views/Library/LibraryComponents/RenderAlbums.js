@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 
-function RenderAlbums() {
+export default function RenderAlbums() {
   const [area, setArea] = useState(false);
 
   const addToArea = (
@@ -28,3 +28,4 @@ function RenderAlbums() {
     </div>
   )
 };
+
