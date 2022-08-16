@@ -149,7 +149,7 @@ app.get("/playlistsongs/:userid", async (req, res) => {
     const userid =req.params.userid;
    // console.log("User id: ", userid);
     const getUserPlaylists = await pool.query(
-      "SELECT DISTINCT name FROM playlists WHERE user_id IN (SELECT id FROM users WHERE spotify_user_id = $1);", [userid]
+      "SELECT DISTINCT id, name FROM playlists WHERE user_id IN (SELECT id FROM users WHERE spotify_user_id = $1);", [userid]
     )
     res.json(getUserPlaylists);
 
