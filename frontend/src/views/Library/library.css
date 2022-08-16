@@ -28,7 +28,9 @@
 .page-components {
   display: flex;
   flex-direction: row;
-  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  /* flex-grow: 1; */
 }
 
 .left-side {

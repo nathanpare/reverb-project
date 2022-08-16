@@ -24,7 +24,7 @@ app.use(express.json());
 
 app.listen(port, () => {
   console.log(`database server running on port ${port}`);
-  console.log(REDIRECT_URI);
+  // console.log(REDIRECT_URI);
 });
 
 // app.delete("/playlists/delete/:id", async (req, res) => {
