@@ -148,7 +148,7 @@ export default function CreatePlaylists(props) {
       <div className="createplaylistform">
       <form onSubmit={e => e.preventDefault()}>
         <label className="addplaylistslabel">
-          Playlist Name:
+          Playlist Name
           <input className="form-control" type="text" onChange={e => setPlaylistName(e.target.value)} /> {"      "}
           <p></p>
           {/* <input type="email" /> {"      "} */}

@@ -145,9 +145,9 @@ app.post("/playlistsongs", async (req, res) => {
 });
 app.get("/playlistsongs/:userid", async (req, res) => {
   try {
-    console.log(req.params);
+   // console.log(req.params);
     const userid =req.params.userid;
-    console.log("User id: ", userid);
+   // console.log("User id: ", userid);
     const getUserPlaylists = await pool.query(
       "SELECT DISTINCT name FROM playlists WHERE user_id IN (SELECT id FROM users WHERE spotify_user_id = $1);", [userid]
     )

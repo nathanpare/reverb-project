@@ -2,6 +2,7 @@
   font-size: 20px;
   font-family: cursive;
   font-weight: bold;
+  color:greenyellow;
 }
 .playlists-table tr td {
   height: 35px;
@@ -22,8 +23,8 @@
 }
 .playlistnamebutton {
   background-color:purple;
-  border-radius: 10%;
-  border: 1px solid #FF4742;
+  
+  border: 5px solid #3790A6;
   width: 250px;
   height: 60px;
   box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
