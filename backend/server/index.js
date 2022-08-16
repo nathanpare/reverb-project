@@ -67,7 +67,7 @@ app.get('/', function(req, res, next) {
 app.get("/playlists", async (req, res) => {
   try {
     const getAllplaylistshere = await pool.query(
-      'SELECT playlists.id, playlists.name FROM playlists JOIN users on users.id = playlists.user_id ORDER BY name ASC' 
+      'SELECT playlists.id, playlists.user_id, playlists.name FROM playlists JOIN users on users.id = playlists.user_id ORDER BY name ASC' 
 
     );
     res.json(getAllplaylistshere.rows);
@@ -143,14 +143,30 @@ app.post("/playlistsongs", async (req, res) => {
     console.log(error.message);
   }
 });
-app.delete("/playlistsongs/:id", async (req, res) => {
+app.get("/playlistsongs/:userid", async (req, res) => {
   try {
-    const id =parseInt(req.params.id);
-    console.log("Deleted Playlist id: ", id );
-    const deleteStep = await pool.query(
-      "DELETE FROM playlist_songs WHERE id = $1 RETURNING *", [id]
+    console.log(req.params);
+    const userid =req.params.userid;
+    console.log("User id: ", userid);
+    const getUserPlaylists = await pool.query(
+      "SELECT DISTINCT name FROM playlists WHERE user_id IN (SELECT id FROM users WHERE spotify_user_id = $1);", [userid]
     )
-    res.json("The song was deleted")
+    res.json(getUserPlaylists);
+
+  }catch(err){
+    console.log(err.message)
+  }
+});
+//app.get("/individualplaylistsongs/:)
+app.get("/playlistfullsongs/:userid", async (req, res) => {
+  try {
+    console.log(req.params);
+    const userid =req.params.userid;
+    console.log("User id: ", userid);
+    const getUserPlaylists = await pool.query(
+      "SELECT DISTINCT spotify_song_id FROM playlist_songs WHERE playlist_songs.playlist_id IN   (SELECT playlists.id FROM playlists WHERE playlists.user_id IN (SELECT id FROM users WHERE spotify_user_id = $1));", [userid]
+    )
+    res.json(getUserPlaylists);
 
   }catch(err){
     console.log(err.message)
