@@ -21,41 +21,70 @@ export default function Library(props) {
   const [playlistSongs, setPlaylistSongs] = useState([]);
   const [userSongs, setUserSongs] = useState([]);
   const [userArtists, setUserArtists] = useState([]);
-  const [userAlbums, setUsereAlbums] = useState([]);
+  const [userAlbums, setUserAlbums] = useState([]);
   const [userPlaylists, setUserPlaylists] = useState([]);
   const [userGenres, setUserGenres] = useState([]);
   const [users, setUsers] = useState([]);
   const [playlists, setPlaylists] = useState([]);
   const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
   
-  // console.log(user);
-
+  console.log(user);
+  const userId = user.id;
+  console.log(userId);
   useEffect(() => {
     const userId = user.id;
-    // console.log(user);
+    // console.log(userId);
     
     axios.get(`http://localhost:8080/playlistsongs/${user.id}`)
       .then(function(res) {
         setUserPlaylists([...res.data.rows])
-        // let info = res.data;
-        
-    
         console.log(res.data.rows)
       })
-    // axios.get(`http://localhost:8080/playlistsongs/`)
-    // .then(function(res) {
-    //   console.log(res)
-    //   // setPlaylistSongs([...res.data.rows]);
-    //   // let info = res.data;
-    //   console.log(res.data.rows)
-    // })
-    // .catch(error => {
-    //   console.log("setPlaylistSongs failed")
-    // });
-      
+      .catch(err => {
+        console.log("Set user playlists failed.");
+      });
   }, []);
 
-  
+  /////////////////
+
+  // let playlistsAddr = `http://localhost:8080/playlistsongs/${user.id}`;
+  // let artistsAddr = `http://localhost:8080/artists/${user.id}`;
+  // let albumsAddr = `http://localhost:8080/albums/${user.id}`;
+  // let songsAddr = `http://localhost:8080/songs/${user.id}`;
+  // const playlistsGet = axios.get(playlistsAddr);
+  // const artistsGet = axios.get(artistsAddr);
+  // const albumsGet = axios.get(albumsAddr);
+  // const songsGet = axios.get(songsAddr);
+
+  // useEffect(() => {
+  //   axios.all([playlistsGet, songsGet, albumsGet, songs])
+
+  // })
+
+  // useEffect(() => {
+  //   const userId = user.id;
+  //   console.log(userId)
+  //   axios.all([
+  //     axios.get(`http://localhost:8080/playlistsongs/${user.id}`),
+  //     // axios.get(`http://localhost:8080/songs/${user.id}`),
+  //     // axios.get(`http://localhost:8080/artists/${user.id}`),
+  //     // axios.get(`http://localhost:8080/albums/${user.id}`)
+  //   ]).then(axios.spread((...responses) => {
+  //       const responseUserPlaylists = responses[0];
+  //       // const responseUserSongs = response[1];
+  //       // const responseUserArtists = response[2];
+  //       // const responseUserAlbums = response[3];
+  //       // console.log(responseUserPlaylists);
+  //       // console.log(responseUserSongs);
+  //       // console.log(responseUserArtists);
+  //       // console.log(responseUserAlbums);
+  //     })  
+  //   ).catch(errors => {
+  //     console.log("Errors: " + errors);
+  //   })
+  // })
+
+  // console.log(users);
    
   function fetchUserId(userList) {
     let idsArr = [];
@@ -87,24 +116,24 @@ export default function Library(props) {
   // console.log(users);
   
 
-  const fetchData = () => {
-    const usersApi = `http://localhost:8080/users`;
-    const playlistsApi = `http://localhost:8080/playlists`;
-    const getUsers = axios.get(usersApi);
-    const getPlaylists = axios.get(playlistsApi);
+  // const fetchData = () => {
+  //   const usersApi = `http://localhost:8080/users`;
+  //   const playlistsApi = `http://localhost:8080/playlists`;
+  //   const getUsers = axios.get(usersApi);
+  //   const getPlaylists = axios.get(playlistsApi);
   
-    axios.all([getUsers, getPlaylists]).then(
-      axios.spread((...allData) => {
-        const allUserData = allData[0].data;
-        const allPlaylistData = allData[1].data;
-        setUsers([...allUserData]);
-        setPlaylists([...allPlaylistData]);
+  //   axios.all([getUsers, getPlaylists]).then(
+  //     axios.spread((...allData) => {
+  //       const allUserData = allData[0].data;
+  //       const allPlaylistData = allData[1].data;
+  //       setUsers([...allUserData]);
+  //       setPlaylists([...allPlaylistData]);
   
-      })
-    ).catch(error => {
-      console.log(error);
-    })
-  };
+  //     })
+  //   ).catch(error => {
+  //     console.log(error);
+  //   })
+  // };
   
 
   // (8) [{…}, {…}, {…}, {…}, {…}, {…}, {…}, {…}]
@@ -144,7 +173,7 @@ export default function Library(props) {
 
     <div className="library-page">
       <header className="page-header">
-        <h1 className="page-title">Reverb</h1>
+        <h1 className="page-title">Reverb Library</h1>
         <h3 className="header-message">Good morning</h3>
       </header>
         <div className="page-components">
@@ -177,21 +206,23 @@ export default function Library(props) {
           </div>
 
           <div className="right-side">
-
-            <div className="playlists-components">
-              <h5 className="playlists-header">Playlists</h5>
-                <div className="playlists-items">
-                  {/* < userPlaylists={userPlaylists} />  */}
-                  {userPlaylists.map((playlist, index) => {
-                    return (
-                      <div key={index}>
-                        <Button className="all-playlists-button" onClick={getSongs(playlist.id)}>{playlist.name}</Button>
-                      </div>
-                    )
-                    })}
-                  {/* <Button className="all-playlists-button" onClick={() => {}}>All Playlists</Button> */}
-                </div>
-            </div>
+            {/* <div className="gradient-border"> */}
+              <div className="playlists-components">
+                <h5 className="playlists-header">Playlists</h5>
+                  <div className="playlists-items">
+                    {/* < userPlaylists={userPlaylists} />  */}
+                    {userPlaylists.map((playlist, index) => {
+                      return (
+                        <div key={index}>
+                          <Button className="all-playlists-button" onClick={getSongs(playlist.id)}>{playlist.name}</Button>
+                        </div>
+                      )
+                      })}
+                    <Button className="all-playlists-button" onClick={() => {}}>All Playlists</Button>
+                  </div>
+              </div>
+            {/* </div> */}
+            
             <div className="genres-components">
               <h5 className="genres-header">Genres</h5>
                 <div className="genres-items">
@@ -209,7 +240,9 @@ export default function Library(props) {
 
           </div>         
         </div>
-      <Footer />
+        <div className="footer-container">
+          <Footer />    
+        </div>
     </div>
   );
 }
