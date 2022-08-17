@@ -99,7 +99,19 @@
   display: flex;
   flex-flow: row wrap;
 }
+.all-user-songs-button {
+  background-color:green;
+  border-radius: 25px;
+  border: 1px solid #FF4742;
+  width: 25%;
+  height: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+  font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
 
+}
 .song-item {
   
 }
