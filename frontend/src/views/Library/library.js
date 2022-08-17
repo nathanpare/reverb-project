@@ -33,6 +33,7 @@ export default function Library(props) {
   const [userGenres, setUserGenres] = useState([]);
   const [isFirstRender, setIsFirstRender]=useState("A");
   const [userPlaylistId, setUserPlaylistId] = useState([]);
+  const [addRenderhtml, setAddRenderhtml]=useState("");
 
   
   const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
@@ -101,25 +102,19 @@ export default function Library(props) {
 
   const fetchData = () => {
    
-    //const usersApi = `http://localhost:8080/users`;
-    //const playlistsApi = `http://localhost:8080/playlists`;
+  
     const songsApi = `http://localhost:8080/playlistsongs`;
-    //const getUsers = axios.get(usersApi);
-    //const getPlaylists = axios.get(playlistsApi);
+
     const getSongs = axios.get(songsApi);
   
   
     axios.all([getSongs]).then(
       axios.spread((...allData) => {
-       // const allUserData = allData[0].data;
-       // const allPlaylistData = allData[1].data;
+
         const allSongsData = allData[0].data;      
-       // console.log("all user data", allUserData);
-       // console.log("allPlaylistData", allPlaylistData);
-        console.log("all songs Data", allSongsData);
     
-      //  setUsers([...allUserData]);
-       // setPlaylists([...allPlaylistData]);
+        console.log("all songs Data", allSongsData);
+
         setAllSongs([...allSongsData]);
        
       })
@@ -128,21 +123,12 @@ export default function Library(props) {
     })
   };
   function getSongs(playlist_id){
-    //fetchData();
-   // fetchUserId();
-    //fetchUserPlaylist();
+
     console.log(playlist_id);
     fetchUserSongs(playlist_id);
     setUserPlaylistId(playlist_id);
     console.log(userPlaylistSongs);
-    // if(userPlaylistSongs.length>0){
-    //   console.log("Rendering");
-    //   return(
-       addRender = <UserSongs userPlaylistSongs={userPlaylistSongs}/>
-    //   )
-      
-    // }
-
+       setAddRenderhtml(<UserSongs userPlaylistSongs={userPlaylistSongs}/>);
   }
  
   return (
@@ -215,22 +201,30 @@ export default function Library(props) {
           </div>         
         </div>
         
-      <Footer />
-      {addRender}
+      
+      {/* {addRender}
       {userPlaylistSongs.map((playlist, index) => {
                     return (
                       <div key={index}>
-                        <Button className="all-user-songs-button" >{playlist.name}</Button>
+                        <Button className="all-user-songs-button" >{playlist.spotify_song_name}</Button>
                       </div>
                     )
-                    })}
+                    })} */}
           <div className="featured-songs">
-          {userPlaylistSongs.map((features) => (
-            <userSongs title={features.spotify_song_name} artist={features.spotify_song_id} />
+         { userPlaylistSongs.map((playlist, index) => {
+ return (
+  <div key={index}>
+ <UserSongs title={playlist.spotify_song_name} artist={playlist.spotify_song_id} />
 
-          ))
+
+  </div>
+ )
+ 
+         }
+         )
           }
-        </div>
+        </div> 
+        <Footer />
     </div>
   );
 }
