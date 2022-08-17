@@ -5,14 +5,15 @@ export default function UserSongs({title, artist, img}) {
 console.log(title);
 console.log(artist);
   return (
-    <div className="song" >
-      <div className="image">
-        <img alt={""} src={img}
-          width="150" height="150" />
-      </div>
-      <p className="name">{title}</p>
-      <p className="artist">{artist}</p>
+    <div>
+      <div className="library-song-image">
+        <img className="library-song-image" alt={""} src={img}
+          width="70" height="70" />
+        <p>{title}</p>
+        <p>{artist}</p>
      
+      </div>
+
     </div>
   )
 }

@@ -260,3 +260,70 @@
   
 
 }
+
+.expanded-songs-title {
+  display: flex;
+  font-family: 'Archivo Black', sans-serif;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+
+.expanded-songs-items {
+  display: flex;
+  border: 5px outset red;
+  background-color: darkgrey;
+  flex-wrap: column wrap;
+  justify-content: space-evenly;
+  color: white;
+  margin-bottom: 1rem;
+  padding: 2rem;
+  
+}
+
+.library-song-image {
+  border: 3px outset gray;
+  height: 70px;
+  width: 70px;
+}
+
+
+.sample-button {
+  outline: none;
+  
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+  
+  border: none;
+  border-radius: 5px;
+  width: 300px;
+  height: 60px;
+  
+  color: white;
+  background-image: linear-gradient(to right top, #f7204b, #f72843, #f7303a, #f63831, #f43f27);
+  box-shadow: 
+    0 0 0px #000,
+    0 0 40px #F43F27,
+    0 0 800px #F27160;
+  
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  
+  transition: 300ms;
+}
+
+.sample-button:hover {
+  width: 310px;
+  height: 65px;
+  
+  background-image: linear-gradient(to left bottom, #f7204b, #f72843, #f7303a, #f63831, #f43f27);
+  box-shadow: 
+    0 0 20px #000,
+    0 0 40px #F43F27,
+    0 0 800px #F27160;
+}
