@@ -5,5 +5,8 @@ CREATE TABLE playlist_songs(
   playlist_id INTEGER NOT NULL REFERENCES playlists(id) ON DELETE CASCADE,
   user_id INTEGER NOT NULL REFERENCES users(id) ON DELETE CASCADE,
   spotify_song_id VARCHAR(255) NOT NULL,
-  spotify_song_name VARCHAR(255) NOT NULL
+  spotify_song_name VARCHAR(255) NOT NULL,
+  title VARCHAR(255) NOT NULL,
+  artist VARCHAR(255) NOT NULL,
+  img VARCHAR(512) 
 );

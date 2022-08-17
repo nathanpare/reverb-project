@@ -63,21 +63,21 @@ export default function AddSongsToPlaylists({ user_id, playlist_id, playlists, p
     }
 
   }
-  function addMultiFunctionPlaylistSongs(song_id, song_name, disable) {
+  function addMultiFunctionPlaylistSongs(song_id, song_name, title, artist, img) {
     if (checkPlaylistSong_Spotify_id(song_name)) {
       return;
     };
 
-    addPlaylistSongs(song_id, song_name);
+    addPlaylistSongs(song_id, song_name,title, artist, img);
 
   }
 
 
-  function addPlaylistSongs(song_id, song_name) {
+  function addPlaylistSongs(song_id, song_name,title, artist, img) {
 
     //setSpotifySongId(song_id);
 
-    const playlistSongObject = { playlist_id: playlist_id, user_id: user_id, spotify_song_id: song_id, spotify_song_name: song_name };
+    const playlistSongObject = { playlist_id: playlist_id, user_id: user_id, spotify_song_id: song_id, spotify_song_name: song_name, title: title, artist: artist, img: img };
 
     return axios.post(`http://localhost:8080/playlistsongs`, playlistSongObject)
       .then((response) => {

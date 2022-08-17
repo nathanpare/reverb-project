@@ -1,3 +1,3 @@
-INSERT INTO playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name) VALUES (1, 1, 'spotifysongid1', 'hello_round');
-INSERT INTO playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name) VALUES (1, 2, 'spotifysongid2', 'hello_round2');
-INSERT INTO playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name) VALUES (1, 3, 'spotifysongid3', 'hello_round3');
+INSERT INTO playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img) VALUES (1, 1, 'spotifysongid1', 'hello_round', 'Title B', 'Robin', 'https://pnggrid.com/wp-content/uploads/2021/05/Spotify-Music-Logo-2048x2048.png');
+INSERT INTO playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img) VALUES (1, 2, 'spotifysongid2', 'hello_round2', 'Title A', 'Robert', 'https://pnggrid.com/wp-content/uploads/2021/05/Spotify-Music-Logo-2048x2048.png');
+INSERT INTO playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img) VALUES (1, 3, 'spotifysongid3', 'hello_round3', 'Title C', 'Nathan', 'https://pnggrid.com/wp-content/uploads/2021/05/Spotify-Music-Logo-2048x2048.png');

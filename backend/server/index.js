@@ -122,7 +122,7 @@ app.post("/users", async (req, res) => {
 app.get("/playlistsongs", async (req, res) => {
   try {
     const getAllplaylistsongs = await pool.query(
-      'SELECT id, playlist_id, user_id, spotify_song_id, spotify_song_name FROM playlist_songs'
+      'SELECT id, playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img FROM playlist_songs'
 
     );
     res.json(getAllplaylistsongs.rows);
@@ -133,9 +133,9 @@ app.get("/playlistsongs", async (req, res) => {
 });
 app.post("/playlistsongs", async (req, res) => {
   try {
-    const { playlist_id, user_id, spotify_song_id, spotify_song_name } = req.body;
+    const { playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img } = req.body;
     console.log(req.body);
-    const newPlaylistSong = await pool.query(`INSERT into playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name) VALUES ($1, $2, $3, $4) RETURNING * `, [playlist_id, user_id, spotify_song_id, spotify_song_name]);
+    const newPlaylistSong = await pool.query(`INSERT into playlist_songs (playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img ) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING * `, [playlist_id, user_id, spotify_song_id, spotify_song_name, title, artist, img]);
 
     res.json(newPlaylistSong.rows[0]);
 

@@ -24,7 +24,7 @@ export default function Featured({ title, artist, img, chooseTrack, features, ad
       </div>
       <p className="name">{title}</p>
       <p className="artist">{artist}</p>
-      <button className="button_add_songs"  disabled={disable}onClick={() => addMultiFunctionPlaylistSongs(song_id, song_name)}  >
+      <button className="button_add_songs"  disabled={disable}onClick={() => addMultiFunctionPlaylistSongs(song_id, song_name, title, artist, img)}  >
           Add Song
         </button>
     </div>

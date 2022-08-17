@@ -214,7 +214,7 @@ export default function Library(props) {
          { userPlaylistSongs.map((playlist, index) => {
  return (
   <div key={index}>
- <UserSongs title={playlist.spotify_song_name} artist={playlist.spotify_song_id} />
+ <UserSongs title={playlist.title} artist={playlist.artist} img={playlist.img} />
 
 
   </div>
