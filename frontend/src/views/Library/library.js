@@ -148,21 +148,21 @@ export default function Library(props) {
               <h5 className="songs-header">Songs</h5>
                 <div className="songs-items">
                   {/* <SongsPreview /> */}
-                  <Button className="all-songs-button">All Songs</Button>
+                  <button className="all-songs-button">All Songs</button>
                 </div>
             </div>
             <div className="albums-components">
               <h5 className="albums-header">Albums</h5>
                 <div className="albums-items">
                   {/* <AlbumsPreview /> */}
-                  <Button className="all-albums-button">All Albums</Button>
+                  <button className="all-albums-button">All Albums</button>
                 </div>
             </div>
             <div className="artists-components">
               <h5 className="artists-header">Artists</h5>
                 <div className="artists-items">
                   {/* <ArtistsPreview /> */}
-                  <Button className="all-artists-button">All Artists</Button>
+                  <button className="all-artists-button">All Artists</button>
                 </div>
             </div>
           </div>
@@ -176,25 +176,25 @@ export default function Library(props) {
                   {userPlaylists.map((playlist, index) => {
                     return (
                       <div key={index}>
-                        <Button className="all-playlists-button" onClick={() => getSongs(playlist.id)}>{playlist.name}</Button>
+                        <button className="all-playlists-button" onClick={() => getSongs(playlist.id)}>{playlist.name}</button>
                       </div>
                     )
                     })}
-                  {/* <Button className="all-playlists-button" onClick={() => {}}>All Playlists</Button> */}
+                  {/* <button className="all-playlists-button" onClick={() => {}}>All Playlists</button> */}
                 </div>
             </div>
             <div className="genres-components">
               <h5 className="genres-header">Genres</h5>
                 <div className="genres-items">
                   {/* <GenresPreview /> */}
-                  <Button className="all-genres-button">All Genres</Button>
+                  <button className="all-genres-button">All Genres</button>
                 </div>
             </div>
             <div className="podcasts-components">
               <h5 className="podcasts-header">Podcasts</h5>
                 <div className="podcasts-items">
                   {/* <PodcastsPreview /> */}
-                  <Button className="all-podcasts-button">All Podcasts</Button>
+                  <button className="all-podcasts-button">All Podcasts</button>
                 </div>
             </div>
 
@@ -206,7 +206,7 @@ export default function Library(props) {
       {userPlaylistSongs.map((playlist, index) => {
                     return (
                       <div key={index}>
-                        <Button className="all-user-songs-button" >{playlist.spotify_song_name}</Button>
+                        <button className="all-user-songs-button" >{playlist.spotify_song_name}</button>
                       </div>
                     )
                     })} */}
