@@ -5,6 +5,7 @@ import { UseDataLayerValue } from '../../DataLayer';
 function Search({ searchResult, setSearchResult, spotify }) {
   const [{  }, dispatch] = UseDataLayerValue();
   const [tracks, setTracks] = useState([]);
+
   const handleSearch = () => {
     spotify.searchTracks(searchResult).then(res => {
       console.log("TRACKS", res.tracks);

@@ -20,8 +20,6 @@ import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import Liked from './views/Liked/Liked';
 
 const spotify = new SpotifyWebApi();
 
@@ -106,9 +104,7 @@ function App() {
             recents: recents,
           })
         })
-
     }
-
   }, []);
 
   const setPlayingTrack = (track) => {
@@ -123,6 +119,7 @@ function App() {
   console.log("RECENTS", recents);
   console.log("FEATURED", featured);
   console.log("SET PLAYING TRACK", setPlayingTrack);
+
   return (
     <div className='app'>
       {token ?

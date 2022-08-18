@@ -1,10 +1,12 @@
 import React from 'react'
 
 export default function TrackSearchItem({ setPlayingTrack, track }) {
+
   const handlePlay = () => {
     setPlayingTrack(track);
     console.log("TRACKKK", track);
   }
+
   return (
     <div className='search-item' onClick={handlePlay} >
       <div className="search-image">

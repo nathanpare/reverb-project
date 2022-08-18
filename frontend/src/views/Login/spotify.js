@@ -14,7 +14,6 @@ const scopes = [
   "user-read-private",
   "user-library-read",
   "user-library-modify",
-
 ];
 
 export const getTokenFromResponse = () => {

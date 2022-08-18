@@ -112,14 +112,6 @@
   font-family: nunito,roboto,proxima-nova,"proxima nova",sans-serif;
 
 }
-.song-item {
-  
-}
-
-
-.all-songs-button {
-
-}
 
 .albums-components {
   display: flex;
@@ -140,14 +132,6 @@
   margin: 1%;
 }
 
-.albums-item {
-  /* background-color: red; */
-}
-
-.all-albums-button {
-  
-}
-
 .playlists-components {
   display: flex;
   flex-flow: column wrap;
@@ -164,10 +148,6 @@
 .playlists-items {
   display: flex;
   flex-flow: row wrap;
-}
-
-.playlists-item {
-  
 }
 
 .all-playlists-button {
@@ -198,14 +178,6 @@
   flex-flow: row wrap;
 }
 
-.artists-item {
-  
-}
-
-.all-artists-button {
-
-}
-
 .genres-components {
   display: flex;
   flex-flow: column wrap;
@@ -221,14 +193,6 @@
 .genres-items {
   display: flex;
   flex-flow: row wrap;
-}
-
-.genres-item {
-
-}
-
-.all-genres-button {
-
 }
 
 .podcasts-components {
@@ -248,19 +212,6 @@
   flex-flow: row wrap;
 }
 
-.podcasts-item {
-  
-}
-
-.all-podcasts-button {
-
-}
-
-.footer-container {
-  
-
-}
-
 .expanded-songs-title {
   display: flex;
   font-family: 'Archivo Black', sans-serif;
@@ -272,21 +223,47 @@
 .expanded-songs-items {
   display: flex;
   border: 5px outset red;
-  background-color: darkgrey;
+  background-color: #28282B;
   flex-wrap: column wrap;
-  justify-content: space-evenly;
   color: white;
   margin-bottom: 1rem;
+  align-items: center;
   padding: 2rem;
-  
+  height: 500px;
+  align-items: center;
+  flex-wrap: wrap;
+  padding-left: 4.5rem;
+}
+
+.playlist-song-item {
+  display: flex;
+  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
+  width: 150px;
+  height: 200px;
+  justify-content: center;
+  padding-top: 1rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
 }
 
 .library-song-image {
   border: 3px outset gray;
   height: 70px;
   width: 70px;
+  cursor: pointer;
+  margin-bottom: 1rem;
 }
 
+.playlist-artist {
+width: 100px;
+  opacity: 50%;
+  align-items: center;
+}
+
+.playlist-song {
+width: 100px;
+  flex-direction: row;
+}
 
 .sample-button {
   outline: none;

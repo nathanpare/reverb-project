@@ -40,7 +40,7 @@ export default function Library(props) {
   const [userPlaylistId, setUserPlaylistId] = useState([]);
   const [addRenderhtml, setAddRenderhtml] = useState("");
   const [view, setView] = useState("");
- 
+
 
   const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
 
@@ -50,7 +50,6 @@ export default function Library(props) {
       track: track,
     })
   }
-
 
   const [songsarea, setSongsarea] = useState(false);
   const PLAYLIST_VIEW = "playlists";
@@ -66,10 +65,8 @@ export default function Library(props) {
     if (userPlaylists) {
       fetchData();
       console.log(featured.tracks);
-
       //setIsOneRender(False);
     }
-
 
     if (isFirstRender === "A") {
 
@@ -80,20 +77,12 @@ export default function Library(props) {
         .then(function (res) {
           setUserPlaylists([...res.data.rows])
           // let info = res.data;
-
-
           console.log(res.data.rows)
 
         });
       setIsFirstRender("B");
     }
-
-
-
   }, []);
-
-
-
 
   function fetchUserSongs(playlistid) {
     console.log(allSongs);
@@ -160,12 +149,16 @@ export default function Library(props) {
       </div>
       <div className="expanded-songs-items">
         {featured.tracks.map((feature) => (
-          <ActualExpandedSongs
-            name={feature.name}
-            artist={feature.artists[0].name}
-            album={feature.album.name}
-            img={feature.album.images[0].url}
-          />
+          <div className='playlist-song-item'>
+            <ActualExpandedSongs
+              name={feature.name}
+              artist={feature.artists[0].name}
+              album={feature.album.name}
+              img={feature.album.images[0].url}
+              setPlayingTrack={setPlayingTrack}
+              feature={feature}
+            />
+          </div>
         ))}
       </div>
     </div>
@@ -180,7 +173,6 @@ export default function Library(props) {
     <div className="library-page">
       <header className="page-header">
         <h1 className="page-title">Reverb Library</h1>
-        <h3 className="header-message">Good morning</h3>
       </header>
       <div className="page-components">
         <div className="nav-bar">
@@ -191,23 +183,9 @@ export default function Library(props) {
           <div className="songs-components">
             <h5 className="songs-header">Songs</h5>
             <div className="songs-items">
-              
+
               <Button className="all-songs-button" onClick={() => setView(SONG_VIEW)}>Expand</Button>
 
-            </div>
-          </div>
-          <div className="albums-components">
-            <h5 className="albums-header">Albums</h5>
-            <div className="albums-items">
-              {/* <AlbumsPreview /> */}
-              <Button className="all-albums-button">All Albums</Button>
-            </div>
-          </div>
-          <div className="artists-components">
-            <h5 className="artists-header">Artists</h5>
-            <div className="artists-items">
-              {/* <ArtistsPreview /> */}
-              <Button className="all-artists-button">All Artists</Button>
             </div>
           </div>
         </div>
@@ -217,35 +195,21 @@ export default function Library(props) {
           <div className="playlists-components">
             <h5 className="playlists-header">Playlists</h5>
             <div className="playlists-items">
-              
+
               {userPlaylists.map((playlist, index) => {
                 return (
                   <div key={index}>
-                    <Button 
+                    <Button
                       className="all-playlists-button" onClick={() => {
-                      setView(PLAYLIST_VIEW);
-                      getSongs(playlist.id)}}>{playlist.name}</Button>
+                        setView(PLAYLIST_VIEW);
+                        getSongs(playlist.id)
+                      }}>{playlist.name}</Button>
                   </div>
                 )
               })}
               {/* <Button className="all-playlists-button" onClick={() => {}}>All Playlists</Button> */}
             </div>
           </div>
-          <div className="genres-components">
-            <h5 className="genres-header">Genres</h5>
-            <div className="genres-items">
-              {/* <GenresPreview /> */}
-              <Button className="all-genres-button">All Genres</Button>
-            </div>
-          </div>
-          <div className="podcasts-components">
-            <h5 className="podcasts-header">Podcasts</h5>
-            <div className="podcasts-items">
-              {/* <PodcastsPreview /> */}
-              <Button className="all-podcasts-button">All Podcasts</Button>
-            </div>
-          </div>
-
         </div>
       </div>
 
@@ -258,34 +222,33 @@ export default function Library(props) {
                       </div>
                     )
                     })} */}
-      
+
       {view === PLAYLIST_VIEW
-       && userPlaylistSongs.length > 0 && 
+        && userPlaylistSongs.length > 0 &&
         <div className="expanded-songs-items">
-        {userPlaylistSongs.map((playlist, index) => {
+          {userPlaylistSongs.map((playlist, index) => {
 
-          return (
-            <div key={index}>
-               <UserSongs
-                title={playlist.title}
-                artist={playlist.artist}
-                img={playlist.img}
-                id={playlist.id}
-                item={playlist}
-                setPlayingTrack={setPlayingTrack} />
+            return (
+              <div className='playlist-song-item' key={index}>
+                <UserSongs
+                  title={playlist.title}
+                  artist={playlist.artist}
+                  img={playlist.img}
+                  id={playlist.id}
+                  item={playlist}
+                  setPlayingTrack={setPlayingTrack} />
 
-            </div>
+              </div>
+            )
+          }
           )
+          }
 
-            }
-          )
-      }
-  
-      </div>}
-      {view === SONG_VIEW && 
-      <div className="songs-render">
-        {addToSongsArea}
-      </div>}
+        </div>}
+      {view === SONG_VIEW &&
+        <div className="songs-render">
+          {addToSongsArea}
+        </div>}
       <Footer />
     </div>
   );
