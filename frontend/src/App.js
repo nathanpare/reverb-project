@@ -21,6 +21,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import Liked from './views/Liked/Liked';
 
 const spotify = new SpotifyWebApi();
 
@@ -155,14 +156,7 @@ function App() {
                 </div>
                 <p>Create Playlist</p>
               </div>
-              <div className='sidebar-liked'>
-                <div className='sidebar-icon'>
-                  <FavoriteIcon />
-                </div>
-                <p>Liked Songs</p>
-              </div>
             </div>
-
           </div>
           <div className='view'>
             {view === "Dashboard" && <Dashboard />}

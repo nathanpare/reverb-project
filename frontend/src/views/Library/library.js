@@ -44,6 +44,13 @@ export default function Library(props) {
 
   const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
 
+  const setPlayingTrack = (track) => {
+    dispatch({
+      type: "SET_PLAYING_TRACK",
+      track: track,
+    })
+  }
+
 
   const [songsarea, setSongsarea] = useState(false);
   const PLAYLIST_VIEW = "playlists";
@@ -256,10 +263,17 @@ export default function Library(props) {
        && userPlaylistSongs.length > 0 && 
         <div className="expanded-songs-items">
         {userPlaylistSongs.map((playlist, index) => {
-          
+
           return (
             <div key={index}>
-              <UserSongs title={playlist.title} artist={playlist.artist} img={playlist.img} />
+               <UserSongs
+                title={playlist.title}
+                artist={playlist.artist}
+                img={playlist.img}
+                id={playlist.id}
+                item={playlist}
+                setPlayingTrack={setPlayingTrack} />
+
             </div>
           )
 
@@ -272,7 +286,6 @@ export default function Library(props) {
       <div className="songs-render">
         {addToSongsArea}
       </div>}
-      
       <Footer />
     </div>
   );
