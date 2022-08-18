@@ -20,8 +20,8 @@ import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import LibraryMusicIcon from '@mui/icons-material/LibraryMusic';
 import PlaylistAddIcon from '@mui/icons-material/PlaylistAdd';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import Liked from './views/Liked/Liked';
+//import FavoriteIcon from '@mui/icons-material/Favorite';
+//import Liked from './views/Liked/Liked';
 
 const spotify = new SpotifyWebApi();
 
