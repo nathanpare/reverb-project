@@ -12,7 +12,7 @@ export default function ActualExpandedSongs({ name, artist, album, img }) {
       <div>{name}</div>
       <div>{artist}</div>
       <div>{album}</div>
-      <div className="library-song-image">
+        <div className="library-song-image">
         <img alt={""} src={img}
           width="70" height="70" />
       </div>

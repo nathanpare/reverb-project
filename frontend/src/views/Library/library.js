@@ -39,12 +39,16 @@ export default function Library(props) {
   const [isFirstRender, setIsFirstRender] = useState("A");
   const [userPlaylistId, setUserPlaylistId] = useState([]);
   const [addRenderhtml, setAddRenderhtml] = useState("");
-
+  const [view, setView] = useState("");
+ 
 
   const [{ user, featured, summers, recents, tops, token }, dispatch] = UseDataLayerValue();
 
 
   const [songsarea, setSongsarea] = useState(false);
+  const PLAYLIST_VIEW = "playlists";
+  const SONG_VIEW = "songs";
+  const ALBUM_VIEW = "albums";
 
   // console.log(userPlaylists);
 
@@ -140,6 +144,8 @@ export default function Library(props) {
     setAddRenderhtml(<UserSongs userPlaylistSongs={userPlaylistSongs} />);
   }
 
+  console.log(featured.tracks);
+
   const addToSongsArea = (
     <div>
       <div className="expanded-songs-title">
@@ -160,7 +166,7 @@ export default function Library(props) {
 
 
   const fillSongsArea = () => {
-    setSongsarea(true);
+    // setSongsarea(true);
   }
 
   return (
@@ -178,8 +184,8 @@ export default function Library(props) {
           <div className="songs-components">
             <h5 className="songs-header">Songs</h5>
             <div className="songs-items">
-              {/* <SongsPreview /> */}
-              <Button className="all-songs-button" onClick={() => fillSongsArea()}>Expand</Button>
+              
+              <Button className="all-songs-button" onClick={() => setView(SONG_VIEW)}>Expand</Button>
 
             </div>
           </div>
@@ -204,11 +210,14 @@ export default function Library(props) {
           <div className="playlists-components">
             <h5 className="playlists-header">Playlists</h5>
             <div className="playlists-items">
-              {/* < userPlaylists={userPlaylists} />  */}
+              
               {userPlaylists.map((playlist, index) => {
                 return (
                   <div key={index}>
-                    <Button className="all-playlists-button" onClick={() => getSongs(playlist.id)}>{playlist.name}</Button>
+                    <Button 
+                      className="all-playlists-button" onClick={() => {
+                      setView(PLAYLIST_VIEW);
+                      getSongs(playlist.id)}}>{playlist.name}</Button>
                   </div>
                 )
               })}
@@ -242,28 +251,28 @@ export default function Library(props) {
                       </div>
                     )
                     })} */}
-      {/* ///////////////// */}
-      <div className="expanded-songs-items">
+      
+      {view === PLAYLIST_VIEW
+       && userPlaylistSongs.length > 0 && 
+        <div className="expanded-songs-items">
         {userPlaylistSongs.map((playlist, index) => {
           
           return (
             <div key={index}>
               <UserSongs title={playlist.title} artist={playlist.artist} img={playlist.img} />
-
-
             </div>
           )
 
-        }
-        )
-        }
-      {/* ////////////////////</div> */}
-
-      </div>
+            }
+          )
+      }
+  
+      </div>}
+      {view === SONG_VIEW && 
       <div className="songs-render">
-        {songsarea && addToSongsArea}
-        <button className="sample-button">AAAA</button>
-      </div>
+        {addToSongsArea}
+      </div>}
+      
       <Footer />
     </div>
   );

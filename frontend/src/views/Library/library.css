@@ -70,7 +70,7 @@
   width: 40vw;
   /* flex: auto; */
   border: 5px solid darkgrey;
-  height: minmax(10vh, 20vh);
+  /* height: minmax(10vh, 20vh); */
 }
 
 .right-side {
