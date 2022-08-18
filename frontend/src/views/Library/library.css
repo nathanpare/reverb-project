@@ -13,9 +13,9 @@
   /* align-items: center; */
   /* flex: 1; */
   /* margin-left: 220px; */
-  margin-left: 15%;
+  margin-left: 13rem;
   width: 80vw;
-  height: 100vh;
+  height: 100%;
 }
 
 .page-header {
