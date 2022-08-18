@@ -16,8 +16,8 @@ You may also see any lint errors in the console.
 
 ### Screenshots
 
-!["Screenshot of Login Page"](https://github.com/ejdokter/LHLmidterm01-24/blob/master/docs/Screenshot%20of%20login%20page.png?raw=true)
-!["Screenshot of Home Page"](https://github.com/ejdokter/LHLmidterm01-24/blob/master/docs/Screenshot%20of%20home%20page.png?raw=true)
-!["Screenshot of Search"](https://github.com/ejdokter/LHLmidterm01-24/blob/master/docs/Screenshot%20of%20cart%20page.png?raw=true)
-!["Screenshot of Create Playlists Page"](https://github.com/ejdokter/LHLmidterm01-24/blob/master/docs/Screenshot%20of%20user%20orders.png?raw=true)
-!["Screenshot of Library Page"](https://github.com/ejdokter/LHLmidterm01-24/blob/master/docs/Screenshot%20of%20admin%20orders.png?raw=true)
+!["Screenshot of Login Page"](https://github.com/nathanpare/reverb-project/blob/main/docs/Login%20Page.png?raw=true)
+!["Screenshot of Home Page"](https://github.com/nathanpare/reverb-project/blob/main/docs/Home%20Page.png?raw=true)
+!["Screenshot of Search"](https://github.com/nathanpare/reverb-project/blob/main/docs/Search%20Page.png?raw=true)
+!["Screenshot of Create Playlists Page"](https://github.com/nathanpare/reverb-project/blob/main/docs/Create%20Playlists.png?raw=true)
+!["Screenshot of Library Page"](https://github.com/nathanpare/reverb-project/blob/main/docs/Library%20Page.png?raw=true)
