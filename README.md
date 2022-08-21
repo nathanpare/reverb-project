@@ -1,5 +1,10 @@
 # reverb-project
 
+Test account Login credentials:
+
+Email: reverbtest95@gmail.com
+password: test12345
+
 In the Frontend and Backend Directory run:
 
 ### `npm install`
