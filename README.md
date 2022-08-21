@@ -1,9 +1,34 @@
 # reverb-project
 
-Test account Login credentials:
+### Test account Login credentials:
 
 Email: reverbtest95@gmail.com
 password: test12345
+
+Run the following going to backend folder
+
+1. In the terminal type psql
+Run:
+\i db/databasecreate/database.sql
+
+--Database is created
+
+2. Connect the database by # \c spotifyclone;
+Run for schema and seed data copying all at once:
+
+\i db/schema/01_users.sql
+\i db/schema/02_playlists.sql
+\i db/schema/03_likes.sql
+\i db/schema/04_playlist_songs.sql
+
+\i db/seeds/01_users_seed.sql
+\i db/seeds/02_playlists_seed.sql
+\i db/seeds/03_likes_seed.sql
+\i db/seeds/04_playlist_songs_seed.sql
+
+3. Go to backend/server/connection.js file and change your user and password from your database user and password.
+4. Go to another terminal and go to server directory and run: npm start
+
 
 In the Frontend and Backend Directory run:
 
